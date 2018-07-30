@@ -1,0 +1,33 @@
+*.class
+
+#package file
+*.war
+*.ear
+
+#maven 
+target/
+baseMan-common/target/
+baseMan-dao/target/
+baseMan-pojo/target/
+baseMan-service/target/
+baseMan-web/target/
+
+#eclipse 
+.settings/
+.project
+.classpatch
+
+#idea
+.idea/
+/idea/
+*.ipr
+*.iml
+*.iws
+
+# temp file
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
