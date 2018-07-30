@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dulk.baseMan.dao.DemoDao">
+
+    <resultMap id="girlResultMap" type="dulk.baseMan.pojo.Girl">
+        <id property="id" column="id"/>
+        <result property="age" column="age"/>
+        <result property="cupSize" column="cup_size"/>
+    </resultMap>
+
+    <sql id="girlColumn">
+        id, age, cup_size
+    </sql>
+
+    <select id="findById" parameterType="int" resultMap="girlResultMap">
+        SELECT
+        <include refid="girlColumn"/>
+        FROM girl WHERE id = #{id}
+    </select>
+
+    <insert id="insertGirl" parameterType="dulk.baseMan.pojo.Girl" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO girl (age)
+        VALUES (#{age})
+    </insert>
+
+    <update id="updateGirl" parameterType="dulk.baseMan.pojo.Girl">
+        UPDATE girl
+        SET age = #{age}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteGirl" parameterType="int">
+        DELETE FROM girl
+        WHERE id = #{id}
+    </delete>
+
+
+</mapper>
