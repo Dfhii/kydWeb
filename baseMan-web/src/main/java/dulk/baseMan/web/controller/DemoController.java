@@ -3,6 +3,9 @@ package dulk.baseMan.web.controller;
 import dulk.baseMan.common.utils.StringUtils;
 import dulk.baseMan.pojo.Girl;
 import dulk.baseMan.service.DemoService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +32,30 @@ public class DemoController {
     @RequestMapping("/findGirl")
     public Girl findGirl(Integer id) {
         return demoService.findById(id);
+    }
+
+    @RequestMapping("/user/signUp")
+    public String signUp() {
+        return "sign up";
+    }
+
+    @RequestMapping("/user/login")
+    public String login() {
+
+        UsernamePasswordToken token = new UsernamePasswordToken("zhangsan", "123456");
+        try {
+            SecurityUtils.getSubject().login(token);
+        } catch (AuthenticationException e) {
+            return e.getMessage();
+        }
+
+
+        return "success";
+    }
+
+    @RequestMapping("/page/index")
+    public String index() {
+        return "index";
     }
 
 }

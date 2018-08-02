@@ -19,6 +19,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- spring-shiro -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring-boot-web-starter</artifactId>
+            <version>1.4.0-RC2</version>
+        </dependency>
+
         <!-- service -->
         <dependency>
             <groupId>dulk.framework</groupId>
