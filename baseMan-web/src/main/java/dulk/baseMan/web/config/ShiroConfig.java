@@ -1,6 +1,6 @@
 package dulk.baseMan.web.config;
 
-import dulk.baseMan.web.realm.CustomRealm;
+import dulk.baseMan.web.realm.MyRealm;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
@@ -19,8 +19,9 @@ public class ShiroConfig {
 
     @Bean
     public Realm realm() {
-        return new CustomRealm();
+        return new MyRealm();
     }
+
 
     @Bean
     public ShiroFilterChainDefinition shiroFilterChainDefinition() {

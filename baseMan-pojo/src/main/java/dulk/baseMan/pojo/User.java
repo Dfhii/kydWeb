@@ -1,34 +1,34 @@
 package dulk.baseMan.pojo;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
-/**
- * User.
- *
- * @author Dulk
- * @version 20180731
- * @date 2018/7/31
- */
 public class User {
+    private Long id;
 
-    private Long uid;
     private String username;
-    private String nick;
-    private String pwd;
-    private String salt;
-    private Date created;
-    private Date updated;
-    private Set<String> roles = new HashSet<String>();
-    private Set<String> perms = new HashSet<String>();
 
-    public Long getUid() {
-        return uid;
+    private String password;
+
+    private String salt;
+
+    private Boolean locked;
+
+    public User(Long id, String username, String password, String salt, Boolean locked) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.salt = salt;
+        this.locked = locked;
     }
 
-    public void setUid(Long uid) {
-        this.uid = uid;
+    public User() {
+        super();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -36,23 +36,15 @@ public class User {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username == null ? null : username.trim();
     }
 
-    public String getNick() {
-        return nick;
+    public String getPassword() {
+        return password;
     }
 
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
     public String getSalt() {
@@ -60,38 +52,14 @@ public class User {
     }
 
     public void setSalt(String salt) {
-        this.salt = salt;
+        this.salt = salt == null ? null : salt.trim();
     }
 
-    public Date getCreated() {
-        return created;
+    public Boolean getLocked() {
+        return locked;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    public Set<String> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<String> roles) {
-        this.roles = roles;
-    }
-
-    public Set<String> getPerms() {
-        return perms;
-    }
-
-    public void setPerms(Set<String> perms) {
-        this.perms = perms;
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
     }
 }
