@@ -1,8 +1,15 @@
 package dulk.baseMan.dao;
 
 import dulk.baseMan.pojo.Permission;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
-public interface PermissionMapper {
+import java.util.Set;
+
+@Repository
+@Mapper
+public interface PermissionDao {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(Permission record);
@@ -14,4 +21,6 @@ public interface PermissionMapper {
     int updateByPrimaryKeySelective(Permission record);
 
     int updateByPrimaryKey(Permission record);
+
+    Set<Permission> findByRoleId(Long roleId);
 }

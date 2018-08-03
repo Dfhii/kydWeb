@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dulk.baseMan.dao.UserDao">
+    <resultMap id="BaseResultMap" type="dulk.baseMan.pojo.User">
+        <constructor>
+            <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+            <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="salt" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="locked" jdbcType="BIT" javaType="java.lang.Boolean"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, username, password, salt, locked
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="findByUsernameAndPassword" parameterType="map" resultType="dulk.baseMan.pojo.User">
+        SELECT *
+        FROM user
+        WHERE username = #{username} AND password = #{password}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        DELETE FROM user
+        WHERE id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <delete id="uncorrelateAllRole" parameterType="long">
+        DELETE FROM user_x_role
+        WHERE user_id = #{userId}
+    </delete>
+
+    <insert id="insert" parameterType="dulk.baseMan.pojo.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user (id, username, password,
+                          salt, locked)
+        VALUES (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+                #{salt,jdbcType=VARCHAR}, #{locked,jdbcType=BIT})
+    </insert>
+    <insert id="insertSelective" parameterType="dulk.baseMan.pojo.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="salt != null">
+                salt,
+            </if>
+            <if test="locked != null">
+                locked,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="salt != null">
+                #{salt,jdbcType=VARCHAR},
+            </if>
+            <if test="locked != null">
+                #{locked,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="correalteRoles" parameterType="map">
+        INSERT INTO user_x_role (user_id, role_id) VALUES
+        <foreach collection="roles" separator="," index="index" item="item">
+            (#{userId}, #{item.id})
+        </foreach>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="dulk.baseMan.pojo.User">
+        update user
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="salt != null">
+                salt = #{salt,jdbcType=VARCHAR},
+            </if>
+            <if test="locked != null">
+                locked = #{locked,jdbcType=BIT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="dulk.baseMan.pojo.User">
+        UPDATE user
+        SET username = #{username,jdbcType=VARCHAR},
+            password = #{password,jdbcType=VARCHAR},
+            salt     = #{salt,jdbcType=VARCHAR},
+            locked   = #{locked,jdbcType=BIT}
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

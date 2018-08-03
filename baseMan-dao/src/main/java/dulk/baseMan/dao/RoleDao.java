@@ -1,8 +1,15 @@
 package dulk.baseMan.dao;
 
 import dulk.baseMan.pojo.Role;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
-public interface RoleMapper {
+import java.util.Set;
+
+@Repository
+@Mapper
+public interface RoleDao {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(Role record);
@@ -14,4 +21,8 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+    Set<Role> findAll();
+
+    Set<Role> findByUserId(Long userId);
 }

@@ -1,5 +1,8 @@
 package dulk.baseMan.pojo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class User {
     private Long id;
 
@@ -10,6 +13,10 @@ public class User {
     private String salt;
 
     private Boolean locked;
+
+    private Set<Role> roles = new HashSet<Role>();
+    private Set<String> rolesString;
+    private Set<String> rolesPermissionsString;
 
     public User(Long id, String username, String password, String salt, Boolean locked) {
         this.id = id;
@@ -61,5 +68,33 @@ public class User {
 
     public void setLocked(Boolean locked) {
         this.locked = locked;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Set<String> getRolesString() {
+        Set<String> roles = new HashSet<String>();
+        for (Role role : getRoles()) {
+            roles.add(role.getRole());
+        }
+        return roles;
+    }
+
+    public Set<String> getRolesPermissionsString() {
+        Set<String> permissions = new HashSet<String>();
+        for (Role role : getRoles()) {
+            Set<Permission> permissionSet = role.getPermissions();
+            for (Permission permission : permissionSet) {
+                permissions.add(permission.getPermission());
+            }
+        }
+
+        return permissions;
     }
 }

@@ -1,5 +1,7 @@
 package dulk.baseMan.pojo;
 
+import java.util.Set;
+
 public class Role {
     private Long id;
 
@@ -8,6 +10,8 @@ public class Role {
     private String description;
 
     private Boolean available;
+
+    private Set<Permission> permissions;
 
     public Role(Long id, String role, String description, Boolean available) {
         this.id = id;
@@ -50,5 +54,13 @@ public class Role {
 
     public void setAvailable(Boolean available) {
         this.available = available;
+    }
+
+    public Set<Permission> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(Set<Permission> permissions) {
+        this.permissions = permissions;
     }
 }

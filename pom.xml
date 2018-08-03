@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <!-- parent -->
@@ -30,6 +30,12 @@
     </modules>
 
     <dependencies>
+
+        <!-- springboot test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
 
         <!-- junit -->
         <dependency>
