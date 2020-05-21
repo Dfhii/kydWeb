@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>服务政策</title>
+<!--    <link href="/static/css/bootstrap.css" rel="stylesheet" >-->
+<!--    <script  src="/static/js/jquery.js" ></script>-->
+    <script src="/static/js/pc.js"> </script>
+    <style>
+        html{
+            /*overflow:hidden*/
+            overflow-x:hidden;
+        }
+        body{
+            font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            background-color: #F4F4F4;
+            font-family: SourceHanSansCN-Light;
+            position:revert;}
+
+        /*body *{border: 1px solid #000000}*/
+        .poli-to{margin-top: 30px;margin-bottom: 0px;width: 96%;margin-left: 2%;
+            background-color: #FFFFff;
+            text-align: left;
+            font-size: 1.7rem;
+            padding: 30px;
+            line-height: 50px;
+            color: rgb(96,96,96);
+        }
+        /*.to-img{height: 380px;margin-top: 0px;margin-bottom: 0px;width: 100%}*/
+        /*.to-img img{width: 100%;height: 100%;background-color: #FFFFff;}*/
+
+        .cent{ font-size: 2rem;color: #000000;text-align: center; }
+        .cent-2{font-size: 1.7rem;color: #000000;text-align: center; }
+        .present-hr{margin: 10px auto;margin-bottom: 20px;width: 65px;background-color: #02d497;height: 5px;  border:0px ; }
+        /*.opt{width: 100%;font-size: 1.9rem;border-bottom:2px solid #4EBDB4  }*/
+        /*.opt span{background-color: #ffffff;font-size:1.8rem;text-align: center;width: 20%;  padding: 1.3rem 1rem;  display: inline-block; margin-bottom: 0px;margin-top: 0px;}*/
+        /*.opt span:nth-child(2){margin-left: 0px; }*/
+        /*.opt span:nth-child(3){margin-left: 0px;margin-right: 0px; color: #ffffff;background: #02d497}*/
+        /*.opt span:nth-child(4){margin-right: 0px; }*/
+        /*.opt span:nth-child(1){  }*/
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        @media  (max-width: 720px){
+            body{
+                font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                /*min-width: 680px;*/
+                overflow: hidden;
+                background-color: #F4F4F4;
+                font-family: SourceHanSansCN-Light;
+                position:revert;}
+             .poli-to{margin-top: 30px;margin-bottom: 0px;width: 96%;margin-left: 2%;
+                background-color: #FFFFff;
+                text-align: left;
+                font-size: 1.7rem;
+                padding: 30px;
+                color: rgb(96,96,96);
+            }
+        }
+        /*@media  (max-width: 700px) and (min-width: 680px){*/
+        /*    html{font-size: 14px;}*/
+        /*    body{*/
+        /*        font-family: SourceHanSansCN-Regular;*/
+        /*        width: 660px;*/
+        /*        margin:0px;*/
+        /*        padding: 0px;*/
+        /*        !*zoom: 52.5%;*!*/
+        /*        min-width: 660px;*/
+        /*        background-color: #F4F4F4;*/
+        /*        position:revert;*/
+        /*    }*/
+        /*    .opt span{background-color: #ffffff;width:17%;font-size: 1.5rem;text-align: center;height: 56px; padding: 0.55rem;display: inline-block;padding-top: 20px;margin-bottom: 0px;margin-top: 0px;}*/
+
+        /*}*/
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+        window.onload = function () {
+            /*720代表设计师给的设计稿的宽度，你的设计稿是多少，就写多少;100代表换算比例，这里写100是
+             为了以后好算,比如，你测量的一个宽度是100px,就可以写为1rem,以及1px=0.01rem等等*/
+
+            /*
+             * 也就说，在屏幕宽度为720px的情况下，1rem=100px
+             * */
+
+            getRem(750, 16)
+        };
+        window.onresize = function () {
+            getRem(750, 16)
+        };
+
+        function getRem(pwidth, prem) {
+            var html = document.getElementsByTagName("html")[0];
+            var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+            html.style.fontSize = oWidth / pwidth * prem + "px";
+        }
+    </script>
+</head>
+<body>
+<!--    <div id="page1" ></div>-->
+<!--    <div class="to-img">-->
+<!--        <img src="/static/img/server/服务（在线支持）页3_02.png">-->
+<!--    </div>-->
+<!--    <div class="opt">-->
+<!--        <span><a href="/static/page/service/sell.html">销售网点</a></span><span><a href="/static/page/service/netWork.html">服务网点</a></span><span>服务政策</span><span><a href="/static/page/service/anti.html">防伪查询</a></span><span><a href="/static/page/service/sustain.html">在线支持</a></span>-->
+<!--    </div>-->
+    <div class="poli-to">
+        <div class="cent">品质快易典</div> 
+        <hr class="present-hr"/>
+        <div class="cent-2">3个月免费换新    2年内免费维修</div><br />
+        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;为了让快易典用户享受到更好的服务，快易典全面提升服务质量，对主销机型推出售后延保政策。<br />
+        一、适用范围： H80Pro、H90、H90s、H60、H26S、M5、M2Pro、M2、M2s、H19、H29及2019年1月1日后上市的机型，且用户在2018年12月4日（含）及之后购买，即可享受延保政策。<br />
+        二、延保政策：<br />
+        1、自购机之日起3个月内，若主机出现非人为损坏的硬件性能故障，用户可在原购机处享有免费换机之服务，或在快易典公司指定的服务代理处享有免费保修服务；<br />
+        2、自购机之日起2年内，若主机出现非人为损坏的硬件性能故障，用户可在原购机处或在快易典公司指定的服务代理处享有免费保修服务；<br />
+        3、软件故障可通过当场刷机解决，不在售后延保政策之内；<br />
+        4、不符合售后延保政策的故障机仍按照原售后三包政策执行，即：1个月免费换新，1年内免费保修。<br />
+    </div>
+
+    <div class="poli-to">
+        <div class="cent">三包服务</div>
+        <hr class="present-hr"/>
+        <div class="cent-2">三包服务只限于正常使用下有效<br />
+            有下列情形之一，不实行三包服务</div><br />
+        1、超过三包有效期的；<br />
+        2、无有效保修卡及有效发票的（能够证明在三包有效期内的除外）；<br />
+        3、三包凭证上的内容与商品实物标识不符或涂改的；<br />
+        4、未按产品说明书要求使用、维护、保管而造成损坏的；<br />
+        5、非经本公司认可之维修和改装的；<br />
+        6、用户自行拆装、连接不适当配件；<br />
+        7、因运输及其他不可抗力造成的机件损坏、机器进液、震裂等。<br />
+    </div>
+
+    <div class="poli-to">
+        <div class="cent">三包说明</div>
+        <hr class="present-hr"/>
+        1、保修卡须经售机单位填写完整并加盖公章方可有效。<br />
+        2、保修卡及发票填写内容不得涂改，否则作废。<br />
+        3、主机机身背面的序列号贴纸不得撕毁，否则不予保修。<br />
+        4、保修时请携带有效保修卡和有效发票，前往快易典全国联保网络中的任一维修点。<br />
+    </div>
+<!--    <div id="page2" ></div>-->
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>在线申请</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script  src="/static/js/bootstrap.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        /*html{*/
+        /*    font-size: 16px;*/
+        /*    overflow-x:hidden;*/
+        /*}*/
+        body{
+            overflow:hidden;
+            margin: 0;padding: 0px;
+            background-color:#f4f4f4;
+            font-family: SourceHanSansCN-Regular;
+        }
+
+
+        /*@media screen and (min-width: 320px) {*/
+        /*    html {font-size: 14px;}*/
+        /*}*/
+
+        /*@media screen and (min-width: 360px) {*/
+        /*    html {font-size: 2px;}*/
+        /*}*/
+
+        /*@media screen and (min-width: 400px) {*/
+        /*    html {font-size: 6px;}*/
+        /*}*/
+
+        /*@media screen and (min-width: 440px) {*/
+        /*    html {font-size: 9px;}*/
+        /*}*/
+
+        /*@media screen and (min-width: 480px) {*/
+        /*    html {font-size: 12px;}*/
+        /*}*/
+
+        /*@media screen and (min-width: 640px) {*/
+        /*    html {font-size: 15px;}*/
+        /*}*/
+        /*@media screen and (min-width: 750px) {*/
+        /*    html {font-size: 18px;}*/
+        /*}*/
+        /*body *{border: 1px solid #000000}*/
+
+
+
+       
+        /*.opt{width: 100%;font-size: 1.9rem;border-bottom:2px solid #02d497  }*/
+        /*.opt div{width: 22.4%;background-color: #ffffff;text-align: center;height: 56px; padding: 0.55rem;padding-top: 20px;display: inline-block;margin:0;}*/
+        /*.opt div:nth-child(2){margin-left: 0px;  }*/
+        /*.opt div:nth-child(3){margin-left: 0px;margin-right: 0px;}*/
+        /*.opt div:nth-child(4){margin-right: 0px; color: #ffffff;background: #02d497}*/
+        /*.opt div:nth-child(1){  }*/
+        .form-control{background: url('/static/img/delivery/送货上门3_05.png') no-repeat 174px 24px;padding-left: 8px;width: 23%;display: inline-block;margin-left: 0.5rem;  color: rgb(121,121,121);  height: 70px;font-size: 1.5rem; border-radius:20px; }
+
+        .ini input{height: 45px;border: 1px solid #f4f4f4;font-size:24px;display: inline-block;width: 210px;}
+        .ini div{margin-bottom: 35px}
+        .ini{font-size: 1.5rem;margin: 0 auto;width: 92%;padding: 0px;       margin-left: 4%;  }
+        .ini div span:nth-child(2){float: right; }
+        .ini div span{display: inline-block; }
+        .btn{width: 206px;
+            letter-spacing: 3px;
+            background-color: rgb(2,212,151);
+            color: #FFFFff;
+            font-size: 25px;
+            text-align: center;
+            border: 1px solid #f4f4f4;
+            display: inline-block;
+            border-radius: 10px;
+        }
+       
+       .xin{font-size: 1.3rem;color:rgb(2,212,151);margin-top: 13px;margin-left: 5px}
+        @media (max-width: 720px) {
+            body{  overflow:hidden;margin: 0;padding: 0px; background-color:#f4f4f4;font-family: SourceHanSansCN-Regular;  }
+            /*.opt div{width: 22.6%;background-color: #ffffff;text-align: center;height: 56px; padding: 0.55rem;padding-top: 20px;display: inline-block;margin:0;}*/
+            #tle{width: 100%;height: 382px;}
+            .ini input{height: 45px;border: 1px solid #f4f4f4;font-size:24px;display: inline-block;width: 150px;}
+            .ini div{margin-bottom: 35px}
+            .ini{font-size: 1.5rem;width: 92%;padding: 0px; margin-left: 4%;  }
+            .form-control{background: url('/static/img/delivery/送货上门3_05.png') no-repeat 121px 24px;padding-left: 8px;width: 23%;display: inline-block;margin-left: 0.5rem;  color: rgb(121,121,121);  height: 70px;font-size: 1.5rem; border-radius:20px; }
+            .ini div span:nth-child(2){float: right; }
+            .xin{font-size: 1.3rem;color:rgb(2,212,151);margin-top: 20px;margin-left: 5px}
+            .phone{margin-left: 30px;}
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        });
+    </script>
+</head>
+
+<body    >
+<!--<div id="page1"  ></div>-->
+<!--<div id="tle">-->
+<!--    <img src="/static/img/coopertion/商务合作（合作条件）页3_02.png" width="100%" height="100%">-->
+<!--</div>-->
+<!--<div class="opt"  >-->
+<!--    <div ><a href="/static/page/coopertion/support.html">支持条件</a></div><div ><a href="/static/page/coopertion/termms.html" >合作条件</a></div><div><a href="/static/page/coopertion/success.html" >成功案例</a></div><div  class="col-md-3"  ><a href="/static/page/coopertion/apply.html" style="color: #FFFFff"  >在线申请</a></div>-->
+<!--</div>-->
+<div style="font-size: 1.5rem;padding: 5% 4%;color: rgb(96,96,96)">
+    尊敬的客户朋友，请将您的意见建议通过下表反馈给我们，我们
+    会尽快与您联系。<span  style="color:rgb(2,212,151);font-size: 1.1rem">（以下 * 均为必填项）</span>
+</div>
+<div class="container">
+<!--    <div class="row">-->
+<!--        <div class="col">-->
+<!--            One of three columns-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            One of three columns-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            One of three columns-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="ini" >
+
+          <div>
+             <span> 姓名:<input type="text" name="agentName"/><span  class="xin">*</span></span>
+              <span class="phone"> 手机号码:<input type="text" name="telephone"/><span class="xin">*</span></span>
+         </div>
+        <div>
+            <span> 固定电话:<input type="text" name="mobile"/></span>
+            <span> 联系地址:<input type="text" name="address"/></span>
+        </div>
+        <div>
+            <span>QQ:<input type="text" name="qqNumber"/></span>
+            <span>现公司年销售额:<input type="text" name="yearSales"/></span>
+        </div>
+        <div>
+            <span>现从事行业:<input type="text" style="width: 174px" name="industry"/></span>
+            <span> 现公司人数:<input type="text" name="personnelQuantity"/></span>
+        </div>
+        <div>
+            <span>意向代理地区: </span><select class="form-control" id="prov"  name="intentionProvince">
+        <option value="0">选择省</option>
+
+    </select>
+
+                <!--城市选择-->
+    <select class="form-control"id="city" name="intentionCity">
+        <option value="0">选择市</option>
+    </select>
+
+                <!--县区选择-->
+    <select class="form-control" id="country"  name="intentionDistrict">
+        <option value="0">选择区</option>
+    </select>
+
+        </div>
+        <span style="display: block">
+            留言内容:
+            <div style="margin-top: 10px">
+                 <textarea  style="width: 100%;height: 265px" id="text"></textarea>
+            </div>
+        </span>
+        <div style="margin:0;text-align: center;height: 60px">
+            <input type="button" class="btn" value="提交" height="60px" style="height: 60px" />
+        </div>
+
+    </div>
+
+</div>
+<!--<div id="page2" ></div>-->
+</body>
+<script>
+
+
+
+    $(".btn").click(function () {
+
+        asentName=$("input[name='agentName']").val().trim();
+        phone=$("input[name='telephone']").val().trim();
+        province=$("select[name='intentionProvince'] option:selected").val()==0?null:$("select[name='intentionProvince'] option:selected").text();
+        city=$("select[name='intentionCity'] option:selected").val()==0?null:$("select[name='intentionCity'] option:selected").text();
+        district=$("select[name='intentionDistrict'] option:selected").val()==0?null:$("select[name='intentionDistrict'] option:selected").text();
+ 
+        if( asentName==null || asentName==''){
+            alert("请输入姓名");
+        }else if( phone==null ||phone==''){
+            alert("请输入手机号码");
+        }else if(!(/^1[3456789]\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填");
+        } else {
+            $.ajax({
+                url: "/agent/addAgent",
+                data: JSON.stringify({
+                    agentName: $("input[name='agentName']").val(),
+                    telephone: $("input[name='telephone']").val(),
+                    mobile: $("input[name='mobile']").val(),
+                    address: $("input[name='address']").val(),
+                    qqNumber: $("input[name='qqNumber']").val(),
+                    yearSales: $("input[name='yearSales']").val(),
+                    industry: $("input[name='industry']").val()
+                    ,
+                    personnelQuantity: $("input[name='personnelQuantity']").val(),
+                    intentionProvince: province,
+                    intentionCity: city,
+                    intentionDistrict: district,
+                    leaveMessage: $("#text").val()
+                }),
+                type: "post",
+                contentType: "application/json;charset=utf-8",
+                dataType: 'JSON',
+                success: function (data) {
+                        if(data>0){
+                            alert("提交成功");
+                        }
+                }
+            })
+        }
+    })
+    showProv();
+    /*自动加载省份列表*/
+    function showProv() {
+        var prov="";
+        $.ajax({
+            url:"/sell/province",
+            dataType:'JSON',
+            success:function(json){
+                prov+='<option value="0">选择省</option>'
+                for(var i=0;i<json.length;i++){
+                    prov+='<option value="'+json[i].sProID+'">'+json[i].sProName+'</option>'
+                }
+                $('#prov').html(prov);
+            }
+        })
+    }
+    $('#prov').change(function(){
+        var city="";
+
+        $.ajax({
+            url:"/sell/city",
+            data:'provId='+$('#prov option:selected').val()+'',
+            dataType:'JSON',
+            success:function(json){
+                city+='<option value="0">选择市</option>'
+                for(var i=0;i<json.length;i++){
+                    city+='<option value="'+json[i].sCityID+'">'+json[i].sCityName+'</option>'
+                }
+                $('#city').html(city);
+            }
+        })
+    })
+
+    $('#city').change(function(){
+        var country="";
+
+        $.ajax({
+            url:"/sell/country",
+            data:'cityId='+$('#city option:selected').val()+'',
+            dataType:'JSON',
+            success:function(json){
+                country+='<option value="0">选择区</option>'
+                for(var i=0;i<json.length;i++){
+                    country+='<option value="'+json[i].sdisID+'">'+json[i].sdisName+'</option>'
+                }
+                $('#country').html(country);
+            }
+        })
+    })
+</script>
+</html>

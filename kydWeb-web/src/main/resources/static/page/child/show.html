@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>奇米儿童</title>
+
+    <script  src="/static/js/jquery.js" ></script>
+        <script  src="/static/js/bootstrap.js" ></script>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" >
+<!--    <script src="/static/js/pc.js"> </script>-->
+
+
+    <style>
+        .bj-m{height: 148px;width: 148px;margin-left: 270px;margin-top:117px;  }
+
+        .bj-1{background: url('/static/img/about/品牌（视频）页3_03.png') ;width: 686px;height: 380px;margin: 0 auto;border-radius: 20px;}
+        html{
+            /*overflow:hidden*/
+            overflow-x:hidden;
+        }
+        body{
+            font-family: SourceHanSansCN-Regular;
+            background-color:#F2F2F2;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            overflow:hidden;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            position:revert;
+        }
+        /*body *{border: 1px solid #000000}*/
+        .to {
+            height: 750px;
+            width: 100%
+        }
+
+        .to img {
+            width: 100%;
+            height: 100%
+        }
+        .opt{width: 103%;background-color: #FFFFff}
+        .opt img {
+            /*min-width: 22.4%;*/
+            /*!*background-color: #ffffff;*!*/
+            /*width: 22.4%;*/
+            text-align: center;
+            padding: 5px;
+            display: inline-block;
+            margin-bottom: 0px;
+            margin-top: 30px;
+
+            font-size: 1.8rem;
+            width: 97px;
+            height: 96px;
+            border-radius: 100px;
+            margin-left: 70px;
+            background-color: #606060;
+            letter-spacing: 3px;
+        }
+
+        .opt span:nth-child(1) img  {
+            background-color: rgb(240,120,30);
+        }
+
+        .opt span{
+            width: 233px;
+            display: inline-block;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 28px;
+        }
+        .opt span span{
+            margin-left: 37px;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+
+        .opt span:nth-child(2) img {
+            margin-left: 73px;
+        }
+
+        .opt img:nth-child(3) {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .hqg{width: 100%;margin-bottom: 20px;height: 627px;}
+        .hqg img{width: 100%;height: 627px;}
+
+        .xsk{width: 100%;margin-bottom: 20px;height: 750px;}
+        .xsk img{width: 100%;height: 750px;}
+
+        .child{width: 100%;margin-bottom: 20px;height: 750px;}
+        .child img{width: 100%;height: 750px;}
+
+        #exper{background-color: #ffffff;width: 100%;font-size:30px;text-align: center}
+        #imge img{  box-shadow:2px 2px 4px 2px #cccccc; margin: 0 auto;border-radius:10px; }
+        #imge div{margin: 0 auto}
+        .carousel-indicators .active{background-color: rgb(237,113,22);border: 1px solid rgb(237,113,22) }
+        .carousel-indicators li{  border: 1px solid rgb(180,180,180);background-color: rgb(180,180,180)}
+        .pause{top: 1450px;}
+        #page2 #foot{margin-top: 0px;}
+        .present-hr {
+            margin-left: 48px;
+            width: 65px;
+            background-color: rgb(240,120,30);
+            border:0px ;
+            height: 2px;
+            margin: 5px auto;
+            margin-bottom:10px;
+        }
+        @media  (max-width: 750px) {
+            .opt{width: 103.8%}
+            .opt span{
+                width: 213px;
+            }
+            .hqg{width: 100%;margin-bottom: 20px;height: 597px;}
+            .hqg img{width: 100%;height: 100%;}
+
+            .xsk{width: 100%;margin-bottom: 20px;height: 597px;}
+            .xsk img{width: 100%;height: 100%;}
+            .child{width: 100%;margin-bottom: 20px;height: 597px;}
+            .child img{width: 100%;height:  100%;}
+
+            body {
+                font-family: SourceHanSansCN-Regular;
+                background-color: #f2f2f2;
+                /*width: 680px;*/
+                margin: 0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                /*min-width: 680px;*/
+                position: revert;
+            }
+            #product-img img {
+                margin-left:10px;
+            }
+            #page1{width: 107.7%;}
+            #page2{width: 107.7%}
+            .pause{bottom: -55%;}
+            #product-img span {
+
+
+                width: 30.2%;
+                text-align: center;
+                margin-left: 10px;
+                display: inline-block;
+                font-size: 2.0rem;
+                margin-top: 10px;
+            }
+            #product-img{padding-bottom: 30px;}
+            .bj-m{height: 148px;width: 148px;margin-left: 250px;margin-top:117px;}
+            .bj-1{background: url('/static/img/child/奇米（关于我们）_03.png');width: 638px;height: 380px;margin: 0 auto;border-radius: 20px;}
+            .opt span{margin-left: 0px;}
+       
+         
+        }
+
+
+        /* resource_style */
+        /*body *{border: 1px solid #000000}*/
+        #mate{width: 103.7%;background-color: rgb(251,255,224) }
+        /*#mate *{text-align: center;}*/
+        /*#mate div:nth-child(4){font-family: SourceHanSansCN-Regular;font-size: 30px;}*/
+        /*#mate div:nth-child(2){font-family: SourceHanSansCN-Light;font-size: 30px;}*/
+        /*.resource_03{width: 80%;display: inline-block;margin-left:10%;margin-bottom: 135px;}*/
+        /*#gather{height: 795px;width: 700px;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }*/
+        /*#tle{height: 55px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 30px;border-bottom-left-radius: 30px;*/
+        /*    background-color: rgb(82,82,82);color: #FFFFff;font-size: 30px;}*/
+        /*#tle span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 100px;position: relative;z-index: 10;height: 50px; }*/
+        /*#tle img{display: inline-block;position:absolute  ;width: 130px;height: 75px;left: 196px;margin-bottom: -60px }*/
+
+        /*#gather-img{width: 657px;height: 659px;}*/
+        /*#gather-img img{width: 100%;height: 100%;margin-top: 34px;margin-left: 20px;}*/
+        /*.tle-img{display: inline-block;position:absolute  ;width: 120px;height: 75px;left: 78px;z-index: 9;margin-top: -19px; }*/
+        /*.tle-img-1{display: inline-block;position:absolute  ;width: 230px;height: 75px;left: 68px;z-index: 9;margin-top: -19px; }*/
+        /*#gather-1{height: 795px;width: 700px;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }*/
+        /*#tle-1{height: 55px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 30px;border-bottom-left-radius: 30px;*/
+        /*    background-color: rgb(82,82,82);color: #FFFFff;font-size: 30px;}*/
+        /*#tle-1 span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 210px;position: relative;z-index: 10;}*/
+        /*#tle-1 img{display: inline-block;position:absolute  ;width: 260px;height: 75px;left: 180px;   }*/
+        /*#gather-img-1{width: 657px;height: 659px;}*/
+        /*#gather-img-1 img{width: 100%;height: 100%;margin-top: 34px;margin-left: 20px;}*/
+
+        /*#carousel-example-generic{width: 700px;height: 904px;text-align: center;margin: 0 auto;}*/
+        
+        /*!*#imgs img{width:  100%;height:  100%;display: inline-block;margin: 0px;padding: 0px;}*!*/
+        /*!*#imgs {width:  100%;height:   100%;display: inline-block;margin: 0px;padding: 0px;}*!*/
+
+        /*#imgsa img{width:  100%;height:  100%;display: inline-block;margin: 0px;padding: 0px;}*/
+        /*#imgsa {width:  100%;height:   100%;display: inline-block;margin: 0px;padding: 0px;}*/
+        /*.carousel-indicators{margin-bottom: 40px; }*/
+        /*.carousel-indicators li{margin-left: 10px;}*/
+        /*.carousel-indicators .active{margin-left: 10px;}*/
+        /*@media  (max-width: 750px) {*/
+        /*    #gather{height: 795px;width: 630px;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }*/
+        /*    #gather-1{height: 795px;width: 630px;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }*/
+        /*    #gather-img{width: 587px;height: 659px;}*/
+        /*    #gather-img-1{width: 587px;height: 659px;}*/
+        /*    #tle span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 90px;position: relative;z-index: 10 }*/
+        /*    #tle-1 span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 200px;position: relative;z-index: 10 }*/
+        /*    .tle-img{display: inline-block;position:absolute  ;width: 120px;height: 70px;left: 248px;z-index: 9;margin-top: -15px; }*/
+        /*    .tle-img-1{display: inline-block;position:absolute  ;width: 230px;height: 75px;left: 38px;z-index: 9;margin-top: -19px; }*/
+        /*}*/
+    </style>
+
+</head>
+<script src="https://zeptojs.com/zepto.js"> </script>
+<body  >
+<div id="page1"></div>
+
+<div class="to">
+    <img src="/static/img/child/奇米儿童首页3_02.png">
+</div>
+
+<div class="opt">
+    <span onclick="show()"><img src="/static/img/child/奇米儿童首页3_05.png"><span>品牌优势</span></span>
+    <span onclick="resource()"><img src="/static/img/child/奇米儿童首页3_07.png"> <span>课程资源</span></span>
+    <span onclick="about()"><img src="/static/img/child/奇米儿童首页3_09.png"> <span>关于我们</span></span>
+</div>
+<div  id="resource"></div>
+<div  id="about"></div>
+<div style="background-color: #ffffff;background-color: #F2F2F2;   " id="show">
+<div class="hqg" style=" ">
+ 
+    <video class="pause" style="display: inline-block;position: absolute;border-radius: 10px;width: 320px;height: 180px;left: 43%; "
+           controls="controls" poster="/static/img/child/视频封面_03.png"    preload="auto" >
+        <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/M2完整版.mp4" type="video/mp4">
+        您的浏览器不支持html5！
+    </video>
+    <img src="/static/img/child/奇米儿童首页3_14.png">
+</div>
+<div class="xsk">
+    <img src="/static/img/child/奇米儿童首页3_16.png">
+</div>
+<div class="child">
+    <img src="/static/img/child/奇米儿童首页3_19.png">
+</div>
+
+<div id="exper" style=" " >
+    <br />
+    <div>体验好</div>
+    <hr class="present-hr"/>
+    <br />
+    <div>惠及近百万学龄前儿童，多所高端幼儿园使用</div>
+    <br />
+    <div id="carousel-example-generie" class="carousel slide" data-ride="carousel" style="margin-bottom: 0px;padding-bottom:80px;">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" style="  " >
+            <li data-target="#carousel-example-generie" data-slide-to="0" class="active" ></li>&nbsp;
+            <li data-target="#carousel-example-generie" data-slide-to="1"></li>&nbsp;
+            <li data-target="#carousel-example-generie" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox" id="imge" style=" width:633px;margin: 0 auto;  height: 600px;" >
+            <div class="item active" >
+                <img  src="/static/img/child/奇米儿童首页3_22.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                   -->
+                <!--                </div>-->
+            </div>
+            <div class="item"   >
+                <img  src="/static/img/child/2_03.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                </div>-->
+            </div>
+            <div class="item">
+                <img  src="/static/img/child/3_03.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                </div>-->
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a   href="#carousel-example-generie" role="button" data-slide="prev">
+            <!--            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+            <span class="sr-only">Previous</span>
+        </a>
+        <a  id="next" role="button" data-slide="next">
+            <!--            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+</div>
+
+ <div id="page2" style="margin: 0px;padding: 0"></div>
+</body>
+<script>
+    $(function(){
+        $("#page1").css('width','100%');
+        $("#page2").css({'width':'100%','overflow':'hidden'});
+        $("#page1").load("/static/page/head.html");
+        $("#page2").load("/static/page/foot.html");
+        // $("#taggle").load("resource.html")
+
+        // $('#show').delegate("div","click",function () {
+        //     window.location.assign(url);
+        // })
+    })
+    var taggleBol=true;
+    var taggleBol2=true;
+    function show(){
+        // $("#resource *").remove();
+        $(".opt span img").css("background","#606060");
+        $(".opt span:eq(0) img").css("background","rgb(240,120,30)");
+        $(".carousel-indicators .active").css({"background-color":"rgb(237,113,22)","border":"1px solid rgb(237,113,22)" });
+        $(".carousel-indicators li").css({"border":"1px solid rgb(180,180,180)","background-color":"rgb(180,180,180)"});
+        $("#show").show();
+        $("#resource").hide();
+        $("#about").hide();
+    }
+    function about(){
+    if(taggleBol){
+        $("#about").load("/static/page/child/about.html");
+        taggleBol=false;
+    }
+        $(".opt span img").css("background","#606060");
+        $(".opt span:eq(4) img").css("background","rgb(240,120,30)");
+        $("#show").hide();
+        $("#resource").hide();
+        $("#about").show();
+        // setTimeout(   $("#taggle").show(),1000);
+    }
+    function resource(){
+        if(taggleBol2){
+            $("#resource").load("/static/page/child/resource.html");
+            taggleBol2=false;
+        }
+        $(".opt span img").css("background","#606060");
+        $(".opt span:eq(2) img").css("background","rgb(240,120,30)");
+        $("#show").hide();
+        $("#about").hide();
+        $("#resource").show();
+        // setTimeout(   $("#taggle").show(),1000);
+
+    }
+    var left;
+    var imgLeft;
+    $("#gather div:eq(0) span").click(function () {
+        left= parseInt($(this).offset().left);
+        imgLeft= parseInt($(".tle-img").offset().left);
+
+        // if(imgLeft<left){
+        $(".tle-img").css("left",(left-10));
+        // }
+    })
+    $("#gather-1 div:eq(0) span").click(function () {
+        left= parseInt($(this).offset().left);
+        imgLeft= parseInt($(".tle-img-1").offset().left);
+        $(".tle-img-1").css("left",(left-10));
+        // }
+    })
+    var startx,starty,movex,movey,endx,endy,nx,ny,angle;
+    var carousel=$('.carousel');
+
+    function touchSatrt(event) {
+        var touch = event.touches[0];
+        //获取第一个坐标的X轴
+        startx = Math.floor(touch.pageX);
+        //获取第一个坐标的X轴
+        starty = Math.floor(touch.pageY);
+    }
+    //触摸中的坐标获取
+    // }
+    // else if(event.type=="touchmove")
+    // {
+    function touchMove(event) {
+
+        // event.preventDefault();
+        //  console.log('滑动中');
+        var touch = event.touches[0];
+        movex = Math.floor(touch.pageX);
+        movey = Math.floor(touch.pageY);
+    }
+    //当手指离开屏幕或系统取消触摸事件的时候
+    // }else if(event.type == "touchend" || event.type == "touchcancel"){
+    function touchEnd(event) {
+    // alert(1);
+
+        event.preventDefault();
+        //获取最后的坐标位置
+        var touch = event.changedTouches[0];
+        endx =  Math.floor(touch.pageX) ;
+        endy = parseInt(Math.floor(touch.pageX));
+
+        // //获取开始位置和离开位置的距离
+        nx = endx - startx;
+        ny = endy - starty;
+        if(nx>0&&nx<50 || nx<0&&nx>-50){
+            // alert(1);
+        } else{
+            if ( nx > 0 ) {
+                carousel.carousel('prev');
+            }
+            //右滑
+            else if ( nx < 0 ) {
+                carousel.carousel('next');
+            }
+        }
+    }
+    document.getElementById("carousel-example-generie").addEventListener('touchstart', touchSatrt,false);
+    document.getElementById("carousel-example-generie").addEventListener('touchmove', touchMove,false);
+    document.getElementById("carousel-example-generie").addEventListener('touchend', touchEnd,false);
+
+</script>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dulk.baseMan.mapper.InviteMapper">
+
+    <resultMap id="iteMap" type="java.util.Map">
+    </resultMap>
+    <select id="findInviteById" resultMap="iteMap">
+        select JobDescription from Jobs where Id=#{id}
+    </select>
+    <select id="iteBySchool" resultMap="iteMap">
+        select Id,PositionTitle,JobCount,JobAddress,CreateTime from Jobs where HireType=#{hireType}
+    </select>
+</mapper>

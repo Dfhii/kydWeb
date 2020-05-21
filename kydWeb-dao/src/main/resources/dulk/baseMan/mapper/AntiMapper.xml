@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dulk.baseMan.mapper.AntiMapper">
+    <select id="findProduct"  resultType="java.lang.String">
+        select (m.mcName+m.mcType) name from modelCode m
+        LEFT JOIN product p on m.mcID=p.pmID
+             where  p.pNo=#{serial}
+    </select>
+</mapper>

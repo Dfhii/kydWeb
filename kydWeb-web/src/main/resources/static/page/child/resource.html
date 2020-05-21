@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>奇米儿童</title>
+    <script src="/static/js/vue.min.js"  charset="UTF-8"></script>
+    <script  src="/static/js/jquery.js" ></script>
+    <script  src="/static/js/bootstrap.js" ></script>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" >
+
+    <style>
+        body{
+            font-family: SourceHanSansCN-Regular;
+            background-color:#F2F2F2;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            position:revert;
+        }
+        /*body *{border: 1px solid #000000}*/
+        #mate{width: 100%;background-color: rgb(251,255,224) }
+        #mate *{text-align: center;}
+        #mate div:nth-child(5){font-family: SourceHanSansCN-Regular;font-size: 30px;}
+        #mate div:nth-child(2){font-family: SourceHanSansCN-Light;font-size: 30px;}
+        .resource_03{width: 80%;display: inline-block;margin-left:10%;margin-bottom: 135px;}
+        #gather{height: 795px;width: 90%;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }
+        #tle{height: 55px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 30px;border-bottom-left-radius: 30px;
+            background-color: rgb(82,82,82);color: #FFFFff;font-size: 30px;}
+        #tle span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 100px;position: relative;z-index: 10;height: 50px; }
+        #tle img{display: inline-block;position:absolute  ;width: 130px;height: 75px;left: 196px;margin-bottom: -60px }
+
+        #gather-img{width: 657px;height: 659px;}
+        #gather-img img{width: 100%;height: 100%;margin-top: 10px;padding: 23px;}
+        .tle-img{display: inline-block;position:absolute  ;width: 120px;height: 75px;left: 78px;z-index: 9;margin-top: -19px; }
+        .tle-img-1{display: inline-block;position:absolute  ;width: 230px;height: 75px;left: 68px;z-index: 9;margin-top: -19px; }
+        #gather-1{height: 795px;width: 90%;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }
+        #tle-1{height: 55px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 30px;border-bottom-left-radius: 30px;
+            background-color: rgb(82,82,82);color: #FFFFff;font-size: 30px;}
+        #tle-1 span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 210px;position: relative;z-index: 10;}
+        #tle-1 img{display: inline-block;position:absolute  ;width: 260px;height: 75px;left: 180px;   }
+        #gather-img-1{width: 657px;height: 659px;}
+        #gather-img-1 img{width: 100%;height: 100%;margin-top: 10px;padding: 23px;}
+
+        #carousel-example-genericb{width: 700px;height: 904px;text-align: center;margin: 0 auto;}
+        #carousel-example-generica{width: 700px;height: 904px;text-align: center;margin: 0 auto;}
+        #carousel-example-genericc{width: 700px;height: 904px;text-align: center;margin: 0 auto;}
+        #carousel-example-genericd{width: 700px;height: 904px;text-align: center;margin: 0 auto;}
+        #imgs img{width:  100%;height:  100%;display: inline-block;margin: 0px;padding: 0px;}
+        #imgs {width:  100%;height:   100%;display: inline-block;margin: 0px;padding: 0px;}
+
+        #imgsd img{width:  100%;height:  100%;display: inline-block;margin: 0px;padding: 0px;}
+        #imgsd {width:  100%;height:   100%;display: inline-block;margin: 0px;padding: 0px;}
+
+        /*#imgsa img{width:  100%;height:  100%;display: inline-block;margin: 0px;padding: 0px;}*/
+        /*#imgsa {width:  100%;height:   100%;display: inline-block;margin: 0px;padding: 0px;}*/
+        .carousel-indicators{margin-bottom: 40px; }
+        .carousel-indicators li{margin-left: 10px;}
+        .carousel-indicators .active{margin-left: 10px;}
+        .resource-present-hr {
+            margin-left: 48px;
+            width: 65px;
+            background-color: rgb(240,120,30);
+            border:0px ;
+            height: 3px;
+            margin: 5px auto;
+            margin-bottom:10px;
+        }
+        @media  (max-width: 720px) {
+            body{
+                font-family: SourceHanSansCN-Regular;
+                background-color:#F2F2F2;
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                /*min-width: 680px;*/
+                position:revert;
+            }
+            /*#imgsa img{width:  100%;height:  100%;display: inline-block;margin: 0px;padding: 0px;}*/
+            /*#imgsa {width:  527px;height:   100%;display: inline-block;margin: 0px;padding: 0px;}*/
+            #gather{height: 710px;width: 90%;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }
+            #gather-1{height: 710px;width: 90%;margin: 0 auto;border-radius: 10px;background-color: rgb(255,255,255); }
+            #gather-img{ height: 587px;padding: 0px;}
+            #gather-img img{width: 90%;height: 100%;margin-top: 10px;padding: 23px;margin-right: 20px;}
+            #gather-img-1{width: 587px;height: 659px;padding: 0px;}
+            #gather-img-1 img{width: 90%;height: 100%;margin-top: 10px;padding: 23px;margin-right: 20px;}
+            #tle span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 90px;position: relative;z-index: 10 }
+            #tle-1 span{display: inline-block;font-family: SourceHanSansCN-Regular;margin-top: 5px;width: 200px;position: relative;z-index: 10 }
+            .tle-img{display: inline-block;position:absolute  ;width: 120px;height: 70px;left: 248px;z-index: 9;margin-top: -15px; }
+            .tle-img-1{display: inline-block;position:absolute  ;width: 230px;height: 75px;left: 38px;z-index: 9;margin-top: -19px; }
+        }
+    </style>
+</head>
+<body>
+<div id="mate">
+    <br />
+    <div style="margin-top: 30px;">数学认知</div>
+    <hr class="resource-present-hr"/>
+    <br />
+    <div>分龄分段  六大数学体系  136+节数学认知课程</div>
+    <br />
+    <br />
+    <img  src="/static/img/child/课程资源_03.png" class="resource_03">
+    <div id="gather" style="margin-bottom: 118px;">
+        <span>  <img src="/static/img/child/课程资源_07.png" class="tle-img" style="width: 120px;"></span>
+
+        <div id="tle"style="position: relative;top:0px;"><span value="1" v-text="sxrz[0]">集合</span><span value="2" v-text="sxrz[1]">数</span><span value="3" v-text="sxrz[2]">量</span><span value="4" v-text="sxrz[3]">形</span><span value="5" v-text="sxrz[4]">时</span><span value="6" v-text="sxrz[5]">空</span> </div>
+        <div id="gather-img">
+            <div id="carousel-example-generica" class="carousel slide" data-ride="carousel"  >
+            <!-- Indicators -->
+            <!--                    <ol class="carousel-indicators" >-->
+            <!--                        <li data-target="#carousel-example-genericb" data-slide-to="0" class="active"></li>-->
+            <!--                        <li data-target="#carousel-example-genericb" data-slide-to="1"></li>-->
+            <!--                        <li data-target="#carousel-example-genericb" data-slide-to="2"></li>-->
+            <!--                        <li data-target="#carousel-example-genericb" data-slide-to="1"></li>-->
+            <!--                        <li data-target="#carousel-example-genericb" data-slide-to="2"></li>-->
+            <!--                    </ol>-->
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" id="imgsa" >
+                <div class="item active" >
+                    <img  src="/static/img/child/集合_03.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                   -->
+                    <!--                </div>-->
+                </div>
+                <div class="item"   >
+                    <img  src="/static/img/child/数_03.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"  >
+                    <img  src="/static/img/child/量_03.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"   >
+                    <img  src="/static/img/child/形_03.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"  >
+                    <img  src="/static/img/child/时_03.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"  >
+                    <img  src="/static/img/child/空_03.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+            </div>
+
+        </div> </div>
+    </div>
+    <div id="carousel-example-genericb" class="carousel slide" data-ride="carousel"  >
+        <!-- Indicators -->
+        <ol class="carousel-indicators" >
+            <li data-target="#carousel-example-genericb" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-genericb" data-slide-to="1"></li>
+            <li data-target="#carousel-example-genericb" data-slide-to="2"></li>
+            <li data-target="#carousel-example-genericb" data-slide-to="3"></li>
+            <li data-target="#carousel-example-genericb" data-slide-to="4"></li>
+            <li data-target="#carousel-example-genericb" data-slide-to="5"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox" id="imgs" >
+            <div class="item active" >
+                <img  src="/static/img/child/集合-蔬菜分一分_02.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                   -->
+                <!--                </div>-->
+            </div>
+            <div class="item"   >
+                <img  src="/static/img/child/数-小兔子回家_02.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                </div>-->
+            </div>
+            <div class="item"  >
+                <img  src="/static/img/child/量-摘桃子_02.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                </div>-->
+            </div>
+            <div class="item"   >
+                <img  src="/static/img/child/形-认识圆形_02.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                </div>-->
+            </div>
+            <div class="item"  >
+                <img  src="/static/img/child/时-白天黑夜_02.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                </div>-->
+            </div>
+            <div class="item"  >
+                <img  src="/static/img/child/空-认识上下_02.png" alt=""  >
+                <!--                <div class="carousel-caption">-->
+                <!--                </div>-->
+            </div>
+        </div>
+
+</div>
+    <div style="background-color:rgb(240,214,198);width: 100%;height: 100%;margin-top: 40px;">
+        <br />
+        <div style="margin-top: 60px;">思维训练</div>
+        <hr class="resource-present-hr"/>
+        <br />
+        <div>十二大思维能力  120+节趣味数学思维课程</div>
+        <br />
+        <br />
+        <img  src="/static/img/child/奇米儿童.png" style="margin: 0 auto;margin-bottom: 89px;">
+
+        <div id="gather-1" style="margin-bottom: 118px;">
+            <span><img src="/static/img/child/课程资源_07.png" class="tle-img-1"></span>
+            <div id="tle-1" style="position: relative;top: 0px;"><span value="1" v-text="msg[0]"></span ><span value="2"  v-text="msg[1]">想象与创造</span><span value="3"  v-text="msg[2]">观察与比较</span></div>
+
+            <div id="gather-img-1">
+                <div id="carousel-example-genericc" class="carousel slide" data-ride="carousel"  >
+                    <!-- Indicators -->
+<!--                    <ol class="carousel-indicators" >-->
+<!--                        <li data-target="#carousel-example-genericb" data-slide-to="0" class="active"></li>-->
+<!--                        <li data-target="#carousel-example-genericb" data-slide-to="1"></li>-->
+<!--                        <li data-target="#carousel-example-genericb" data-slide-to="2"></li>-->
+<!--                        <li data-target="#carousel-example-genericb" data-slide-to="1"></li>-->
+<!--                        <li data-target="#carousel-example-genericb" data-slide-to="2"></li>-->
+<!--                    </ol>-->
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox" id="imgsc" >
+                        <div class="item active" >
+                            <img  src="/static/img/child/注意与记忆_03.png" alt=""  >
+                            <!--                <div class="carousel-caption">-->
+                            <!--                   -->
+                            <!--                </div>-->
+                        </div>
+                        <div class="item"   >
+                            <img  src="/static/img/child/想象与创造_03.png" alt=""  >
+                            <!--                <div class="carousel-caption">-->
+                            <!--                </div>-->
+                        </div>
+                        <div class="item"  >
+                            <img  src="/static/img/child/观察与比较_03.png" alt=""  >
+                            <!--                <div class="carousel-caption">-->
+                            <!--                </div>-->
+                        </div>
+                        <div class="item"   >
+                            <img  src="/static/img/child/分析与判断_03.png" alt=""  >
+                            <!--                <div class="carousel-caption">-->
+                            <!--                </div>-->
+                        </div>
+                        <div class="item"  >
+                            <img  src="/static/img/child/概括与推理_03.png" alt=""  >
+                            <!--                <div class="carousel-caption">-->
+                            <!--                </div>-->
+                        </div>
+                        <div class="item"  >
+                            <img  src="/static/img/child/空间与方位_03.png" alt=""  >
+                            <!--                <div class="carousel-caption">-->
+                            <!--                </div>-->
+                        </div>
+                    </div>
+
+                </div> </div>
+        </div>
+
+        <div id="carousel-example-genericd" class="carousel slide" data-ride="carousel" style="margin-bottom: 80px;"  >
+            <!-- Indicators -->
+            <ol class="carousel-indicators" >
+                <li data-target="#carousel-example-generica" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generica" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generica" data-slide-to="2"></li>
+                <li data-target="#carousel-example-genericb" data-slide-to="3"></li>
+                <li data-target="#carousel-example-genericb" data-slide-to="4"></li>
+                <li data-target="#carousel-example-genericb" data-slide-to="5"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" id="imgsd" >
+                <div class="item active" >
+                    <img  src="/static/img/child/注意记忆_12.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                   -->
+                    <!--                </div>-->
+                </div>
+                <div class="item"   >
+                    <img  src="/static/img/child/课程资源_28_12.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"  >
+                    <img  src="/static/img/child/观察与比较_12.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"   >
+                    <img  src="/static/img/child/分析与判断_12.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"  >
+                    <img  src="/static/img/child/概括与推理_12.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+                <div class="item"  >
+                    <img  src="/static/img/child/注意与记忆_12.png" alt=""  >
+                    <!--                <div class="carousel-caption">-->
+                    <!--                </div>-->
+                </div>
+            </div>
+
+        </div>
+</div>
+
+</body>
+<script>
+    $('.carousel').carousel({
+        interval: 7000
+    });
+
+
+    var left;
+    var imgLeft;
+    $("#gather div:eq(0) span").click(function () {
+        left= parseInt($(this).offset().left);
+        imgLeft= parseInt($(".tle-img").offset().left);
+
+        // if(imgLeft<left){
+        $(".tle-img").css("left",(left-10));
+        // }
+    })
+    $("#gather-1 div:eq(0) span").click(function () {
+        left= parseInt($(this).offset().left);
+        imgLeft= parseInt($(".tle-img-1").offset().left);
+ 
+        $(".tle-img-1").css("left",(left-10));
+        // }
+    })
+    var startx,starty,movex,movey,endx,endy,nx,ny,angle;
+    function touchSatrt(event) {
+        var touch = event.touches[0];
+        //获取第一个坐标的X轴
+        startx = Math.floor(touch.pageX);
+        //获取第一个坐标的X轴
+        starty = Math.floor(touch.pageY);
+    }
+
+    function touchMove(event) {
+        var touch = event.touches[0];
+        movex = Math.floor(touch.pageX);
+        movey = Math.floor(touch.pageY);
+    }
+
+    function touchEnd(event) {
+        event.preventDefault();
+        //获取最后的坐标位置
+        var touch = event.changedTouches[0];
+        endx =  Math.floor(touch.pageX) ;
+        endy = parseInt(Math.floor(touch.pageX));
+
+        // //获取开始位置和离开位置的距离
+        nx = endx - startx;
+        ny = endy - starty;
+
+        if(nx>0&&nx<50 || nx<0&&nx>-50){
+
+        } else{
+            if ( nx > 0 ) {
+                $('#carousel-example-genericb').carousel('prev');
+            }
+            //右滑
+            else if ( nx < 0 ) {
+                $('#carousel-example-genericb').carousel('next');
+            }
+        }
+
+    }
+    document.getElementById("carousel-example-genericb").addEventListener('touchstart', touchSatrt,false);
+    document.getElementById("carousel-example-genericb").addEventListener('touchmove', touchMove,false);
+    document.getElementById("carousel-example-genericb").addEventListener('touchend', touchEnd,false);
+
+
+    function touchSatrt2(event) {
+        var touch = event.touches[0];
+        //获取第一个坐标的X轴
+        startx = Math.floor(touch.pageX);
+        //获取第一个坐标的X轴
+        starty = Math.floor(touch.pageY);
+    }
+
+    function touchMove2(event) {
+        var touch = event.touches[0];
+        movex = Math.floor(touch.pageX);
+        movey = Math.floor(touch.pageY);
+    }
+
+    anaBol=true;
+    function touchEnd2(event) {
+        event.preventDefault();
+        //获取最后的坐标位置
+        var touch = event.changedTouches[0];
+        endx =  Math.floor(touch.pageX) ;
+        endy = parseInt(Math.floor(touch.pageX));
+
+        // //获取开始位置和离开位置的距离
+        nx = endx - startx;
+        ny = endy - starty;
+
+        if(nx>0&&nx<50 || nx<0&&nx>-50){
+
+        } else{
+            if ( nx > 0 ) {
+                sxrzBol = false;
+
+                if (anaBol) {
+
+                        $('#carousel-example-generica').carousel('prev');
+                        for (i = vue2.sxrz.length - 1; i > 0; i--) {
+                            vue2.sxrz = swapItems(vue2.sxrz, 0, 0 - i);
+                        }
+                    setTimeout(function () {
+                        anaBol=true;
+                    }, 700);
+                 }
+                anaBol=false;
+            }
+            //右滑
+            else if ( nx < 0 ) {
+                sxrzBol=false;
+                if (anaBol) {
+                        $('#carousel-example-generica').carousel('next');
+                        for (i = vue2.sxrz.length - 1; i > 0; i--) {
+                            vue2.sxrz = swapItems(vue2.sxrz, 0, 0 + i);
+                        }
+                    setTimeout(function () {
+                        anaBol=true;
+                    }, 700);
+                }
+                anaBol=false;
+            }
+        }
+
+    }
+    document.getElementById("carousel-example-generica").addEventListener('touchstart', touchSatrt2,false);
+    document.getElementById("carousel-example-generica").addEventListener('touchmove', touchMove2,false);
+    document.getElementById("carousel-example-generica").addEventListener('touchend', touchEnd2,false);
+
+
+    var sxrz=["集合","数","量","形","时","空"];
+    var swxl=["注意与记忆","想象与创造","观察与比较","分析与判断","概括与推理","空间与方位"];
+
+    var vue=new Vue({
+        el:"#tle-1",
+        data:{
+            msg:swxl
+        },
+        methods:{
+
+        }
+    })
+    var vue2=new Vue({
+        el:"#tle",
+        data:{
+            sxrz:sxrz
+        },
+        methods:{
+
+        }
+    })
+    swxlBol=true;
+    $("#carousel-example-genericc").on('slide.bs.carousel', function (obj) {
+        // 当前轮播索引
+        //  index = $(this).find('.item').index(obj.relatedTarget);
+        //  alert(index);
+        if(swxlBol){
+            for( i=vue.msg.length-1;i>0;i--){
+                vue.msg= swapItems( vue.msg, 0, 0 + i);
+            }
+        }
+        swxlBol=true;
+    });
+    sxrzBol=true;
+    $("#carousel-example-generica").on('slide.bs.carousel', function (obj) {
+        // 当前轮播索引
+        //  index = $(this).find('.item').index(obj.relatedTarget);
+        //  alert(index);
+        //  alert(index);
+        if(sxrzBol) {
+            for (i = vue2.sxrz.length - 1; i > 0; i--) {
+                vue2.sxrz = swapItems(vue2.sxrz, 0, 0 + i);
+            }
+        }
+        sxrzBol=true;
+    });
+    function touchSatrt3(event) {
+        var touch = event.touches[0];
+        //获取第一个坐标的X轴
+        startx = Math.floor(touch.pageX);
+        //获取第一个坐标的X轴
+        starty = Math.floor(touch.pageY);
+    }
+    function touchMove3(event) {
+        var touch = event.touches[0];
+        movex = Math.floor(touch.pageX);
+        movey = Math.floor(touch.pageY);
+    }
+    function touchEnd3(event) {
+        event.preventDefault();
+        //获取最后的坐标位置
+        var touch = event.changedTouches[0];
+        endx =  Math.floor(touch.pageX) ;
+        endy = parseInt(Math.floor(touch.pageX));
+
+        // //获取开始位置和离开位置的距离
+        nx = endx - startx;
+        ny = endy - starty;
+
+        if(nx>0&&nx<90 || nx<0&&nx>-90){
+        } else {
+            if ( nx > 0 ) {
+                $('#carousel-example-genericd').carousel('prev');
+            }
+            //右滑
+            else if ( nx < 0 ) {
+                $('#carousel-example-genericd').carousel('next');
+            }
+        }
+    }
+    document.getElementById("carousel-example-genericd").addEventListener('touchstart', touchSatrt3,false);
+    document.getElementById("carousel-example-genericd").addEventListener('touchmove', touchMove3,false);
+    document.getElementById("carousel-example-genericd").addEventListener('touchend', touchEnd3,false);
+
+    function touchSatrt4(event) {
+        var touch = event.touches[0];
+        //获取第一个坐标的X轴
+        startx = Math.floor(touch.pageX);
+        //获取第一个坐标的X轴
+        starty = Math.floor(touch.pageY);
+    }
+
+    function touchMove4(event) {
+        var touch = event.touches[0];
+        movex = Math.floor(touch.pageX);
+        movey = Math.floor(touch.pageY);
+    }
+    var swapItems = function(arr, index1, index2) {
+        arr[index1] = arr.splice(index2, 1, arr[index1])[0];
+        return arr;
+    };
+    anBol=true;
+    function touchEnd4(event) {
+        event.preventDefault();
+        //获取最后的坐标位置
+        var touch = event.changedTouches[0];
+        endx = Math.floor(touch.pageX);
+        endy = parseInt(Math.floor(touch.pageX));
+
+        // //获取开始位置和离开位置的距离
+        nx = endx - startx;
+        ny = endy - starty;
+
+        if (nx > 0 && nx < 50 || nx < 0 && nx > -50) {
+
+        } else {
+            if (nx > 0) {
+                swxlBol = false;
+                if (anBol) {
+
+                    $('#carousel-example-genericc').carousel('prev');
+                    for (i = vue.msg.length - 1; i > 0; i--) {
+                        vue.msg = swapItems(vue.msg, 0, 0 - i);
+                    }
+                    setTimeout(function () {
+                        anBol = true;
+                    }, 700);
+                }
+                anBol = false;
+            }
+            //右滑
+            else if (nx < 0) {
+                swxlBol = false;
+                // newArr=swxl.splice(0,1,swxl[1])[0];
+                if (anBol) {
+
+                    $('#carousel-example-genericc').carousel('next');
+                    for (i = vue.msg.length - 1; i > 0; i--) {
+                        vue.msg = swapItems(vue.msg, 0, 0 + i);
+                    }
+                    setTimeout(function () {
+                        anBol = true;
+                    }, 700);
+
+                }
+                anBol = false;
+            }
+
+        }
+    }
+        document.getElementById("carousel-example-genericc").addEventListener('touchstart', touchSatrt4, false);
+        document.getElementById("carousel-example-genericc").addEventListener('touchmove', touchMove4, false);
+        document.getElementById("carousel-example-genericc").addEventListener('touchend', touchEnd4, false);
+    
+</script>
+</html>

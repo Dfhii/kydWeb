@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>在线支持</title>
+<!--    <link href="/static/css/bootstrap.css" rel="stylesheet" >-->
+<!--    <script  src="/static/js/jquery.js" ></script>-->
+<!--    <script src="/static/js/pc.js"> </script>-->
+    
+
+    <style>
+        /*html{font-size:30px;}*/
+        html{
+            /*overflow:hidden*/
+            overflow-x:hidden;
+        }
+        body{
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            position:revert;
+            overflow: hidden;
+           background-color: #F4F4F4;
+            font-family: SourceHanSansCN-Regular;
+        }
+
+        /*body *{border: 1px solid #000000}*/
+
+        .opt{width: 100%;font-size: 1.9rem;border-bottom:2px solid #4EBDB4  }
+        .opt span{background-color: #ffffff;font-size:1.8rem;text-align: center;width: 20%;  padding: 1.3rem 1rem;  display: inline-block; margin-bottom: 0px;margin-top: 0px;}
+        .opt span:nth-child(2){margin-left: 0px; }
+        .opt span:nth-child(3){margin-left: 0px;margin-right: 0px;}
+        .opt span:nth-child(4){margin-right: 0px; }
+        .opt span:nth-child(5){color: #ffffff;background: #02d497 }
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        .to{height: 380px;margin-top: 0px;margin-bottom: 0px;width: 100%}
+        .to img{width: 100%;height: 100%;background-color: #FFFFff;}
+        .phone{width: 94%; height: 20rem;margin: 3% 3%;background: #FFFFff;padding: 30px;
+            font-size:1.6rem;color:rgb(96,96,96);letter-spacing: 0px;
+      }
+         .rx{padding: 0;font-size: 1.8rem;display: inline-block; margin-bottom: 12px; margin-top: 29px;width: 100%;display: inline-block;float: left}
+        .rx span{font-size: 1.6rem;display:inline-block;}
+        .sj{font-size: 1.8rem;display: inline-block;}
+        .bt{display: inline-block;margin-bottom: 20px;font-size: 2.3rem;letter-spacing: 3px;margin-left: 15px;position: absolute;margin-top: -3px;}
+        .zx{display: inline-block;
+            display: inline-block;background-color: #02d497;border-radius:100px;float: right;padding: 30px 88px;
+            margin-top: -50px;font-size: 1.9rem;color: #FFFFff;letter-spacing: 3px;}
+        .pdiv-2{margin-top: 40px;}
+        .wx{font-size:1.3rem;text-align: center;width: 208px;height: 94px;display: inline-block;margin-left: 16%;margin-top: 30px;}
+        a:hover{
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none;
+        }
+        @media  (max-width: 720px){
+            body{
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                /*min-width: 680px;*/
+                overflow: hidden;
+                position:revert;
+                background-color: #F4F4F4;
+                font-family: SourceHanSansCN-Regular;
+            }
+            .phone{width: 94%; height: 20rem;margin: 3% 3%;background: #FFFFff;padding: 30px;
+                font-size:1.6rem;color:rgb(96,96,96);letter-spacing: 2px;
+            }
+            .wx{font-size:1.3rem;text-align: center;width: 208px;height: 94px;display: inline-block;margin-left: 14%;margin-top: 30px;}
+
+        }
+        /*@media  (max-width: 700px) and (min-width: 680px){*/
+        /*    html{font-size: 12px;}*/
+        /*    body{  width: 660px;*/
+        /*        margin:0px;*/
+        /*        padding: 0px;*/
+        /*        !*zoom: 52.5%;*!*/
+        /*        min-width: 660px;*/
+        /*        position:revert;*/
+        /*        background-color: #F4F4F4;*/
+        /*        font-family: SourceHanSansCN-Regular;*/
+        /*    }*/
+        /*    .opt{width: 100%;font-size: 1.9rem;border-bottom:2px solid #02d497;background-color: #FFFFff }*/
+        /*    .opt span{background-color: #ffffff;width:17.2%;font-size: 1.5rem;text-align: center;height: 56px; padding: 0.55rem;display: inline-block;padding-top: 20px;margin: 0px;}*/
+        /*    .opt span:nth-child(2){margin-left: 0px; }*/
+        /*    .opt span:nth-child(3){margin-left: 0px;margin-right: 0px;}*/
+        /*    .opt span:nth-child(4){margin-right: 0px; }*/
+        /*    .opt span:nth-child(5){color: #ffffff;background: #02d497 }*/
+        /*}*/
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+        // $("html").css("font-size",(screen.width/26));
+        window.onload = function () {
+            /*720代表设计师给的设计稿的宽度，你的设计稿是多少，就写多少;100代表换算比例，这里写100是
+             为了以后好算,比如，你测量的一个宽度是100px,就可以写为1rem,以及1px=0.01rem等等*/
+
+            /*
+             * 也就说，在屏幕宽度为720px的情况下，1rem=100px
+             * */
+
+            getRem(750, 16)
+        };
+        window.onresize = function () {
+            getRem(750, 16)
+        };
+
+        function getRem(pwidth, prem) {
+            var html = document.getElementsByTagName("html")[0];
+            var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+            html.style.fontSize = oWidth / pwidth * prem + "px";
+        }
+    </script>
+</head>
+<body >
+
+<!--    <div id="page1" style="display: inline-block;margin: 0;padding: 0;"></div>-->
+<!--    <div class="to">-->
+<!--        <img src="/static/img/server/服务（在线支持）页3_02.png">-->
+<!--    </div>-->
+<!--    <div class="opt">-->
+<!--        <span><a href="/static/page/service/sell.html">销售网点</a></span><span><a href="/static/page/service/netWork.html">服务网点</a></span><span><a href="/static/page/service/policy.html">服务政策</a></span><span><a href="/static/page/service/anti.html">防伪查询</a></span><span>在线支持</span>-->
+<!--    </div>-->
+
+    <div class="phone">
+        <img src="/static/img/server/服务（在线支持）页3_05.png"/><span class="bt">服务热线</span> <br />
+
+        <div class="rx">400 678 0315<span style="padding: 0;margin: 0;">（400未覆盖地区可拨打0755-26703955） </span></div><br />
+        <span class="sj">人工服务时间</span>（法定节假日正常休息） <br />
+        周一至周五  8:30--12:30     13:30--17:30<br />
+        周六、周日  9:00--17:00
+    </div>
+
+    <div class="phone">
+        <div class="pdiv-2"  style="margin-top: 60px;">
+           <img src="/static/img/server/服务（在线支持）页3_08.png"/><span class="bt">在线咨询</span><br />
+            <span style="margin-top: 20px;display: inline-block">4006780315（企业QQ）</span>   <a href="http://wpa.b.qq.com/cgi/wpa.php?ln=2&uin=4006780315"><span class="zx"> 立即咨询</span></a> 
+        </div>
+    </div>
+    
+    <div class="phone">
+        <div class="pdiv-2">
+            <img src="/static/img/server/服务（在线支持）页3_08.png"/><span class="bt">客服邮箱</span><br />
+            <span style="margin-top: 20px;display: inline-block">hp-service@hwapu22.com</span> <br />
+            <span  style="margin-top: 20px;display: inline-block">自动录音服务：24 小时</span>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="wx">
+ 
+
+        <span style="display: inline-block;margin-left: -10px;"><img src="/static/img/server/服务（在线支持）页3_13.png"></span>
+        扫一扫 <br />
+        关注快易典公众号 <br />
+ 
+    </div>
+    <div class="wx">
+ 
+        <span style="display: inline-block;margin-left: -10px;"><img src="/static/img/server/服务（在线支持）页3_15.png"></span>
+        扫一扫 <br />
+        关注奇米儿童公众号<br />
+    </div>
+<!--    <div id="page2" ></div>-->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+
+    <title>Title</title>
+<!--    <link href="/static/css/bootstrap.css" rel="stylesheet" >-->
+    <script  src="/static/js/jquery.js" ></script>
+<!--    <script  src="/static/js/bootstrap.js" ></script>-->
+<!--    <script src="/static/js/pc.js"> </script>-->
+</head>
+<style>
+
+ 
+    #headi{width: 100%;height: 88px;background-color: #FFFFff; position: relative;}
+    #headi img:nth-child(1){width:58px;height: 42px;margin: 20px ; display: inline; float: right;}
+  .log{width:161px;height: 48px;margin-top: 20px;  float: left; display: inline;margin-left: 304px;background:url('/static/img/home/首页3.png') no-repeat}
+    @media  (max-width: 720px){
+        .log{width:161px;height: 48px;margin-top: 20px;  float: left; display: inline;margin-left: 264px;background:url('/static/img/home/首页3.png') no-repeat}
+    }
+</style>
+<body>
+
+<div  id="headi" ><a href="/static/page/menu.html"><img src="/static/img/home/首页_06.png"></a>  <a ><span class="log">
+
+</span></a> </div>
+<script>
+    $(function(){
+
+        // $("#headi img:eq(0)").click(function () {
+        //     window.location.replace("/static/page/menu.html");
+        // });
+        $(".log").click(function () {
+            window.location.replace("/anon/index");
+        })
+    })
+</script>
+</body>
+</html>

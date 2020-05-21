@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.548, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>目录</title>
+    <script src="/static/js/vue.min.js"  charset="UTF-8"></script>
+    <script  src="/static/js/jquery.js" ></script>
+ 
+<!--    <script src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>-->
+    <style>
+        html{width:500px;font-family: SourceHanSansCN-Regular;}
+        /*body *{ border: 0.1px solid #000000}*/
+        body{  font-family: SourceHanSansCN-Regular;
+            width: 40rem;min-width: 750px;margin: 0px;padding: 0px;   font-family: SourceHanSansCN-Regular; }
+
+        @media (min-width: 350px) and (max-width: 2080px) {
+            #menu {
+                position: revert;
+                width: 100%;
+                background-color: #ffffff;
+                z-index: 10;
+                margin-top: 53px;
+                padding: 0px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #737373;
+            }
+
+            a:link {
+                text-decoration: none;
+            }
+            a:hover{
+                -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+                -webkit-user-select: none;
+                -moz-user-focus: none;
+                -moz-user-select: none;
+            }
+
+            /*a:hover{background-color: #000000}*/
+            #menu ul {
+                margin: 0px;
+                padding: 0px;
+                width: 100%
+            }
+
+            #menu ul li {
+                font-size: 30px;
+                list-style-type: none;
+                padding: 0px;
+                color: #737373;
+                margin-top: 43px;
+                margin-left: 48px
+            }
+
+            #menu ul li div span img {
+                /*margin-bottom: 10px*/
+            }
+            
+            #menu ul li div span span {
+                display: inline-block;
+                text-align: center;
+                margin-left: 50px;
+                padding: 0px;
+            }
+
+            #menu ul li:nth-child(1) {
+                margin-top: 0px
+            }
+
+            #menu ul li:nth-child(1) div img {
+                margin-bottom: 20px;
+            }
+
+            #menu ul li:nth-child(2) div img {
+                width: 200px;
+                height: 200px;
+                padding: 0px;
+                margin-left: 27px;
+            }
+
+            #menu ul li:nth-child(2) span {
+                display: inline-block;
+                width: 49%;
+                float: left;
+                font-size: 30px;
+            }
+            #menu ul li:nth-child(3) div a:nth-child(4) img {
+                width: 168px;
+                height: 112px;
+                margin-top: 60px;
+                margin-bottom: 25px;
+                margin-left: 40px;
+            }
+            #menu ul li:nth-child(2) div a:nth-child(4) img {
+                width: 168px;
+                height: 112px;
+                margin-top: 60px;
+                margin-bottom: 25px;
+                margin-left: 40px;
+            }
+            #menu ul li:nth-child(4) div a:nth-child(4) img {
+                width: 168px;
+                height: 112px;
+                margin-top: 60px;
+                margin-bottom: 25px;
+                margin-left: 40px;
+            }
+            #menu ul li:nth-child(5) div a:nth-child(4) img {
+                width: 168px;
+                height: 112px;
+                margin-top: 60px;
+                margin-bottom: 25px;
+                margin-left: 40px;
+            }
+            #menu ul li:nth-child(3) div img {
+                width: 200px;
+                height: 200px;
+                padding: 0px;
+                margin-left: 27px;
+            }
+
+            #menu ul li:nth-child(3) span {
+                display: inline-block;
+                width: 49%;
+                float: left;
+                font-size: 30px;
+            }
+
+            #menu ul li:nth-child(4) div img {
+                width: 200px;
+                height: 200px;
+                padding: 0px;
+                margin-left: 27px;
+            }
+
+            #menu ul li:nth-child(4) span {
+                display: inline-block;
+                width: 49%;
+                float: left;
+                font-size: 30px;
+            }
+
+            #menu ul li:nth-child(5) div img {
+                width: 200px;
+                height: 200px;
+                padding: 0px;
+                margin-left: 27px;
+            }
+
+            #menu ul li:nth-child(5) span {
+                display: inline-block;
+                width: 49%;
+                float: left;
+                font-size: 30px;
+            }
+            #menu ul li:nth-child(5) span span{
+                width: 59%;
+                display: inline-block;
+                margin-left: 6%;
+            }
+            #menu ul li:nth-child(4) span span{
+
+                display: inline-block;
+                margin-left: 41px;
+                /*margin-top: 40px;*/
+                /*padding-top: 0px;*/
+            }
+            #menu ul li:nth-child(3) span span{
+
+                display: inline-block;
+                margin-left: 41px;
+            }
+            #menu ul li:nth-child(2) span span{
+
+                display: inline-block;
+                margin-left: 41px;
+            }
+            #menu ul li:nth-child(6) div{
+                margin-left:32px;
+            }
+            #menu ul li:nth-child(6) div img {
+                width: 120px;
+                height: 120px;
+                margin-left: 0px;
+            }
+
+            #menu ul li:nth-child(6) span {
+                display: inline-block;
+                width: 30px;
+                height: 90px;
+                font-size: 30px;
+                width: 22%;
+                /*float: left;*/
+                margin-left:0px ;
+            }
+
+            #menu ul li:nth-child(6) span:nth-child(2) {
+                margin-left: 80px;
+                margin-right: 80px;
+            }
+
+            #menu ul li:nth-child(7) div img {
+                width: 100%;
+                height: 180px;
+            }
+
+            #menu ul li:nth-child(7) span {
+                display: inline-block;
+                width: 25%;
+                float: left;
+            }
+
+            #menu ul li:nth-child(8) div img {
+                width: 125px;
+                height: 125px;
+            }
+
+            #menu ul li:nth-child(8) span {
+                display: inline-block;
+                width: 22%;
+                float: left;
+                margin-left: 30px;
+                font-size: 30px;
+            }
+
+            #menu ul li:nth-child(8) span:nth-child(2) {
+                margin-left: 60px;
+                margin-right: 60px;
+            }
+
+            #menu ul li:nth-child(8) span:nth-child(4) {
+                margin-left: 19%;
+                margin-top: 20px;
+            }
+
+            #menu ul li:nth-child(8) span:nth-child(5) {
+                margin-left: 13%;
+                margin-top: 20px;
+            }
+
+            #menu ul li div {
+                overflow: hidden;
+                margin-top: 30px;
+            }
+
+            /*#menu ul li div span{border: 1px solid #000000}*/
+            /*#menu ul li div span img{display: inline-block;border: 1px solid #000000;width: 300px;height: 300px}*/
+            .arrow {
+                width: 16px;
+                height: 28px;
+                float: right;
+                margin-right: 54px;
+                margin-top: 10px;
+            }
+
+            .add {
+                width: 28px;
+                height: 28px;
+                float: right;
+                margin-right: 48px;
+                margin-top: 10px;
+                animation-iteration-count:1;
+
+            }
+
+            #headi {
+                width: 100%;
+                height: 88px;
+                background-color:#FFFFff;
+                margin: 0px;
+                padding: 0px
+            }
+
+            #headi img:nth-child(1) {
+                width: 40px;
+                height: 40px;
+                margin-right: 34px;
+                margin-top: 21px;
+                display: inline;
+                float: right;
+            }
+
+            #headi img:nth-child(2) {
+                width: 161px;
+                height: 48px;
+                margin-top: 20px;
+                float: left;
+                display: inline;
+                margin-left: 296px;
+            }
+
+            @keyframes revolve {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(0deg);
+                }
+            }
+            @keyframes revolveY {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+
+                    -webkit-transform: rotate(45deg);
+                }
+            }
+        }
+        @media  (max-width: 720px){
+            body{  font-family: SourceHanSansCN-Regular;
+                width: 40rem;min-width: 680px;margin: 0px;padding: 0px;   font-family: SourceHanSansCN-Regular; }
+            /*#menu ul li:nth-child(6) span {*/
+            /*    display: inline-block;*/
+            /*    width: 80px;*/
+            /*    height: 90px;*/
+            /*    font-size:2.0rem;*/
+            /*    width: 22%;*/
+            /*    !*float: left;*!*/
+            /*    margin-left:0px ;*/
+            /*}*/
+            #headi img:nth-child(2) {
+                width: 161px;
+                height: 48px;
+                margin-top: 20px;
+                float: left;
+                display: inline;
+                margin-left: 256px;
+            }
+            #menu ul li:nth-child(5) span span{
+                width: 59%;
+                display: inline-block;
+                margin-left: 10%;
+            }
+            #menu ul li:nth-child(4) span span{
+                width: 59%;
+                display: inline-block;
+                margin-left: 10%;
+            }
+            #menu ul li:nth-child(3) span span{
+                width: 59%;
+                display: inline-block;
+                margin-left: 10%;
+            }
+            #menu ul li:nth-child(2) span span{
+                width: 59%;
+                display: inline-block;
+                margin-left: 10%;
+            }
+            /*#menu ul li:nth-child(6) div img {*/
+            /*    width: 100px;*/
+            /*    height: 100px;*/
+            /*    margin-left: 15px;*/
+            /*}*/
+            /*#menu ul li:nth-child(8) span {*/
+            /*    display: inline-block;*/
+            /*    width: 23%;*/
+            /*    float: left;*/
+            /*    margin-left: 30px;*/
+            /*}*/
+            /*#menu ul li:nth-child(8) div img {*/
+            /*    width: 125px;*/
+            /*    height: 125px;*/
+            /*    margin-left: 8px;*/
+            /*}*/
+
+        }
+    </style>
+
+</head>
+<body>
+<div class="col-xs-12 col-md-8" id="headi" ><img src="/static/img/catalog/目录页_05.png">  <img  src="/static/img/home/首页3.png" /></div>
+<div id="menu">
+    <ul>
+        <li>  首页  <img src="/static/img/catalog/目录页_10.png" class="arrow"/>  </li>
+        <li>智能家教机 <img src="/static/img/catalog/目录页_14.png" value="0" class="add"/>
+<!--            /static/img/product/家教机产品页_08.jpg-->
+            <div>
+                <a v-on:click="detailsHref(prd.Id,prd.Name)"  v-for="(prd,index) in productMenu" v-if="prd.SeriesId==1"  >
+                         <span ><img :src="prd.AppHomeCoverImage"><br />
+                         <span v-html="prd.Name">H80 Pro</span></span>
+                     </a>
+            <a href="/static/page/product/familye.html?id=1">
+                <span> <img src="/static/img/home/菜单2.png"><br />
+                <span class="all">全部机型</span></span>
+            </a>
+</div>
+</li>
+        <li>早教电脑<img src="/static/img/catalog/目录页_14.png"  value="0" class="add"><div >
+
+            <a v-on:click="detailsHref(prd.Id,prd.Name)"  v-for="(prd,index) in productMenu" v-if="prd.SeriesId == 2"  >
+                         <span ><img :src="prd.AppHomeCoverImage"><br />
+                         <span v-html="prd.Name">H80 Pro</span></span>
+            </a>
+
+            <a href="/static/page/product/familye.html?id=2"><span> <img src="/static/img/home/菜单2.png"><br /><span class="all">全部机型</span></span></a></div></li>
+
+        <li>早教点读笔<img src="/static/img/catalog/目录页_14.png"  value="0" class="add">
+            <div >
+                <a v-on:click="detailsHref(prd.Id,prd.Name)"  v-for="(prd,index) in productMenu" v-if="prd.SeriesId==3"  >
+                         <span ><img :src="prd.AppHomeCoverImage"><br />
+                         <span v-html="prd.Name">H80 Pro</span></span>
+                </a>
+
+                <a href="/static/page/product/familye.html?id=3">   <span style=""><img src="/static/img/home/菜单2.png"><br /><span class="all">全部机型</span></span></a></div></li>
+        <li>其他产品<img src="/static/img/catalog/目录页_14.png"  value="0" class="add">
+            <div >
+                <a v-on:click="detailsHref(prd.Id,prd.Name)"  v-for="(prd,index) in productMenu" v-if="prd.SeriesId==4 || prd.SeriesId==5 || prd.SeriesId==6"  >
+                         <span ><img :src="prd.AppHomeCoverImage"><br />
+                         <span v-html="prd.Name">H80 Pro</span></span>
+                </a>
+
+                <a href="/static/page/product/familye.html?id=4">   <span> <img src="/static/img/home/菜单2.png"><br /><span class="all">全部机型</span></span></a></div></li>
+        <li>品牌<img src="/static/img/catalog/目录页_14.png"  value="0" class="add"><div>
+            <span>  <a href="/static/page/brand/about.html?id=1"><img src="/static/img/home/目录页(品牌展开页）_03.png"></a>关于我们 </span>
+            <span>  <a href="/static/page/brand/about.html?id=2"><img src="/static/img/home/目录页(品牌展开页）_05.png"></a>品牌资讯</span>
+            <span>  <a href="/static/page/brand/about.html?id=3"><img src="/static/img/home/目录页(品牌展开页）_08.png"> </a>品牌视频</span> </div></li>
+        <li>网上商城<img src="/static/img/catalog/目录页_10.png"    class="arrow" /></li>
+        <li>服务<img src="/static/img/catalog/目录页_14.png"  value="0" class="add"><div><span> <a href="/static/page/service/sell.html?id=1"> <img src="/static/img/home/目录页(服务）_03.png">销售网点</a></span>
+            <span>  <a href="/static/page/service/sell.html?id=2"> <img src="/static/img/home/目录页(服务）_05.png">服务网点</a></span>
+            <span>  <a href="/static/page/service/sell.html?id=3"> <img src="/static/img/home/目录页(服务）_07.png">政策服务</a></span>
+            <span>  <a href="/static/page/service/sell.html?id=4"> <img src="/static/img/home/目录页(服务）_09.png">防伪查询</a></span>
+            <span>  <a href="/static/page/service/sell.html?id=5"> <img src="/static/img/home/目录页(服务）_11.png">在线支持</a></span></div></li>
+        <li>送货上门<img src="/static/img/catalog/目录页_10.png"  class="arrow"></li>
+        <li>商务合作<img src="/static/img/catalog/目录页_10.png" class="arrow">  </li>
+            <li>奇米儿童<img src="/static/img/catalog/目录页_10.png" class="arrow"></li>
+        <li>加入我们<img src="/static/img/catalog/目录页_10.png" class="arrow"></li>
+        </ul>
+</div>
+
+</body>
+<script>
+    var url="/static/page/product/productDetails.html";
+    var menu=new Vue({
+        el:"#menu",
+        data:{
+            productMenu:[]
+        },
+        methods: {
+            last(val){
+                ++val;
+                return val;
+            }
+        }
+    })
+    $.ajax({
+        url:"/product/findProductMenu",
+        dataType:"JSON",
+        success:function(data){
+            menu.productMenu=data;
+        }
+    });
+    function detailsHref(id,name){
+        window.location.replace(url+"?Id="+id+"&Name="+name);
+    }
+    $(function(){
+        $("ul li div").hide();
+        $("#headi img:eq(0)").click(function () {
+            window.history.go(-1);
+
+        })
+        $("#headi img:eq(1)").click(function () {
+            // alert(1);
+            window.location.replace("/anon/index");
+
+        })
+        $("ul li:eq(0)").click(function () {
+            window.location.replace("/anon/index");
+        })
+        $("ul li:eq(6)").click(function () {
+            window.location.replace("/static/page/shopping.html");
+        })
+        $("ul li:eq(8)").click(function () {
+            window.location.replace("/static/page/delivery.html");
+        })
+        $("ul li:eq(9)").click(function () {
+            window.location.replace("/static/page/coopertion/support.html");
+        })
+        $("ul li:eq(10)").click(function () {
+            window.location.replace("/static/page/child/show.html");
+        })
+        $("ul li:eq(11)").click(function () {
+            window.location.replace("/static/page/join/campus.html");
+        })
+        // $("ul li").toggle(
+        //   function () {
+        //   $(this).children('.add').css('animation','revolve 1s')
+        //   },
+        //   function (){
+        //   $(this).children('.add').css('animation','revolveY 1s')
+        //   }
+        //   )
+        //    var x=0;
+        $("ul li").click(function () {
+            var bol=false;
+            if($(this).children('.add').attr("value")=="0"){
+                $("ul li").children('.add').css({"animation":"revolve ease-in 0.5s","animation-fill-mode":"forwards"});
+                $(this).children('.add').css({"animation":"revolveY ease-in 0.5s","animation-fill-mode":"forwards"});
+                $("ul li" ).children('.add').attr("value","0");
+                $(this).children('.add').attr("value","1");
+                //$(this).children('.add').attr("src","/static/img/home/目录页(默认状态）_11.png");
+                bol=false;
+            }else{
+                bol=true;
+            }
+            if(bol){
+                $(this).children('.add').css({"animation":"revolve ease-in 0.5s","animation-fill-mode":"forwards"});
+                $(this).children('.add').attr("value","0");
+            }
+            $(this).siblings('li').children('div').hide()
+            $(this).children('div').toggle(500);
+        })
+
+        // $("ul li a").click(function () {
+        //     $(this).parent('div').hide();
+        // })
+
+        // #menu ul li div span:nth-child(4) span {
+        //         font-size: 10px;
+        //     }
+        //     $('#menu').children('ul').children('li').children('div').children('span:eq(3)').children('span').css('font-size','10px')
+    })
+</script>
+</html>

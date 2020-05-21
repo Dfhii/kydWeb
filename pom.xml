@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dulk.framework</groupId>
-    <artifactId>baseMan</artifactId>
+    <artifactId>kydWeb</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -22,11 +22,11 @@
 
     <!-- modules -->
     <modules>
-        <module>baseMan-web</module>
-        <module>baseMan-service</module>
-        <module>baseMan-dao</module>
-        <module>baseMan-pojo</module>
-        <module>baseMan-common</module>
+        <module>kydWeb-web</module>
+        <module>kydWeb-service</module>
+        <module>kydWeb-dao</module>
+        <module>kydWeb-pojo</module>
+        <module>kydWeb-common</module>
     </modules>
 
     <dependencies>
@@ -36,6 +36,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+<!--        <dependency>-->
+<!--            <groupId>com.sun.mail</groupId>-->
+<!--            <artifactId>javax.mail</artifactId>-->
+<!--            <version>1.5.6</version>-->
+<!--        </dependency>-->
 
         <!-- junit -->
         <dependency>
@@ -47,21 +60,38 @@
         <!-- common -->
         <dependency>
             <groupId>dulk.framework</groupId>
-            <artifactId>baseMan-common</artifactId>
+            <artifactId>kydWeb-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- pojo -->
         <dependency>
             <groupId>dulk.framework</groupId>
-            <artifactId>baseMan-pojo</artifactId>
+            <artifactId>kydWeb-pojo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+ 
+     
+        <!--        <dependency>-->
+<!--            <groupId>com.microsoft.sqlserver</groupId>-->
+<!--            <artifactId>mssql-jdbc</artifactId>-->
+<!--            <version>7.0</version>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+ 
 
     </dependencies>
 
     <build>
-        <finalName>baseMan</finalName>
+        <finalName>kydWeb</finalName>
+<!--        <plugins>-->
+<!--        <plugin>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--        </plugin>-->
+<!--        </plugins>-->
     </build>
-
+ 
+ 
 </project>

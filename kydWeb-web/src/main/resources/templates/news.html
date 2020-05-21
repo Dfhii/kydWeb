@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>品牌资讯</title>
+<!--    <link rel="Shortcut Icon" href="你的ico图片地址" />-->
+    <script  src="/static/js/jquery.js" ></script>
+<!--    <script src="/static/js/pc.js"> </script>-->
+    <style>
+        html{
+            font-size: 16px;
+            /*overflow:hidden*/
+            overflow-x:hidden;
+        }
+        body{  font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            margin: 0;padding: 0px; background-color:#FFFFff; overflow:hidden;}
+        /*body *{border: 1px solid #000000}*/
+        #show *{margin:0 auto;width: 96%; text-align:justify;}
+        #show img{width: 100%;margin:0 auto;  margin-left: -5px;  }
+        #show *{line-height:1.5rem; margin-left:8px;}
+        #show p{margin: 0 auto;width: 96%; margin-left:20px; line-height: 20px;}
+        #title{text-align: center;margin-bottom: 30px;}
+        @media  (max-width: 720px){
+            body{  font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                margin: 0;padding: 0px; background-color:#FFFFff;
+            }
+        }
+        @media  (max-width: 700px){
+
+           
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+    </script>
+</head>
+<body>
+<div id="page1" style="border-bottom: 2px solid #f2f2f2;margin-bottom: 20px;"></div>
+<h1 id="title" th:text="${Title}"></h1>
+<!--<hr style="color: #F1F3F4"/>-->
+<br/>
+<div   id="show"  th:utext="${Contents}"></div>
+ 
+<input type="button" value="返回" style="display: inline-block;margin-left: 33%;font-size: 2.3rem;width:256px;height: 79px;border-radius:40px;border: 1px solid #ffffff;background-color: rgb(2,212,151);color: #FFFFff; " onclick="back()">
+<div id="page2" ></div>
+</body>
+<script>
+    function back(){
+        window.history.go(-1);
+    }
+    // $("#show p").css)("text-indent","0px");
+</script>
+</html>

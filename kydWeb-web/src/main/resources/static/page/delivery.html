@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>送货上门</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/vue.min.js"  charset="UTF-8"></script>
+<!--    <script src="/static/js/pc.js"> </script>-->
+    <style>
+        html{
+            overflow-x: hidden;
+        }
+        body{
+            font-family: SourceHanSansCN-Regular;
+            /*width: 750px;  min-width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            overflow: hidden;
+            background: rgb(244,244,244);
+            position:revert;}
+
+        /*body *{*/
+        /*    border: 1px solid #000000;*/
+        /*}*/
+        .to{height: 380px;width: 100%;margin: 0;padding: 0;}
+        .to img{height: 100%;width: 100%;margin: 0;padding: 0;}
+        .form-control{background: url('/static/img/delivery/送货上门3_05.png') no-repeat 120px 12px;padding-left: 10px;width: 145px;display: inline-block;margin-left: 2rem;margin-top: 3rem; color: rgb(121,121,121);margin-bottom:1.8rem; height: 42px;font-size: 1.1rem; border-radius:10px; }
+        .form-control option{ }
+        .rwm{width: 80%;margin: 0 auto;background: #FFFFff }
+        .rwm div:nth-child(1) p{color: #FFFFff; margin: 0px; }
+        .rwm div:nth-child(1) p:nth-child(1){font-size: 1.9rem;margin-left: 36px;margin-bottom: 20px;}
+        .rwm div:nth-child(1) p:nth-child(2){font-size: 1.5rem;margin-left: 36px;}
+        .rwm div:nth-child(1){padding-top: 37px;padding-bottom: 29px;}
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        .col-md-4{ text-align: center;font-size: 1.9rem;color: rgb(90,80,80)}
+        .col-md-5{text-align: center;font-size: 1.1rem;color: rgb(171,171,171);margin-top: 28px;margin-bottom: 44px;}
+        @media  (max-width: 750px){
+            body{
+                font-family: SourceHanSansCN-Regular;
+                /*width: 680px;  min-width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                background: rgb(244,244,244);
+                position:revert;}
+            .form-control{background: url('/static/img/delivery/送货上门3_05.png') no-repeat 120px 12px;padding-left: 10px;width: 145px;display: inline-block;margin-left:3%;margin-top: 3rem; color: rgb(121,121,121);margin-bottom:1.8rem; height: 42px;font-size: 1.1rem; border-radius:10px; }
+
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+    </script>
+</head>
+<body>
+<div id="page1" ></div>
+<div class="to">
+    <img src="/static/img/delivery/送货上门3_02.png">
+</div>
+
+<form action="#">
+    <select class="form-control" id="prov"  >
+        <option>选择省</option>
+    </select>
+
+    <!--城市选择-->
+    <select class="form-control"id="city"  >
+        <option value="0">选择市</option>
+    </select>
+
+    <!--县区选择-->
+    <select class="form-control" id="country">
+        <option value="0">选择区</option>
+    </select>
+
+    <select class="form-control" id="shop">
+        <option value="0">选择门店</option>
+    </select>
+
+
+</form>
+
+<div class="rwm" id="box">
+    <div style="background: url('/static/img/delivery/送货上门3_09.png')  no-repeat ;background-size:100%; width: 100%" > <p>服务专员：<span>{{name}}</span></p><p>{{phone}}</p></div>
+    <div style="overflow: hidden">
+        <div class="col-md-4"  >微信服务专员</div>
+        <div style="text-align: center;display: none" id="code"><img :src="code" width="219px" height="219px"></div>
+        <div class="col-md-5"   >长按识别二维码，添加服务专员开始资讯吧</div>
+    </div>
+</div>
+
+<div id="page2" ></div>
+</body>
+<script>
+    $('#country').change(store);
+    var storeUserJson;
+
+    vue=new Vue({
+        el:"#box",
+        data:{
+            name:null,
+            phone:null,
+            code:null
+        }
+    })
+    function store() {
+
+        var str="";
+
+        $.ajax({
+            url:'/sell/shop',
+            data:"sdisId="+$('#country option:selected').val()+"",
+            dataType:'JSON',
+            success: function(json){
+                storeUserJson=json;
+                str+='<option value="0">选择门店</option>'
+                for(var i=0;i<json.length;i++){
+                    str+='<option value="'+json[i].sid+'">'+json[i].sName+'</option>'
+                }
+                if(json.length==0){
+                    str="";
+                    str+='<option value="0">没有可选门店</option>'
+                }
+                $('#shop').html(str);
+            }
+        })
+    }
+
+    $("#shop").change(function () {
+    var sid=parseInt($("#shop option:selected").val());
+ 
+        for(var i=0;i<storeUserJson.length;i++){
+            if(storeUserJson[i].sid==sid ){
+                    vue.name=storeUserJson[i].sContacts;
+                    vue.phone=storeUserJson[i].sContactInformation;
+                    vue.code=storeUserJson[i].suBarCode;
+                    if(storeUserJson[i].suBarCode==null){
+                       $("#code").hide();
+                    }else{
+                        $("#code").show();
+                    }
+            }
+
+
+        }
+
+    });
+
+    showProv();
+    /*自动加载省份列表*/
+    function showProv() {
+        var prov="";
+        $.ajax({
+            url:"/sell/province",
+            dataType:'JSON',
+            success:function(json){
+                prov+='<option value="0">选择省</option>'
+                for(var i=0;i<json.length;i++){
+                    prov+='<option value="'+json[i].sProID+'">'+json[i].sProName+'</option>'
+                }
+                $('#prov').html(prov);
+            }
+        })
+    }
+    $('#prov').change(function(){
+        var city="";
+
+        $.ajax({
+            url:"/sell/city",
+            data:'provId='+$('#prov option:selected').val()+'',
+            dataType:'JSON',
+            success:function(json){
+                city+='<option value="0">选择市</option>'
+                for(var i=0;i<json.length;i++){
+                    city+='<option value="'+json[i].sCityID+'">'+json[i].sCityName+'</option>'
+                }
+                $('#city').html(city);
+            }
+        })
+    })
+
+    $('#city').change(function(){
+        var country="";
+
+        $.ajax({
+            url:"/sell/country",
+            data:'cityId='+$('#city option:selected').val()+'',
+            dataType:'JSON',
+            success:function(json){
+                country+='<option value="0">选择区</option>'
+                for(var i=0;i<json.length;i++){
+                    country+='<option value="'+json[i].sdisID+'">'+json[i].sdisName+'</option>'
+                }
+                $('#country').html(country);
+            }
+        })
+    })
+</script>
+</html>

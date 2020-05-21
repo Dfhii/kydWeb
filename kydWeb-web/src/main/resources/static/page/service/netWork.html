@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>服务网点</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" >
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+        /*html{font-size: 16px;}*/
+        html{
+            /*overflow:hidden*/
+            overflow-x:hidden;
+        }
+        body{
+            font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            overflow: hidden;
+            background-color: #F4F4F4;
+            font-family: SourceHanSansCN-Light;
+            position:revert;}
+
+        /*body *{border: 1px solid #000000}*/
+
+
+        .to{height: 380px;margin-top: 0px;margin-bottom: 0px;width: 100%}
+        .to img{width: 100%;height: 100%;background-color: #FFFFff;}
+        /*.opt{width: 100%;font-size: 1.9rem;border-bottom:2px solid #4EBDB4  }*/
+        /*.opt span{background-color: #ffffff;font-size:1.8rem;text-align: center;width: 20%;  padding: 1.3rem 1rem;  display: inline-block; margin-bottom: 0px;margin-top: 0px;}*/
+        /*.opt span:nth-child(2){margin-left: 0px; color: #ffffff;background: #02d497}*/
+        /*.opt span:nth-child(3){margin-left: 0px;margin-right: 0px;}*/
+        /*.opt span:nth-child(4){margin-right: 0px; }*/
+        /*.opt span:nth-child(1){  }*/
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        .form-control{background: url('/static/img/delivery/送货上门3_05.png') no-repeat 175px 24px;padding-left: 10px;width: 26%;display: inline-block;margin-left: 1.3rem;margin-top: 3rem; color: rgb(121,121,121);margin-bottom:1.8rem; height: 70px;font-size: 1.8rem; border-radius:20px; }
+        /*.form-control{background: url('/static/img/delivery/送货上门3_05.png') no-repeat 120px 12px;padding-left: 10px;width: 145px;display: inline-block;margin-left: 2rem;margin-top: 3rem; color: rgb(121,121,121);margin-bottom:1.8rem; height: 42px;font-size: 1.1rem; border-radius:10px; }*/
+
+        form{ width: 100%;text-align: center}
+        table{width: 96%;  margin: 2% ;margin-bottom: 100px;}
+        table th{text-align: center;font-size: 1.8rem;color: #FFFFff}
+        td{font-size: 0.7rem;}
+        table tr{height: 80px;}
+        table tr td{text-align: center;font-size: 1rem;color: rgb(96,96,96);}
+        @media  (max-width: 720px){
+            body{   font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*width: 680px;*/
+                /*zoom: 52.5%;*/
+                /*min-width: 680px;*/
+                overflow: hidden;
+                position:revert;
+            }
+            .form-control{background: url('/static/img/delivery/送货上门3_05.png') no-repeat 145px 24px;padding-left: 10px;width: 26%;display: inline-block;margin-left: 1.3rem;margin-top: 3rem; color: rgb(121,121,121);margin-bottom:1.8rem; height: 70px;font-size: 1.8rem; border-radius:20px; }
+        }
+        /*@media  (max-width: 700px) and (min-width: 680px){*/
+        /*    html{font-size: 14px;}*/
+        /*    body{*/
+        /*        font-family: SourceHanSansCN-Regular;*/
+        /*        width: 660px;*/
+        /*        margin:0px;*/
+        /*        padding: 0px;*/
+        /*        !*zoom: 52.5%;*!*/
+        /*        min-width: 660px;*/
+        /*        background-color: #F4F4F4;*/
+        /*        position:revert;*/
+        /*    }*/
+        /*    .opt span{background-color: #ffffff;width:17.3%;font-size: 1.5rem;text-align: center;height: 56px; padding: 0.55rem;display: inline-block;padding-top: 20px;margin-bottom: 0px;margin-top: 0px;}*/
+        /*    .form-control{ padding-left: 10px;width: 24%;display: inline-block;margin-left: 2.6rem;margin-top: 3rem; color: rgb(121,121,121);margin-bottom:1.8rem; height: 70px;font-size: 2rem; border-radius:20px; }*/
+        /*}*/
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+        window.onload = function () {
+            /*720代表设计师给的设计稿的宽度，你的设计稿是多少，就写多少;100代表换算比例，这里写100是
+             为了以后好算,比如，你测量的一个宽度是100px,就可以写为1rem,以及1px=0.01rem等等*/
+
+            /*
+             * 也就说，在屏幕宽度为720px的情况下，1rem=100px
+             * */
+            getRem(750, 16)
+        };
+        window.onresize = function () {
+            getRem(750, 16)
+        };
+
+        function getRem(pwidth, prem) {
+            var html = document.getElementsByTagName("html")[0];
+            var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+            html.style.fontSize = oWidth / pwidth * prem + "px";
+        }
+    
+    </script>
+</head>
+<body>
+<!--<div id="page1" ></div>-->
+<!--<div class="to">-->
+<!--    <img src="/static/img/server/服务（在线支持）页3_02.png">-->
+<!--</div>-->
+<!--<div class="opt">-->
+<!--    <span><a href="/static/page/service/sell.html">销售网点</a></span><span>服务网点</span><span><a href="/static/page/service/policy.html">服务政策</a></span><span><a href="/static/page/service/anti.html">防伪查询</a></span><span><a href="/static/page/service/sustain.html">在线支持</a></span>-->
+<!--</div>-->
+<form action="#">
+    <select class="form-control" id="prov_net"  >
+        <option value="0">选择省</option>
+
+    </select>
+
+    <!--城市选择-->
+    <select class="form-control"id="city_net" >
+        <option value="0">选择市</option>
+    </select>
+
+    <!--县区选择-->
+    <select class="form-control" id="country_net"  >
+        <option value="0">选择区</option>
+    </select>
+    <!--            <button type="button" class="btn met1" onClick="showAddr()" id="button-show" >确定</button>-->
+</form>
+
+
+
+<table id="tbl">
+    <tr>
+        <th width="209px" style="background-color: #02d497; ">店面</th>
+        <th width="361px" style="background-color: #02d497; ">地址</th>
+        <th width="141px" style="background-color: #02d497;  ">电话</th>
+    </tr>
+    <tr>
+        <td>广州市学客贸易有限公司</td>
+        <td>广东省广州市越秀区环市东路498柏丽中心17F</td>
+        <td>02037653569</td>
+    </tr>
+    <tr>
+        <td>深圳市快易典教育科技有限公司</td>
+        <td>石岩街道塘头一号路中运泰工业园1栋4楼</td>
+        <td>4006780315</td>
+    </tr>
+    <tr>
+        <td>深圳自由声科技有限公司</td>
+        <td>深圳市南山区西丽镇珠光北路明亮科技园2栋208室技园2栋208室</td>
+        <td>13714323584</td>
+    </tr>
+</table>
+<!--<div id="page2"></div>-->
+<script src="/static/js/city.js" ></script>
+<script>
+
+
+    var $addrShow =document.getElementById('addr-show');
+    // var btn = document.getElementsByClassName('met1')[0];
+    var $prov_net = document.getElementById('prov_net');
+    var $city_net = document.getElementById('city_net');
+    var $country_net = document.getElementById('country_net');
+
+    /*用于保存当前所选的省市区*/
+    var current = {
+        prov_net: '',
+        city_net: '',
+        country_net: ''
+    };
+    $('#country_net').change(store);
+    $('#city_net').change(store);
+
+    function store() {
+        var sContactInformation="";
+        var str="";
+        var country=$('#country option:selected').text();
+        if($('#country option:selected').text()=="选择区"){
+            country=null;
+        }
+        $.ajax({
+            url:'/sell/branch',
+            data:"dir="+country+"&city="+$('#city option:selected').text()+"",
+            dataType:'JSON',
+            success: function(json){
+                for(var i=0;i<json.length;i++){
+                    str+='<tr>';
+                    str+=' <td>'+json[i].Name+'</td>';
+                    str+=' <td>'+json[i].LinkAddress+'</td>';
+                    str+=' <td>'+json[i].LinkPhone+'</td>';
+                    str+='</tr>';
+                }
+                $('#tbl').html('' +
+                    '        <tr>\n' +
+                    '            <th width="209px" style="background-color: #02d497; ">店面</th>\n' +
+                    '            <th width="361px" style="background-color: #02d497; ">地址</th>\n' +
+                    '            <th width="141px" style="background-color: #02d497;  ">电话</th>\n' +
+                    '        </tr>' + str
+                );
+            }
+        })
+    }
+
+    showProv();
+    /*自动加载省份列表*/
+    function showProv() {
+        var prov="";
+        $.ajax({
+            url:"/sell/province",
+            dataType:'JSON',
+            success:function(json){
+                prov+='<option value="0">选择省</option>'
+                for(var i=0;i<json.length;i++){
+                    prov+='<option value="'+json[i].sProID+'">'+json[i].sProName+'</option>'
+                }
+                $('#prov_net').html(prov);
+            }
+        })
+    }
+    $('#prov_net').change(function(){
+        var city="";
+
+        $.ajax({
+            url:"/sell/city",
+            data:'provId='+$('#prov option:selected').val()+'',
+            dataType:'JSON',
+            success:function(json){
+                city+='<option value="0">选择市</option>'
+                for(var i=0;i<json.length;i++){
+                    city+='<option value="'+json[i].sCityID+'">'+json[i].sCityName+'</option>'
+                }
+                $('#city_net').html(city);
+            }
+        })
+    })
+
+    $('#city_net').change(function(){
+        var country="";
+
+        $.ajax({
+            url:"/sell/country",
+            data:'cityId='+$('#city option:selected').val()+'',
+            dataType:'JSON',
+            success:function(json){
+                country+='<option value="0">选择区</option>'
+                for(var i=0;i<json.length;i++){
+                    country+='<option value="'+json[i].sdisID+'">'+json[i].sdisName+'</option>'
+                }
+                $('#country_net').html(country);
+            }
+        })
+    })
+    /*自动加载省份列表*/
+    // (function showProv() {
+    //     // btn.disabled = true;
+    //     var len = provice.length;
+    //     for (var i = 0; i < len; i++) {
+    //         var provOpt = document.createElement('option');
+    //         provOpt.innerText = provice[i]['name'];
+    //         provOpt.value = i;
+    //         $prov.appendChild(provOpt);
+    //     }
+    // })();
+
+    /*根据所选的省份来显示城市列表*/
+    // function showCity(obj) {
+    //     var val = obj.options[obj.selectedIndex].value;
+    //     if (val != current.prov) {
+    //         current.prov = val;
+    //         // addrShow.val('');
+    //         // btn.disabled = true;
+    //     }
+    //     //console.log(val);
+    //     if (val != null) {
+    //         $city.length = 1;
+    //         var cityLen = provice[val]["city"].length;
+    //         for (var j = 0; j < cityLen; j++) {
+    //             var cityOpt = document.createElement('option');
+    //             cityOpt.innerText = provice[val]["city"][j].name;
+    //             cityOpt.value = j;
+    //             $city.appendChild(cityOpt);
+    //         }
+    //     }
+    // }
+    //
+    // /*根据所选的城市来显示县区列表*/
+    // function showCountry(obj) {
+    //     var val = obj.options[obj.selectedIndex].value;
+    //     current.city = val;
+    //     if (val != null) {
+    //         $country.length = 1; //清空之前的内容只留第一个默认选项
+    //         var countryLen = provice[current.prov]["city_net"][val].districtAndCounty.length;
+    //         if (countryLen == 0) {
+    //             $addrShow.value = provice[current.prov].name + '-' + provice[current.prov]["city_net"][current.city_net].name;
+    //             return;
+    //         }
+    //         for (var n = 0; n < countryLen; n++) {
+    //             var countryOpt = document.createElement('option');
+    //             countryOpt.innerText = provice[current.prov_net]["city_net"][val].districtAndCounty[n];
+    //             countryOpt.value = n;
+    //             $country.appendChild(countryOpt);
+    //         }
+    //     }
+    // }
+    //
+    // /*选择县区之后的处理函数*/
+    // function selecCountry(obj) {
+    //     current.country = obj.options[obj.selectedIndex].value;
+    //     if ((current.city_net != null) && (current.country_net != null)) {
+    //         btn.disabled = false;
+    //     }
+    // }
+</script>
+</body>
+</html>

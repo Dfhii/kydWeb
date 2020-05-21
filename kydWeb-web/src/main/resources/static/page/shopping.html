@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>网上商城</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+        html{
+            overflow-x: hidden;
+        }
+        body{
+            font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            background: rgb(244,244,244);
+            /*min-width: 750px;*/
+            overflow: hidden;
+            position:revert;}
+
+        .to{height: 850px;}
+
+        .to img{width: 186px;height: 186px;}
+        .to img:nth-child(2){margin-left: 7%}
+        .to img:nth-child(1){margin-left: 7%;margin-top: 80px}
+        .to img{box-shadow:6px 6px 6px #d5d5d5; border-radius: 10px;}
+        @media  (max-width: 750px){
+            body{
+                font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                background: rgb(244,244,244);
+                /*min-width: 680px;*/
+                overflow: hidden;
+                position:revert;}
+            .to img:nth-child(2){margin-left: 5%}
+            .to img:nth-child(1){margin-left: 5%;margin-top: 80px}
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+    </script>
+</head>
+<body>
+<div id="page1" ></div>
+<div class="to">
+    <a href="https://mall.jd.com/index-1000000487.html"> <img src="/static/img/shopping/网上商城_06.png"></a>
+   <a href="https://kuaiyidian.tmall.com/?spm=a220o.1000855.w5001-21908659028.2.1c977f887TuNut&scene=taobao_shop"> <img src="/static/img/shopping/网上商城_03.png"></a>
+    <a href="https://m.vip.com/searchlist.html?q=%E5%BF%AB%E6%98%93%E5%85%B8&channel_id="> <img src="/static/img/shopping/网上商城_05.png"></a>
+</div>
+
+<div id="page2" ></div>
+</body>
+</html>

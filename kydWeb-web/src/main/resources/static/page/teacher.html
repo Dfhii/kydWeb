@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>名师专栏</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+        html{
+            font-family: SourceHanSansCN-Light;
+        }
+        body{
+            position: revert;
+            font-family: SourceHanSansCN-Regular;
+            background-color: #F1F3F4;
+            width: 750px;
+            min-width: 750px;
+            height: 100%;
+            margin: 0 ;
+            padding: 0px;
+            /*zoom: 50%;*/
+        }
+
+        a {
+            text-decoration: none;
+            color: #737373;
+        }
+        a:link {
+            text-decoration: none
+        }
+        .to{
+            height: 380px;
+            width: 102%;
+            background-color: #ffffff;
+            margin: 0;padding: 0;
+        }
+        .to img{
+            width: 102%;
+            height: 100%;
+        }
+        .teacher{
+            width: 100%;
+            margin: 0px;
+        }
+        teacher div{margin: 11px;font-size: 24px;}
+        .teachers{background-color: #FFFFff;margin-left: 30px;margin-top: 40px;border-top-left-radius:11px;border-top-right-radius:11px; }
+        .teacher-img{margin: 0px;width:100%;margin-bottom:20px;}
+        .boxs{width:94%;margin-top: 18px;font-size: 0.9rem;float: right;margin-right: 10px; text-align:justify; }
+        .names{font-size: 1.5rem;margin-bottom: 30px;display: inline-block}
+        .name{font-size: 2.1rem;  }
+        .ietter{width: 98%; font-size: 1.6rem;color: rgb(96,96,96);letter-spacing: 1px;text-indent: 4rem;display: inline-block }
+        .pause{display: none}
+        .video-to{
+            width: 29%;
+            margin-left: 3%;
+            display: inline-block;
+             margin-top: 20px;
+        }
+        .bj-1{background: url('/static/img/teacher/名师专栏_08.png');width: 211px;height: 133px;}
+        .bj-2{background: url('/static/img/teacher/名师专栏_10.png');width: 211px;height: 133px;}
+        .bj-3{background: url('/static/img/teacher/名师专栏_12.png');width: 211px;height: 133px;}
+        .bj-4{background: url('/static/img/teacher/名师专栏_20.png');width: 211px;height: 133px;}
+        .bj-5{background: url('/static/img/teacher/名师专栏_22.png');width: 211px;height: 133px;}
+        .bj-6{background: url('/static/img/teacher/名师专栏_23.png');width: 211px;height: 133px;}
+        .bj-7{background: url('/static/img/teacher/名师专栏_32.png');width: 211px;height: 133px;}
+        .bj-8{background: url('/static/img/teacher/名师专栏_34.png');width: 211px;height: 133px;}
+        .bj-9{background: url('/static/img/teacher/名师专栏_36.png');width: 211px;height: 133px;}
+        .bj-10{background: url('/static/img/teacher/名师专栏_43.png');width: 211px;height: 133px;}
+        .bj-11{background: url('/static/img/teacher/名师专栏_48.png');width: 211px;height: 133px;}
+        .bj-12{background: url('/static/img/teacher/名师专栏_54.png');width: 211px;height: 133px;}
+        .teacher-imge{margin-left: 2.6%;width: 46%}
+
+        .bj-m{height: 63px;width: 63px;margin-left: 35%;margin-top:18%;  }
+        .to-2{font-size: 1rem;margin-top: 23px;margin-bottom: 20px; color: rgb(96,96,96);text-align: center}
+        @media  (max-width: 750px){
+            body{
+                position: revert;
+                font-family: SourceHanSansCN-Regular;
+                background-color: #F1F3F4;
+                width: 680px;
+                min-width: 680px;
+                height: 100%;
+                margin: 0 ;
+                padding: 0px;
+                /*zoom: 50%;*/
+            }
+
+            
+            .boxs{width:94%;margin-top: 18px;font-size: 0.9rem;float: right;margin-right: 10px;
+
+            }
+            .bj-1{background: url('/static/img/teacher/名师专栏_08.png');width: 190px;height: 133px;}
+            .bj-2{background: url('/static/img/teacher/名师专栏_10.png');width: 190px;height: 133px;}
+            .bj-3{background: url('/static/img/teacher/名师专栏_12.png');width: 190px;height: 133px;}
+            .bj-4{background: url('/static/img/teacher/名师专栏_20.png');width: 190px;height: 133px;}
+            .bj-5{background: url('/static/img/teacher/名师专栏_22.png');width: 190px;height: 133px;}
+            .bj-6{background: url('/static/img/teacher/名师专栏_23.png');width: 190px;height: 133px;}
+            .bj-7{background: url('/static/img/teacher/名师专栏_32.png');width: 190px;height: 133px;}
+            .bj-8{background: url('/static/img/teacher/名师专栏_34.png');width: 190px;height: 133px;}
+            .bj-9{background: url('/static/img/teacher/名师专栏_36.png');width: 190px;height: 133px;}
+            .bj-10{background: url('/static/img/teacher/名师专栏_43.png');width: 190px;height: 133px;}
+            .bj-11{background: url('/static/img/teacher/名师专栏_48.png');width: 190px;height: 133px;}
+            .bj-12{background: url('/static/img/teacher/名师专栏_54.png');width: 190px;height: 133px;}
+            .to-2{font-size: 0.9rem;margin-top: 23px;margin-bottom: 20px; color: rgb(96,96,96);text-align: center;width: 190px;}
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','104%');
+            $("#page2").css({'width':'104%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+            $('video').click(function() {
+                if ($(this).hasClass('pause') ) {
+                    $("video").trigger("play");
+                    $(this).removeClass('pause');
+                    $(this).addClass('play');
+                } else {
+                    $("video").trigger("pause");
+                    $(this).removeClass('play');
+                    $(this).addClass('pause');
+                }
+            });
+            var video;
+            $('.video-to').click(function(){
+                if(video!=null){
+                    video.children('video').hide();
+                    video.children('div:eq(0)').show();
+                    video.children('video').trigger("pause");
+                    video.children('video').removeClass('play');
+                    video.children('video').addClass('pause');
+                }
+
+                video=$(this);
+                // $(this).children('div:eq(0)').hide();
+                $(this).children('video').show();
+                $(this).children('video').css({"position":"fixed","width":"100%","left":"0%","top":"0px","height":"30%"});
+                $(this).children('video').trigger("play");
+                $(this).children('video').removeClass('pause');
+                $(this).children('video').addClass('play');
+            })
+        })
+
+    </script>
+</head>
+<body>
+<div id="page1" style="border-bottom: 2px solid #f2f2f2;"></div>
+<div class="to">
+    <img src="/static/img/teacher/名师专栏_02.jpg">
+</div>
+<div class="teachers">
+     <div class="teacher" > <img src="/static/img/teacher/3位老师_03.png" class="teacher-img" />
+         <img src="/static/img/teacher/3位老师_07.png" class="teacher-imge" /><img src="/static/img/teacher/3位老师_09.png" class="teacher-imge" />
+        <span class="boxs"><span class="names" ><span class="name">研发成果</span>  </span> <br />
+            <span class="ietter"> 2017年12月，何秋光老师战略加盟深圳市快易典教育科技有限公司旗下幼教品牌奇米儿童，我们的开发团队与何老师进行了深度的合作，目前，超过135款“奇米何秋光数学认知课程”和超过120款“奇米何秋光数学思维课程”已经联合开发完成，独家内置“双模式”——课程模式和自由模式，做孩子的专属数学课程“导师”，同时，课程测评体系、教师指导用书、幼儿操作手册也已经完成了开发。
+        </span>
+
+        </span>
+         <span class="boxs"><span class="names" ><span class="name">成果评价</span>  </span> <br />
+            <span class="ietter">奇米数学思维产品进一步朝着“系统化、科学化、体系化”的方向迈进，为孩子数学启蒙教育，加油助力。
+        </span>
+
+        </span>
+     </div>
+    <div class="video">
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >
+                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/M2功能讲解广告(高清).mp4"  controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-1">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">M2功能讲解广告</div>
+        </div>
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png"  width="210" height="133px" x5-video-player-type="h5" >
+                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/20180614何秋光早教电脑-六重护眼版-0813-成片30S(没京东天猫标).mp4" controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-2">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">何秋光早教电脑-六重护眼</div>
+        </div>
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >
+                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/M2完整版.mp4" controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-3">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">何秋光快乐篇</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="teachers">
+    <div class="teacher" ><img src="/static/img/teacher/3位老师_14.png" class="teacher-img" />
+        <img src="/static/img/teacher/3位老师_17.png" class="teacher-imge" /><img src="/static/img/teacher/3位老师_19.png" class="teacher-imge" />
+        <span class="boxs"><span class="names" ><span class="name">研发成果</span>  </span> <br />
+            <span class="ietter">2019年6月，朱乐平老师正式签约快易典，双方开启深度战略合作，正式担任《阶梯数学》产品首席规划师，精心打造小学数学自主教育资源体系! 快易典阶梯数学旨在突出个性化，适应学习差异。作为快易典阶梯数学的首席规划师，朱老师全面把控内容质量，确保由易到难设计学习内容、自低到高体现思维层次、从无到优展示解题过程、促进学生个性化快速发展。
+        </span>
+        </span>
+        <span class="boxs"><span class="names" ><span class="name">成果评价</span>  </span> <br />
+            <span class="ietter">朱老师认为每个孩子个性有差异、能力有强弱、学习有快慢，数学内容有难易、思维有高低，解题有思路，但是班级教学的内容、快慢都是一样的，无法照顾孩子的个性差异。快易典阶梯数学拒绝填鸭式、快餐式教育，通过引导式讲解帮助孩子学会分析问题，解决问题；通过一题多解发散孩子的思维，培养孩子多角度思考问题的能力，提高孩子的思维灵活性；通过角色互动模拟课堂教学，展现孩子可能产生的疑问和可能犯的错误，让孩子有共鸣和代入感并加深对知识点的理解，全面提升孩子的数学素养。
+        </span>
+
+        </span>
+    </div>
+    <div class="video">
+<!--        <div class="video-to">-->
+<!--            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >-->
+<!--                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/朱老师视频.mp4" type="video/mp4">-->
+<!--                您的浏览器不支持html5！-->
+<!--            </video>-->
+<!--            <div class="bj-4">-->
+<!--                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--            </div>-->
+
+<!--            <div class="to-2">受聘与快易典签约战略合作</div>-->
+<!--        </div>-->
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png" controls="controls" preload="auto" width="210" height="133px" >
+                <source src="http://video.hwapu.com.cn/朱乐平老师视频.mp4" controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-5">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">如何为学生提供“帮助”</div>
+        </div>
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >
+                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/朱老师视频.mp4" controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-6">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">朱老师谈教育资源状态</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="teachers">
+    <div class="teacher" ><img src="/static/img/teacher/3位老师_24.png" class="teacher-img" />
+        <img src="/static/img/teacher/3位老师_27.png" class="teacher-imge" /><img src="/static/img/teacher/3位老师_29.png" class="teacher-imge" />
+        <span class="boxs"><span class="names" ><span class="name">研发成果</span>  </span> <br />
+            <span class="ietter">2018年6月，黄东坡老师正式加盟快易典，担任《快易典.黄东坡数学大讲堂》产品首席规划师，共同开发中学数学自主教育资源体系内容!他认为学习数学的根本要义在于知识的内化、方法的感悟、思维的锤炼、文化的浸润、方式的改变。
+快易典黄东坡数学大讲堂和传统教学不同，内置金字塔型的难度梯级，不是数学课本知识和数学课堂的简单再现，而是突出要点，保持高质量的讲解和点评，全面诠释数学的方法、思维、文化之美。随时随地随需满足你个性化的学习需求。快易典黄东坡数学大讲堂中精要的问题、精确的解答、精准的评价、精妙的推送、精巧的互动可以提高你的数学学习效率，改变你的学习方式，颠覆你对数学的认知。
+
+        </span>
+        </span>
+        <span class="boxs"><span class="names" ><span class="name">成果评价</span>  </span> <br />
+            <span class="ietter">数学知识不是孤立的，各个知识点之间环环相扣，循序渐进。自我组织，建构有序的知识体系是解决数学问题的基础。快易典黄东坡数学大讲堂融合了黄老师30余年的教学智慧结晶，体现了其对数学教育的理解和追求。
+        </span>
+
+        </span>
+    </div>
+    <div class="video">
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png"  controls="controls" preload="auto" width="210" height="133px" >
+                <source src="http://play.hwapu.com.cn/MathsSystem/interviews/1.mp4" controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-7">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">为什么选择与快易典的合作</div>
+        </div>
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >
+                <source src="http://update.kyd2002.cn/MathSys/MP4/jieshao.mp4"  controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-8">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">黄东坡数学大讲堂</div>
+        </div>
+        <div class="video-to">
+            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >
+                <source src="http://update.kyd2002.cn/MathSys/MP4/2.mp4"  controls="controls" preload="auto" type="video/mp4">
+                您的浏览器不支持html5！
+            </video>
+            <div class="bj-9">
+                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+            </div>
+
+            <div class="to-2">孩子的数学思维应该怎样提高</div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<div class="teachers">-->
+<!--    <div class="teacher" ><img src="/static/img/teacher/名师专栏_40.jpg" class="teacher-img" />-->
+<!--        <span class="boxs"><span class="names" ><span class="name">谢能超 </span>（华中师范大学附属小学数学教研组长） </span> <br />-->
+<!--            <span class="ietter">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青年教师成长联盟主席，全国深度教学先进教师，华中师范大学基础教育合作平台督学专家，教育大数据国家工程实验室小学数学研究员。参与人教社例题精准分析课程建设，参与武汉出版社的《课堂作业》的编写，编著的《小学生数学必备手册》由崇文书局出版全国发行。-->
+<!--            </span>-->
+<!--    </div>-->
+<!--    <div class="video">-->
+<!--        <div class="video-to">-->
+<!--            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >-->
+<!--                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/男教师.mp4"  controls="controls" preload="auto" type="video/mp4">-->
+<!--                您的浏览器不支持html5！-->
+<!--            </video>-->
+<!--            <div class="bj-10">-->
+<!--                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--            </div>-->
+
+<!--            <div class="to-2">受聘与快易典签约战略合作</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="teachers">-->
+<!--    <div class="teacher" ><img src="/static/img/teacher/名师专栏_45.jpg" class="teacher-img" />-->
+<!--        <span class="boxs"><span class="names" ><span class="name">王红梅 </span>（小学数学高级教师） </span> <br />-->
+<!--            <span class="ietter">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小学数学高级教师，区学科带头人。二十多年，在教学一线工作，经验丰富，曾获区“优秀教师”，“先进个人”，高效课堂“先进个人”等，所撰写的论文，案例多次获省、市、区比赛一、二、三等奖。多次展示课，示范课，比赛课获得一致好评。-->
+<!--            </span>-->
+<!--    </div>-->
+<!--    <div class="video">-->
+<!--        <div class="video-to">-->
+<!--            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >-->
+<!--                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/错题本.mp4" controls="controls" preload="auto" type="video/mp4">-->
+<!--                您的浏览器不支持html5！-->
+<!--            </video>-->
+<!--            <div class="bj-11">-->
+<!--                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--            </div>-->
+
+<!--            <div class="to-2">用好错题本</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="teachers">-->
+<!--    <div class="teacher" ><img src="/static/img/teacher/名师专栏_51.jpg" class="teacher-img" />-->
+<!--        <span class="boxs"><span class="names" ><span class="name">刘亚洲 </span>（国家二级心理咨询师）</span> <br />-->
+<!--            <span class="ietter">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华中师范大学应用心理学硕士</span>-->
+<!--    </div>-->
+<!--    <div class="video">-->
+<!--        <div class="video-to">-->
+<!--            <video class="pause" controls poster="/static/img/home/首页3.png" width="210" height="133px" >-->
+<!--                <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/DSC_0730_1.mp4" controls="controls" preload="auto" type="video/mp4">-->
+<!--                您的浏览器不支持html5！-->
+<!--            </video>-->
+<!--            <div class="bj-12">-->
+<!--                <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--            </div>-->
+
+<!--            <div class="to-2">如何和孩子有效沟通</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div id="page2">
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>智能家教机</title>
+    <script src="/static/js/vue.min.js"  charset="UTF-8"></script>
+    <script  src="/static/js/jquery.js" ></script>
+<!--    <script src="/static/js/pc.js"> </script>-->
+    <style>
+        html{
+            /*overflow:hidden*/
+            overflow-x:hidden;
+        }
+        body{background-color:#F2F2F2;
+            font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            overflow:hidden;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            position:revert;
+        }
+        @media  (max-width: 750px){
+            body{background-color:#F2F2F2;
+                font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                overflow:hidden;
+                /*zoom: 52.5%;*/
+                /*min-width: 680px;*/
+                position:revert;
+            }
+        }
+        .to{ width: 100%}
+        .to img{width: 100%;height: 100%;background-color: #FFFFff;}
+    </style>
+</head>
+<body>
+
+<div id="page1" style="border: 2px solid #f2f2f2"></div>
+<div id="box">
+    <div class="to" v-for="detail in detailImg">
+        <img :src="detail">
+    </div>
+
+</div>
+<div id="page2"></div>
+<script>
+    var detail=new Vue({
+        el:"#box",
+        data: {
+            detailImg: []
+        }
+    })
+    var LocString=String(window.document.location.href);
+    function GetQueryString(str){
+        var rs=new RegExp("(^|)"+str+"=([^&]*)(&|$)","gi").exec(LocString),tmp;
+        if(tmp=rs)return tmp[2];
+
+    }
+    var name=decodeURI(GetQueryString("Name"));
+    var Id=decodeURI(GetQueryString("Id"));
+    document.title=name;
+    $.ajax({
+        url:"/product/findProductDetailsImg",
+        data:"productId="+Id,
+        dataType:"JSON",
+        success:function(data){
+            detail.detailImg=data[0].appDetailImg.split('|');
+        }
+    });
+
+    $(function(){
+        $("#page1").css('width','100%');
+        $("#page2").css({'width':'100.1%','overflow':'hidden'});
+        $("#page1").load("/static/page/head.html");
+        $("#page2").load("/static/page/foot.html");
+    })
+</script>
+</body>
+
+</html>

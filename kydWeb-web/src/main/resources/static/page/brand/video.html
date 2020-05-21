@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+
+<!--    <meta charset="UTF-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">-->
+    <title>品牌视频</title>
+    <script src="/static/js/vue.min.js"  charset="UTF-8"></script>
+    <script  src="/static/js/jquery.js" ></script>
+<!--    <script src="/static/js/pc.js"> </script>-->
+
+    <style>
+        html{font-size: 12px;overflow-x: hidden}
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        body{  font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            overflow: hidden;
+            margin: 0;padding: 0px; background-color:#FFFFff; }
+        /*body *{border: 1px solid #000000}*/
+
+        @keyframes first {
+            0%{transform: scale(1,1)}
+            50%{transform:scale(1.1,1.1 )}
+            100%{transform:scale(1.0,1.0)}
+            /*0%{width: 50%}*/
+            /*100%{width: 100%}*/
+
+        }
+        a:hover{
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none;
+        }
+
+        .pause{display: none}
+        .video-to{
+            width: 94%;
+            margin-left: 6%;
+
+        }
+        /*video{width: 94%}*/
+        .bj-1{background: url('/static/img/about/品牌（视频）页3_03.png');width: 686px;height: 380px;}
+        .bj-2{background: url('/static/img/about/品牌（视频）页3_06.png');width: 686px;height: 380px;}
+        .bj-3{background: url('/static/img/about/品牌（视频）页3_08.png');width: 686px;height: 380px;}
+        .bj-4{background: url('/static/img/about/品牌（视频）页3_10.png');width: 686px;height: 380px;}
+        .bj-5{background: url('/static/img/about/品牌（视频）页3_13.png');width: 686px;height: 380px;}
+        .bj-6{background: url('/static/img/about/品牌（视频）页3_15.png');width: 686px;height: 380px;}
+        .bj-7{background: url('/static/img/about/品牌（视频）页3_09.png');width: 686px;height: 380px;}
+        .bj-8{background: url('/static/img/about/品牌（视频）页3_04.png');width: 686px;height: 380px;}
+        .bj-9{background: url('/static/img/about/品牌（视频）页3_05.png');width: 686px;height: 380px;}
+        .bj-10{background: url('/static/img/about/品牌（视频）页3_17.png');width: 686px;height: 380px;}
+        .bj-m{height: 148px;width: 148px;margin-left: 270px;margin-top:117px;display: inline-block}
+        .to-2{font-size: 2.6rem;margin-top: 23px;margin-bottom: 59px; color: rgb(96,96,96)}
+
+        /*.opt span {*/
+        /*    height: 100%;*/
+        /*    background-color: #ffffff;*/
+
+        /*    text-align: center;*/
+        /*    padding: 20px;*/
+        /*    display: inline-block;*/
+        /*    font-size: 3rem;*/
+        /*    margin-top: 0px;*/
+        /*}  .opt span{margin-left: 0px; }*/
+        /*.opt span:nth-child(3){color: #02d497;border-bottom: 2px solid #02d497 }*/
+        /*.opt{ width: 100.5%;background-color: #ffffff;margin-bottom: 20px;}*/
+        @media  (max-width: 720px) {
+            body{  font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                overflow: hidden;
+                margin: 0;padding: 0px; background-color:#FFFFff; }
+            .video-to{
+                width: 90%;
+                margin-left: 4%;
+            }
+            /*video{width: 92%}*/
+            /*.opt span {*/
+            /*    height: 100%;*/
+            /*    background-color: #ffffff;*/
+
+            /*    text-align: center;*/
+            /*    padding: 20px;*/
+            /*    display: inline-block;*/
+            /*    font-size: 3rem;*/
+            /*    margin-top: 0px;*/
+            /*}*/
+            .bj-1{background: url('/static/img/about/品牌（视频）页3_03.png') ;width: 636px;height: 380px;}
+            .bj-2{background: url('/static/img/about/品牌（视频）页3_06.png');width: 636px;height: 380px;}
+            .bj-3{background: url('/static/img/about/品牌（视频）页3_08.png');width: 636px;height: 380px;}
+            .bj-4{background: url('/static/img/about/品牌（视频）页3_10.png');width: 636px;height: 380px;}
+            .bj-5{background: url('/static/img/about/品牌（视频）页3_13.png');width: 636px;height: 380px;}
+            .bj-6{background: url('/static/img/about/品牌（视频）页3_15.png');width: 636px;height: 380px;}
+            .bj-7{background: url('/static/img/about/品牌（视频）页3_09.png');width: 636px;height: 380px;}
+            .bj-8{background: url('/static/img/about/品牌（视频）页3_04.png');width: 636px;height: 380px;}
+            .bj-9{background: url('/static/img/about/品牌（视频）页3_05.png');width: 636px;height: 380px;}
+            .bj-10{background: url('/static/img/about/品牌（视频）页3_17.png') ;width: 636px;height: 380px;}
+            video{width: 636px;}
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!--<div style="width: 100%;height: 382px;">-->
+<!--    <img src="/static/img/about/品牌（关于我们）页_03.png" width="100%" height="100%">-->
+<!--</div>-->
+<!--<div class="opt">-->
+<!--    <span><a href="/static/page/brand/about.html">关于我们</a></span> <span><a href="/static/page/brand/seek.html">品牌资讯</a></span>-->
+<!--    <span>品牌视频</span>-->
+<!--</div>-->
+
+<!--<div class="video-to" id="videos"  style="margin-top: 50px;" v-for="vd in videoB">-->
+<!--    <video class="pause" controls poster="/static/img/about/品牌（视频）页3_03.png"   height="380px" >-->
+<!--    <source src="http://play.hwapu.com.cn/tongbuweike2/xuanchuan/快易典企业形象宣传片成片.mp4" type="video/mp4">-->
+<!--    您的浏览器不支持html5！-->
+<!--</video>-->
+<!--    <div class="bj-1">-->
+<!--    <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+<!--    <div class="to-2" v-text="vd.Title">品牌宣传视频</div>-->
+<!--</div>-->
+<div id="videos" >
+<div class="video-to"  style="margin-top: 50px;" v-for="vd in videoB" onclick="paly(this)">
+    <video class="pause" controls   poster=""   height="380px" autoplay webkit-playsinline playsinline>
+        <source :src="vd.VideoUrl" type="video/mp4">
+        您的浏览器不支持html5！
+    </video>
+    <div class="bj-1" :style="{backgroundImage: 'url('+ vd.CoverUrl +')',backgroundSize:'cover' }">
+        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />
+    </div>
+    <div class="to-2" v-text="vd.Title">品牌宣传视频</div>
+</div>
+</div>
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"   height="380px" >-->
+<!--        <source src="http://video.hwapu.com.cn/数学完整版高清无水印 截取视频.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-2">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+<!--    <div class="to-2">快易典AI智能家教机</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"  height="380px" >-->
+<!--        <source src="http://video.hwapu.com.cn/完整版.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-3">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+<!--    <div class="to-2">曹宝军董事长做客央广网，畅谈品牌理念！</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"   height="380px" >-->
+<!--        <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/AI智能辅导视频.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-4">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+
+<!--    <div class="to-2">快易典AI智能辅导</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"  height="380px" >-->
+<!--        <source src="http://video.hwapu.com.cn/朱乐平老师视频.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-5">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+
+<!--    <div class="to-2">阶梯数学</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"   height="380px" >-->
+<!--        <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/码上学宣传视频.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-6">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+
+<!--    <div class="to-2">快易典错题码上学</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"  height="380px" >-->
+<!--        <source src="http://video.hwapu.com.cn/2016快易典广告片完整版.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-7">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+
+<!--    <div class="to-2">2016年快易典广告片</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"  height="380px" >-->
+<!--        <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/%E5%BF%AB%E6%98%93%E5%85%B8%E5%AD%A6%E7%94%9F%E7%94%B5%E8%84%91%20%E7%9D%A1%E7%BE%8E%E4%BA%BA%E7%AF%87%20%E7%BB%86%E8%83%9E%E7%89%88%2015s%E5%9B%BD%E8%AF%AD720x576.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-10">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+
+<!--    <div class="to-2">2013年快易典《睡美人篇》广告片</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"  height="380px" >-->
+<!--        <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/快易典广告片（反转篇）.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-8">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+
+<!--    <div class="to-2">快易典2018年广告片《最好的爱是陪伴》</div>-->
+<!--</div>-->
+<!--<div class="video-to">-->
+<!--    <video class="pause" controls poster="/static/img/home/首页3.png"  height="380px" >-->
+<!--        <source src="http://play.hwapu.com.cn/softsave2/websiteVideo/何秋光快乐篇3min_纯净版.mp4" type="video/mp4">-->
+<!--        您的浏览器不支持html5！-->
+<!--    </video>-->
+<!--    <div class="bj-9">-->
+<!--        <img class="bj-m" src="/static/img/about/播放按钮_03.png" />-->
+<!--    </div>-->
+
+<!--    <div class="to-2">2018年kimikids何秋光早教电脑广告片</div>-->
+<!--</div>-->
+
+</body>
+<script>
+    var brandVideo=new Vue({
+        el: "#videos",
+        data: {
+            videoB: [],
+        }
+    })
+
+    findVideo();
+    function findVideo(){
+        $.ajax({
+            url:"/brand/findVideo",
+            dataType:"json",
+            success:function (data) {
+                    brandVideo.videoB=data;
+            }
+        })
+    }
+
+ 
+     
+        //
+        // $('#videos').delegate("click","div",function() {
+        //     alert(1);
+        //     if ($(this).hasClass('pause') ) {
+        //         $("video").trigger("play");
+        //         $(this).removeClass('pause');
+        //         $(this).addClass('play');
+        //     } else {
+        //         $("video").trigger("pause");
+        //         $(this).removeClass('play');
+        //         $(this).addClass('pause');
+        //     }
+        // });
+        var videoButtom;
+        function paly(e){
+            if(videoButtom!=null){
+                videoButtom.children('video').hide();
+                videoButtom.children('div:eq(0)').show();
+                videoButtom.children('video').trigger("pause");
+                videoButtom.children('video').removeClass('play');
+                videoButtom.children('video').addClass('pause');
+            }
+            videoButtom=$(e);
+ 
+            $(e).children('div:eq(0)').hide();
+            $(e).children('video').show();
+            $(e).children('video').trigger("play");
+            $(e).children('video').removeClass('pause');
+            $(e).children('video').addClass('play');
+        }
+        // $('.video-to').click(function(){
+        //     alert(1);
+        //     $(this).css("border","1px solid #000000");
+        //     if(video!=null){
+        //
+        //         video.children('video').hide();
+        //         video.children('div:eq(0)').show();
+        //         video.children('video').trigger("pause");
+        //         video.children('video').removeClass('play');
+        //         video.children('video').addClass('pause');
+        //     }
+        //
+        //      video=$(this);
+        //
+        //     $(this).children('div:eq(0)').hide();
+        //     $(this).children('video').show();
+        //     $(this).children('video').trigger("play");
+        //     $(this).children('video').removeClass('pause');
+        //     $(this).children('video').addClass('play');
+        // })
+        // $(window).scroll(function(){
+        //     alert(1);
+        // })
+
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>$Title$</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/hero.js"></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+
+        body{background-color:#F2F2F2;
+            font-family: SourceHanSansCN-Regular;
+            width: 750px;
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            min-width: 750px;
+            position:revert;
+        }
+        @media  (max-width: 750px){
+            body{background-color:#F2F2F2;
+                font-family: SourceHanSansCN-Regular;
+                width: 680px;
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                min-width: 680px;
+                position:revert;
+            }
+        }
+        .to{ width: 104.1%}
+        .to img{width: 100%;height: 100%;background-color: #FFFFff;}
+    </style>
+</head>
+<body>
+<script>
+    $(function(){
+        $("#page1").css('width','104%');
+        $("#page2").css({'width':'104.1%','overflow':'hidden'});
+        $("#page1").load("/static/page/head.html");
+        $("#page2").load("/static/page/foot.html");
+    })
+</script>
+<div id="page1" ></div>
+<div class="to">
+    <img src="/static/img/product/V1/产品详情（点读笔V1）页3_02.jpg">
+</div>
+<div class="to">
+    <img src="/static/img/product/V1/产品详情（点读笔V1）页3_03.jpg">
+</div>
+<div class="to">
+    <img src="/static/img/product/V1/产品详情（点读笔V1）页3_04.jpg">
+</div>
+
+<div id="page2"></div>
+</body>
+</html>

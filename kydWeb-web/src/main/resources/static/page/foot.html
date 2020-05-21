@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>Title</title>
+<!--    <link href="static/css/bootstrap.css" rel="stylesheet" >-->
+    <script  src="/static/js/jquery.js" ></script>
+<!--    <script  src="static/js/bootstrap.js" ></script>-->
+<!--    <script src="/static/js/pc.js"> </script>-->
+    <style>
+ 
+        /*body *{border: 1px  solid #000000}*/
+        /*#foot *{border: 1px  solid #000000}*/
+
+        #foot{background-color: rgb(65,65,65);height: 405px;margin-top: 64px;bottom: 0px;   }
+        #foot div:nth-child(1) div{display: inline-block; margin-top: 43px;margin-bottom: 0px;width: 103px;height: 101px; }
+        #foot div:nth-child(1) div:nth-child(1){margin-right: 1.4rem;  display: inline-block}
+        #foot div:nth-child(1) div:nth-child(2){margin-right: 1.4rem; }
+        .foot-w{ height:60%;margin: 0 auto;text-align: center}
+        .foot-w img{
+            margin-left: 0px;
+        }
+            .foot-hr {
+                width: 87%;
+                margin-top: 0px;
+            }
+        .tm{color: #FFFFff;height: 59px;margin-top:25px;font-size: 22px;text-align:center;display: block; margin-bottom: 0px;font-family: SourceHanSansCN-Light}
+        #foot-m{ height: 30px;  margin: 12px auto;text-align: center}
+        #foot-m span{ font-size: 26px;display: inline-block;  color: rgb(2,212,151); }
+        .foot-k{font-size: 24px;margin: 0 auto;color: #FFFFff;height: 23px;text-align: center}
+        /*.foot-y{font-size: 30px;float: right;margin-right: 80px;}*/
+        #ewm{ position:absolute;
+            display: inline-block;left: 33.6% }
+        a:hover{
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none;
+        }
+        @media  (max-width: 700px){
+            #foot{background-color: rgb(65,65,65);height: 405px;margin-top: 64px;bottom: 0px;   }
+            #foot div:nth-child(1) div{display: inline-block; margin-top: 43px;margin-bottom: 0px;width: 90px;height: 90px; }
+ 
+            #foot div:nth-child(1) div:nth-child(1){margin-right: 1.6rem;  display: inline-block}
+            #foot div:nth-child(1) div:nth-child(2){margin-right: 1.6rem; }
+            .tm{color: #FFFFff;height: 59px;margin-top:25px;font-size: 19px;text-align:center;display: block; margin-bottom: 0px;font-family: SourceHanSansCN-Light}
+            #foot-m span{ font-size: 23px;display: inline-block;  color: rgb(2,212,151); }
+            .foot-k{font-size: 21px;margin: 0 auto;color: #FFFFff;height: 23px;text-align: center}
+        }
+        @media  (max-width: 680px){
+            #foot{background-color: rgb(65,65,65);height: 405px;margin-top: 64px;bottom: 0px;   }
+            #foot div:nth-child(1) div{display: inline-block; margin-top: 43px;margin-bottom: 0px;width: 85px;height: 85px; }
+
+            #foot div:nth-child(1) div:nth-child(1){margin-right: 1.6rem;  display: inline-block}
+            #foot div:nth-child(1) div:nth-child(2){margin-right: 1.6rem; }
+            .tm{color: #FFFFff;height: 59px;margin-top:25px;font-size: 19px;text-align:center;display: block; margin-bottom: 0px;font-family: SourceHanSansCN-Light}
+            #foot-m span{ font-size: 23px;display: inline-block;  color: rgb(2,212,151); }
+            .foot-k{font-size: 21px;margin: 0 auto;color: #FFFFff;height: 23px;text-align: center}
+            #foot{background-color: rgb(65,65,65);height: 405px;margin-top: 64px;bottom: 0px;   }
+            #foot div:nth-child(1) div{display: inline-block; margin-top: 43px;margin-bottom: 0px;width: 103px;height: 101px; }
+            #foot div:nth-child(1) div:nth-child(1){margin-right: 1.4rem;  display: inline-block}
+            #foot div:nth-child(1) div:nth-child(2){margin-right: 1.4rem; }
+            .tm{color: #FFFFff;height: 59px;margin-top:25px;font-size: 17px;text-align:center;display: block; margin-bottom: 0px;font-family: SourceHanSansCN-Light}
+            #foot-m span{ font-size: 21px;display: inline-block;  color: rgb(2,212,151); }
+            .foot-k{font-size: 18px;margin: 0 auto;color: #FFFFff;height: 23px;text-align: center}
+        }
+        /*@media  (max-width: 750px) {*/
+        /*    !*html{font-size: 18px;}*!*/
+        /*    #foot {*/
+        /*        background-color: rgb(65, 65, 65);*/
+        /*        height: 405px;*/
+        /*        margin-top: 64px;*/
+        /*        bottom: 0px;*/
+        /*    }*/
+
+        /*    #foot div:nth-child(1) div {*/
+        /*        display: inline-block;*/
+        /*        margin-top: 43px;*/
+        /*        margin-bottom: 0px;*/
+        /*        width: 103px;*/
+        /*        height: 101px;*/
+        /*    }*/
+
+        /*    #foot div:nth-child(1) div:nth-child(1) {*/
+        /*        margin-right: 2.0rem;*/
+        /*        display: inline-block*/
+        /*    }*/
+
+        /*    #foot div:nth-child(1) div:nth-child(2) {*/
+        /*        margin-right: 2.0rem;*/
+        /*    }*/
+
+        /*    .foot-w {*/
+        /*        height: 60%;*/
+        /*        margin: 0 auto;*/
+        /*        text-align: center*/
+        /*    }*/
+
+        /*    .foot-w img {*/
+        /*        margin-left: 0px;*/
+        /*    }*/
+
+        /*    .tm {*/
+        /*        color: #FFFFff;*/
+        /*        float: rightheight: 59px;*/
+        /*        margin-top: 25px;*/
+        /*        font-size: 24px;*/
+        /*        text-align: center;*/
+        /*        display: block;*/
+        /*        margin-bottom: 0px;*/
+        /*    }*/
+
+        /*    .foot-hr {*/
+        /*        width: 664px;*/
+        /*        margin-top: 0px;*/
+        /*    }*/
+
+        /*    #foot-m {*/
+        /*        height: 30px;*/
+        /*        margin: 12px auto;*/
+        /*        text-align: center*/
+        /*    }*/
+
+        /*    #foot-m span {*/
+        /*        font-size: 1.7rem;*/
+        /*        display: inline-block;*/
+        /*        color: rgb(2, 212, 151);*/
+        /*    }*/
+
+        /*    .foot-k {*/
+        /*        font-size: 1.6rem;*/
+        /*        margin: 0 auto;*/
+        /*        color: #FFFFff;*/
+        /*        height: 23px;*/
+        /*        text-align: center*/
+        /*    }*/
+
+        /*    !*.foot-y{font-size: 30px;float: right;margin-right: 80px;}*!*/
+        /*    #ewm {*/
+        /*        position: absolute;*/
+        /*        display: inline-block;*/
+        /*        left: 34%*/
+        /*    }*/
+
+        /*    a:hover {*/
+        /*        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);*/
+        /*        -webkit-user-select: none;*/
+        /*        -moz-user-focus: none;*/
+        /*        -moz-user-select: none;*/
+        /*    }*/
+        /*}*/
+
+
+    </style>
+</head>
+<body id="bd">
+<!--<p style="position: fixed;bottom: 20%;left: 40%"><img src="static/img/微信弹框界面_03.png"></p>-->
+<footer id="foot" class="footer">
+    <div class="foot-w">
+           <div id="wx"><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=2&uin=4006780315" onclick="chatQQ()"  >
+               <img  src="/static/img/home/首页_46.png"></a></div>
+        <div ><img src="/static/img/微信弹框界面_03.png" id="ewm" style=" "><img  src="/static/img/home/首页_48.png" class="wx-img"></div>
+     <div >   <a href="https://weibo.com/u/2363879402"><img  src="/static/img/home/首页_50.png"></a></div>
+        <span class="tm">全国服务热线：400 678 0315<br />
+ 周一至周五上午 8:30—12:30  下午13:30-17:30   &nbsp;&nbsp;&nbsp;&nbsp;周六至周日9:00-17:00</span>
+    </div>
+    <hr class="foot-hr"/>
+    <div id="foot-m">
+        <a href="/static/page/brand/about.html"><span>关于我们&nbsp;&nbsp;&nbsp;丨&nbsp;&nbsp;</span></a> <a href="/static/page/shopping.html"><span>&nbsp;官方商城&nbsp;&nbsp;&nbsp;&nbsp;丨</span></a><a href="/static/page/service/sell.html"><span>&nbsp;&nbsp;&nbsp;网点查询&nbsp;&nbsp;&nbsp;丨</span></a><a href="/static/page/join/campus.html"><span>&nbsp;&nbsp;&nbsp;加入我们&nbsp;&nbsp;&nbsp;</span></a>
+    </div>
+    <div class="foot-k">深圳市快易典教育科技有限公司 版权所有 粤IPC备05116325号</div>
+<!--    <div class="foot-y">移动端</div>-->
+</footer>
+<!--<script>-->
+<!--    function setBodyWidth(){-->
+<!--        var barWidthHelper=document.createElement('div');-->
+<!--        barWidthHelper.style.cssText="overflow:scroll; width:100px; height:100px;";-->
+<!--        document.body.appendChild(barWidthHelper);-->
+<!--        var barWidth=barWidthHelper.offsetWidth-barWidthHelper.clientWidth;-->
+<!--        document.body.removeChild(barWidthHelper);-->
+<!--        var bodyWidth=window.screen.availWidth-barWidth;-->
+<!--        return bodyWidth;-->
+<!--    }-->
+
+<!--    $(document).ready(-->
+<!--        function(){-->
+<!--            var bodyWidth=setBodyWidth()+"px";-->
+<!--            //document.body.style.width=bodyWidth;-->
+<!--            $("body").css("width",bodyWidth);-->
+<!--        }-->
+<!--    );-->
+<!--</script>-->
+<script deferonload="init()" >
+    var bol=false;
+    $("#ewm").hide();
+    setTimeout(function(){
+        $("#ewm").css("top",""+document.body.scrollHeight-659+"px");
+        $(".wx-img").click(function () {
+                $("#ewm").fadeToggle();
+        })
+    },2000);
+    $("body").click(function () {
+
+    })
+$("#wx").click(function () {
+
+})
+    function chatQQ(){
+        // http://wpa.qq.com/msgrd?v=3&uin=1846189021&site=qq&menu=yes
+        // window,location.href="mqqwpa://im/chat?chat_type=wpa&uin=4006780315&version=1&src_type=web&web_src=oicqzone.com";
+        // window,location.href="http://wpa.qq.com/msgrd?v=3&uin=4006780315&site=qq&menu=yes";
+    }
+</script>
+</body>
+</html>

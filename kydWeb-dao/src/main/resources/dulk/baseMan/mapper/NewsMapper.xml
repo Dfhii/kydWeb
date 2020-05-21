@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dulk.baseMan.mapper.NewsMapper">
+    <select id="findNewsTitle" resultMap="News">
+        SELECT  Id,Title,SubTitle,CoverUrl,PublishTime FROM News order by PublishTime DESC
+    </select>
+    <resultMap id="News" type="java.util.Map">
+
+    </resultMap>
+    <select id="findNewsContents" resultMap="News">
+         SELECT Title,Contents FROM News where Id=#{id}
+    </select>
+
+    <select id="findTitleByHome" resultMap="News">
+         SELECT top 1 Id,Title,SubTitle,CoverUrl,PublishTime FROM News where IsHomePage=1 order by PublishTime DESC
+    </select>
+</mapper>

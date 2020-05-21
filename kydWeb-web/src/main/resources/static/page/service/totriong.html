@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" >
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <script  src="/static/js/bootstrap.js" ></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            $("#page1").css('width','102%');
+            $("#page2").css({'width':'102%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+    </script>
+    <div id="page1" ></div>
+    <img src="/static/img/bg-edit-reward.png">
+    <img src="/static/img/bg-edit-reward.png">
+    <img src="/static/img/bg-edit-reward.png">
+    <img src="/static/img/bg-edit-reward.png">
+    <img src="/static/img/bg-edit-reward.png">
+      
+    <div id="page2"></div>
+</body>
+</html>

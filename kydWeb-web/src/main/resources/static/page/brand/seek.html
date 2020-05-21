@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>品牌资讯</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <link rel="stylesheet" href="../dist/dropload.css">
+    <script src="../dist/dropload.min.js"></script>
+    <style>
+        html{font-size: 12px;overflow-x: hidden}
+
+        body{  font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            overflow: hidden;
+            margin: 0;padding: 0px; background-color:#FFFFFF; }
+        /*body *{border: 1px solid #000000}*/
+        .seek-to{ width: 92%;
+            /*transform:scaleX(1.5);*/
+            /*margin: 0px auto;*/
+            margin-left:4%;
+            background-color: #ffffff;
+        }
+        /*@keyframes first {*/
+        /*    0%{transform: scale(1,1)}*/
+        /*    50%{transform:scale(1.1,1.1 )}*/
+        /*    100%{transform:scale(1.0,1.0)}*/
+        /*    !*0%{width: 50%}*!*/
+        /*    !*100%{width: 100%}*!*/
+
+        /*}*/
+        .seek-to img{width: 100%;height: 380px;
+             margin-top: 59px;
+            border-radius: 10px;
+        }
+        .to-1{font-size: 2.8rem;margin-top: 34px;}
+        .seek-to-2{font-size: 2.3rem;margin-top: 23px; color: rgb(96,96,96);margin-bottom: 0px;   display: block;
+            display: -webkit-box;
+ 
+ 
+            margin: 0 auto;
+            font-size: 26px;
+            line-height: 1.4;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;height: 73px;}
+        /*.seek-to-2::after{content: ""; position: absolute; bottom: 5px; right: 0; padding-left: 20px;*/
+        /*    background: -webkit-linear-gradient(left, transparent, #fff 50%);*/
+        /*    background: -o-linear-gradient(right, transparent, #fff 50%);*/
+        /*    background: -moz-linear-gradient(right, transparent, #fff 50%);*/
+        /*    background: linear-gradient(to right, transparent, #fff 50%);}*/
+        .to-3{font-size: 2.3rem;margin-top: 0px; color: rgb(96,96,96);float: right}
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        /*.opt span {*/
+        /*    height: 100%;*/
+        /*    background-color: #ffffff;*/
+
+        /*    text-align: center;*/
+        /*    padding: 20px;*/
+        /*    display: inline-block;*/
+        /*    font-size: 3rem;*/
+        /*    margin-top: 0px;*/
+        /*}    .opt span{margin-left: 0px; }*/
+        /*.opt span:nth-child(2){color: #02d497;border-bottom: 2px solid #02d497 }*/
+        /*.opt{ width: 100.7%;background-color: #ffffff;}*/
+      a:hover{
+          -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+          -webkit-user-select: none;
+          -moz-user-focus: none;
+          -moz-user-select: none;
+      }
+        @media  (max-width: 720px) {
+            body{  font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                overflow: hidden;
+                margin: 0;padding: 0px; background-color:#FFFFff; }
+            /*.opt span {*/
+            /*    height: 100%;*/
+            /*    background-color: #ffffff;*/
+
+            /*    text-align: center;*/
+            /*    padding: 20px;*/
+            /*    display: inline-block;*/
+            /*    font-size: 3rem;*/
+            /*    margin-top: 0px;*/
+            /*}*/
+            .seek-to{ width: 92%;
+                /*transform:scaleX(1.5);*/
+                /*margin: 0px auto;*/
+                margin-left:4%;
+                background-color: #ffffff;
+            }
+        }
+
+    </style>
+</head>
+ 
+<body>
+
+<!--<div style="width: 100%;height: 382px;">-->
+<!--    <img src="/static/img/about/品牌（关于我们）页_03.png" width="100%" height="100%">-->
+<!--</div>-->
+<!--<div class="o">-->
+<!--    <span><a href="/static/page/brand/about.html">关于我们</a></span> <span>品牌资讯</span>-->
+<!--    <span><a href="/static/page/brand/video.html">品牌视频</a></span>-->
+<!--</div>-->
+<div id="News">
+<!--<div class="to">-->
+<!--<img src="/static/img/about/品牌（品牌资讯页）页3_03.png">-->
+<!--    <div class="to-1">快易典三大措施保障孩子们“停课不停学”！</div>-->
+<!--    <div class="to-2">新型冠状病毒的疫情防控已经进入关键阶段，各地中小学都又再次延迟了上课的时间！为了全方位落实教育部……</div>-->
+<!--    <div class="to-3">2020/2/26</div>-->
+<!--</div>-->
+<!--<div class="to">-->
+<!--    <img src="/static/img/about/品牌（品牌资讯页）页3_06.png">-->
+<!--    <div class="to-1">快易典三大措施保障孩子们“停课不停学”！</div>-->
+<!--    <div class="to-2">新型冠状病毒的疫情防控已经进入关键阶段，各地中小学都又再次延迟了上课的时间！为了全方位落实教育部……</div>-->
+<!--    <div class="to-3">2020/2/26</div>-->
+<!--</div>-->
+<!--<div class="to">-->
+<!--    <img src="/static/img/about/品牌（品牌资讯页）页3_09.png">-->
+<!--    <div class="to-1">快易典三大措施保障孩子们“停课不停学”！</div>-->
+<!--    <div class="to-2">新型冠状病毒的疫情防控已经进入关键阶段，各地中小学都又再次延迟了上课的时间！为了全方位落实教育部……</div>-->
+<!--    <div class="to-3">2020/2/26</div>-->
+<!--</div>-->
+<!--<div class="to">-->
+<!--    <img src="/static/img/about/品牌（品牌资讯页）页3_11.png">-->
+<!--    <div class="to-1">快易典三大措施保障孩子们“停课不停学”！</div>-->
+<!--    <div class="to-2">新型冠状病毒的疫情防控已经进入关键阶段，各地中小学都又再次延迟了上课的时间！为了全方位落实教育部……</div>-->
+<!--    <div class="to-3">2020/2/26</div>-->
+<!--</div>-->
+<!--<div class="to">-->
+<!--    <img src="/static/img/about/品牌（品牌资讯页）页3_13.png">-->
+<!--    <div class="to-1">快易典三大措施保障孩子们“停课不停学”！</div>-->
+<!--    <div class="to-2">新型冠状病毒的疫情防控已经进入关键阶段，各地中小学都又再次延迟了上课的时间！为了全方位落实教育部……</div>-->
+<!--    <div class="to-3">2020/2/26</div>-->
+<!--</div>-->
+</div>
+<div></div>
+</body>
+<script>
+    $(function(){
+        $("#page1").css('width','100%');
+        $("#page2").css({'width':'100%','overflow':'hidden'});
+        $("#page1").load("/static/page/head.html");
+        $("#page2").load("/static/page/foot.html");
+    })
+    function ini(){
+        var str="";
+        $.ajax({
+            url:"/news/findTitle",
+            dataType:"JSON",
+            success: function (json){
+                for(var i=0;i<5;i++){
+
+                    str+="<a href='/news/findContents?id="+json[i].Id+"'><div   class='seek-to'>\n" +
+                        "    <img src="+json[i].CoverUrl+">\n" +
+                        "    <div class='to-1'>"+json[i].Title+"</div>\n" +
+                        "    <div class='seek-to-2'>"+json[i].SubTitle+"</div>\n" +
+                        "    <div class='to-3'>"+json[i].PublishTime+"</div><hr style='color: rgb(238,238,238);width: 100%' />\n" +
+                        "</div></a>  ";
+                }
+                if(json!=null && json != ''){
+                    $("#News").html(str);
+
+                }
+            }
+        })
+
+    }
+    ini();
+    $(".to").click(function(){
+
+    })
+</script>
+</html>

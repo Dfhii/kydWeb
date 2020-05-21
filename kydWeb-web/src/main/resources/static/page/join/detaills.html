@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>Title</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+
+        body{
+            font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            background-color: #F4F4F4;
+            position:revert;
+        }
+        .opt{width: 104%;font-size: 1.9rem;border-bottom:2px solid #02d497;margin-bottom: 30px;background-color: #FFFFff }
+        .opt span{background-color: #ffffff;width:17.3%;text-align: center;height: 56px; padding: 0.55rem;display: inline-block;padding-top: 20px;margin-bottom: 0px;margin-top: 0px;}
+        .opt span:nth-child(2){margin-left: 0px; }
+        .opt span:nth-child(3){margin-left: 0px;margin-right: 0px;}
+        .opt span:nth-child(4){margin-right: 0px;color: #FFFFff;background: #02d497  }
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+    </script>
+<body>
+<div id="page1"></div>
+<div class="opt">
+    <span><a href="/static/page/service/sell.html">销售网点</a></span><span><a href="/static/page/service/netWork.html">服务网点</a></span><span><a href="/static/page/service/policy.html">服务政策</a></span><span>防伪查询</span><span><a href="/static/page/service/sustain.html">在线支持</a></span>
+</div>
+<div id="page2"></div>
+</body>
+</html>

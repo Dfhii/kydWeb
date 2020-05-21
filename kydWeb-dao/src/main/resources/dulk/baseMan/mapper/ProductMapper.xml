@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dulk.baseMan.mapper.ProductMapper">
+    <resultMap id="productHome" type="java.util.Map"></resultMap>
+    <select id="findProductHome" resultMap="productHome">
+        select top 3 Id,Name,Title,AppHomeCoverImage,IsHot from Product where IsHomePage=1 and IsValid=1  and AppHomeCoverImage is not null order by Sort ASC
+    </select>
+
+    <select id="findProduct" resultMap="productHome">
+        select  Id,SeriesId,Name,Title,AppHomeCoverImage,IsHot from Product
+         <where>
+
+             <if test='SeriesId != null and SeriesId != "" and SeriesId != "0" and SeriesId != "4" '>
+                and SeriesId = #{SeriesId}
+             </if>
+             <if test='SeriesId != null and SeriesId != "" and SeriesId != "0" and SeriesId == "4"'>
+                 and SeriesId in (4,5,6)
+             </if>
+             and AppHomeCoverImage is not null and IsValid=1
+         </where>
+         order by Sort ASC
+    </select>
+
+    <select id="findProductDetailsImg" resultMap="productHome">
+        select   appDetailImg from ProductDetails pd
+        join  Product p on pd.ProductId=p.Id
+        where pd.ProductId = #{productId}
+    </select>
+
+    <select id="findProductMenu" resultMap="productHome">
+         select * from (  select top 3  Id,SeriesId,Name,Title,AppHomeCoverImage from Product
+          where  AppHomeCoverImage is not null and IsValid=1  and SeriesId=1 ORDER BY Sort ASC ) a
+		UNION ALL
+  select * from (   select top 3  Id,SeriesId,Name,Title,AppHomeCoverImage from Product
+          where  AppHomeCoverImage is not null and IsValid=1  and SeriesId=2  ORDER BY Sort ASC) e
+		UNION ALL
+   select * from (  select top 3  Id,SeriesId,Name,Title,AppHomeCoverImage from Product
+          where  AppHomeCoverImage is not null and IsValid=1  and SeriesId=3  ORDER BY Sort ASC) r
+		UNION ALL
+  select * from ( select top 3  Id,SeriesId,Name,Title,AppHomeCoverImage from Product
+          where  AppHomeCoverImage is not null and IsValid=1  and SeriesId in (4,5,6) ORDER BY Sort ASC)  t
+    </select>
+</mapper>

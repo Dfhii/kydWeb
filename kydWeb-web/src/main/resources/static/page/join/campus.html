@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>加入我们</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+        body{
+            font-family: SourceHanSansCN-Regular;
+            /*width: 750px;*/
+            margin:0px;
+            overflow: hidden;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            background-color: #F4F4F4;
+            position:revert;
+        }
+
+        /*body *{border: 1px solid #000000}*/
+        .to{height: 380px;margin-bottom: 0px;width: 104%}
+        .to img{width: 100%;height: 100%;background-color: #FFFFff;}
+        .opt{width: 104%;font-size: 1.9rem;border-bottom:2px solid #02d497;margin-bottom: 30px;background-color: #FFFFff }
+        .opt span{background-color: #ffffff;width:17.3%;text-align: center;height: 56px; padding: 0.55rem;display: inline-block;padding-top: 20px;margin-bottom: 0px;margin-top: 0px;}
+        .opt span:nth-child(1){  color: #FFFFff;background: #02d497 }
+         
+        a{text-decoration:none;color:#737373;}
+        a:link{text-decoration: none}
+        #zp{width: 93%;margin-left: 4%; margin-bottom: 100px;}
+        #zp div{margin-bottom: 22px;padding: 20px;background-color: #FFFFff;height: 70px;}
+        #zp p{margin-bottom: 22px;padding: 20px;background-color: #FFFFff}
+        #zp p:nth-child(1){background-color: rgb(2,212,151);color: #FFFFff;font-size: 1.8rem;}
+        #zp p span{font-size: 1.7rem;display: inline-block;text-align: center}
+        #zp div span{font-size: 1.7rem;display: inline-block;text-align: center}
+        #zp p span:nth-child(2){width: 86px; }
+        #zp p span:nth-child(1){width: 250px;}
+        #zp p span:nth-child(3){width: 110px;margin-left: 15px;   }
+        #zp p span:nth-child(4){width: 110px;text-align: center;margin-left: 15px;  }
+        #zp div span:nth-child(2){width: 86px;margin-top: 3%}
+        #zp div span:nth-child(1){width: 250px;float:left;margin-top: 2%}
+        #zp div span:nth-child(3){width: 110px;margin-top: 2%;margin-left: 15px;   }
+        #zp div span:nth-child(4){width: 160px;text-align: center;margin-left: 15px; margin-top: 1%; }
+        #esc{display: inline-block; margin-left: 32%;;margin-top: 20px;width: 202px;text-align: center;background-color: rgb(2,212,151);font-size: 2rem;color: #FFFFff;padding-bottom: 17px;padding-top: 17px;border-radius: 20px}
+        ul{margin: 0;padding: 0;}
+        .positionRes{margin-bottom: 80px;}
+        .positionReq{margin-bottom: 56px;}
+        li{list-style-type: none}
+        #xq{margin-left: 4%;width: 97%}
+        @media (max-width: 720px) {
+            body{
+                font-family: SourceHanSansCN-Regular;
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                overflow: hidden;
+                /*min-width: 680px;*/
+                background-color: #F4F4F4;
+                position:revert;
+            }
+            #zp{width: 93%; margin-left: 3.5%; margin-bottom: 100px;}
+            #zp p span:nth-child(2){width: 76px; }
+            #zp p span:nth-child(1){width: 240px;}
+            #zp p span:nth-child(3){width: 110px;margin-left: 12px;   }
+            #zp p span:nth-child(4){width: 110px;text-align: center;margin-left: 12px;  }
+            #zp div span:nth-child(2){width: 76px;float: left;margin-top: 2.5%}
+            #zp div span:nth-child(1){width: 240px;float: left;margin-top: 2%}
+            #zp div span:nth-child(3){width: 100px;float: left;margin-top: 2%;margin-left: 15px;   }
+            #zp div span:nth-child(4){width: 140px;text-align: center;margin-left: 15px; margin-top: 2.5%; }
+            #esc{display: inline-block; margin-left: 27%;;margin-top: 20px;width: 202px;text-align: center;background-color: rgb(2,212,151);font-size: 2rem;color: #FFFFff;padding-bottom: 17px;padding-top: 17px;border-radius: 20px}
+        }
+</style>
+    <script>
+        $(function(){
+            $("#page1").css('width','100%');
+            $("#page2").css({'width':'100%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+    </script>
+<body>
+<div id="page1"></div>
+<div class="to">
+    <img src="/static/img/join/join2.jpg">
+</div>
+<div class="opt">
+    <span >校园招聘</span><span> 社会招聘 </span>
+</div>
+<div id="zp">
+<!--    <p>-->
+<!--           <span>职位名称</span>   <span>人数</span>   <span>工作地点</span>   <span>发布时间</span>-->
+<!--    </p>-->
+<!--    <div>-->
+<!--        <span>区域经理</span>   <span>8</span>   <span>全国</span>   <span>2020/2/22-->
+<!--13:56:17</span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span>市场策划工程师</span>   <span>2</span>   <span>深圳</span>   <span>2020/2/22-->
+<!--13:56:17</span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span>电商运营专员</span>   <span>2</span>   <span>深圳</span>   <span>2020/2/22-->
+<!--13:56:17</span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span>Andorid软件工程师</span>   <span>6</span>   <span>深圳</span>   <span>2020/2/22-->
+<!--13:56:17</span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span>市场策划工程师</span>   <span>2</span>   <span>深圳</span>   <span>2020/2/22-->
+<!--13:56:17</span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span>电商运营专员</span>   <span>2</span>   <span>深圳</span>   <span>2020/2/22-->
+<!--13:56:17</span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span>Andorid软件工程师</span>   <span>6</span>   <span>深圳</span>   <span>2020/2/22-->
+<!--13:56:17</span>-->
+<!--    </div>-->
+
+</div>
+<div id="xq" style="margin-bottom: 30px;">
+</div>
+<div id="page2"></div>
+<script>
+    $(".opt span:eq(0)").click(function () {
+        $(".opt span:eq(0)").css({"color": "#FFFFff","background":"#02d497"});
+        $(".opt span:eq(1)").css({"color": "#000000","background":"#FFFFFF"});
+        int(0);
+    })
+    $(".opt span:eq(1)").click(function () {
+        $(".opt span:eq(0)").css({"color": "#000000","background":"#FFFFFF"});
+        $(".opt span:eq(1)").css({"color": "#FFFFff","background":"#02d497"});
+        int(1);
+    })
+    var xz;
+    var sz;
+    var bol=true;
+    function int(type) {
+        $("#zp").show();
+        $("#xq").hide();
+        // if(type == 0 && zx != null && xz!=''){
+        //    bol=true;
+        // }else{
+        //     sz=str;
+        // }
+        $.ajax({
+            url: "/join/iteBySchool",
+            data: "hireType="+type+"",
+            dataType: 'JSON',
+            success: function (data) {
+                var str = " <p>\n" +
+                    "           <span>职位名称</span>   <span>人数</span>   <span>工作地点</span>   <span>发布时间</span>\n" +
+                    "    </p>";
+                for (var i = 0; i < data.length; i++) {
+                    str += "<div value=" + data[i].Id + " ><span>" + data[i].PositionTitle + "</span> <span>" + data[i].JobCount + "" +
+                        " </span> <span>" + data[i].JobAddress + "</span> <span>" + data[i].CreateTime + "</span></div>"
+                }
+                // if(type==0){
+                //     xz=str;
+                // }else{
+                //     sz=str;
+                // }
+                $("#zp").html(str);
+            }
+        })
+    }
+    int(0);
+
+    $('#zp').delegate("div","click",function () {
+        $("#xq").show();
+        $("#zp").hide();
+        $.ajax({
+            url:"/join/iteById",
+            data:"id="+$(this).attr("value"),
+            dataType:'JSON',
+            success: function (data) {
+                console.log(data.JobDescription);
+                $("#zp").hide();
+                var str="<a href='mailto:chenrongyu@hwapu22.com'><div style='display: inline-block;margin-top: 57px;width: 272px;text-align: center;background-color: rgb(2,212,151);font-size: 2rem;color: #FFFFff;padding-bottom: 17px;padding-top: 17px;border-radius: 20px'>" +
+                    "<img src='/static/img/join/服务（加入我们详情）页3_03.png' style='float:left;margin-left: 25px;margin-top: 7px;' /> 简历投递 </div></a><a href='/static/page/join/campus.html'><div id='esc'> " +
+                    "返回</div></a>"
+               $("#xq").html(data.JobDescription+str);
+
+            }
+        })
+    })
+</script>
+</body>
+</html>

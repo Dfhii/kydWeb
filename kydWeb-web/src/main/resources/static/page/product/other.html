@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>Title</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+        body{background-color:#F2F2F2;
+            width: 750px;
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            min-width: 750px;
+            position:revert;
+        }
+        body *{font-family: SourceHanSansCN-Regular}
+        /*body *{border: 1px solid #000000}*/
+        @media (max-width: 750px) {
+            body{background-color:#F2F2F2;
+                width: 680px;
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                min-width: 750px;
+                position:revert;
+            }
+        }
+        /*@media (min-width: 751px) and (max-width: 1080px)  {*/
+        /*  html{  font-size: 28px;}*/
+        /*    .opt{background-color: #5cb85c}*/
+        /*}*/
+        /*@media (min-width: 301px) and (max-width: 750px)  {*/
+        /*    html{  font-size: 15px;}*/
+        /*    .opt{background-color: #ffff00}*/
+        /*}*/
+        /*@media (min-width: 0px) and (max-width: 300px)  {*/
+        /*    html{  font-size: 5px;}*/
+        /*    .opt{background-color: #1FC2C8}*/
+        /*}*/
+        /*.row{width: 101.2%; position: absolute;}*/
+        .to {
+            height: 750px;
+            width: 104%
+        }
+
+        .to img {
+            width: 100%;
+            height: 100%
+        }
+
+        .opt {
+            min-width: 104%;
+            width: 104%;
+            background-color: #FFFFff;
+            padding-bottom: 0px;
+            border-bottom: 3px solid #02d497;
+            display: inline-block;
+            margin: 0px auto;
+            position: revert;
+        }
+
+        a {
+            text-decoration: none;
+            color: #737373;
+        }
+
+        a:link {
+            text-decoration: none
+        }
+
+        .opt span {
+            min-width: 22%;
+            /*background-color: #ffffff;*/
+            width: 21.7%;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: inline-block;
+            margin-bottom: 0px;
+            font-size: 2rem;
+        }
+
+        .opt span:nth-child(1) {
+            margin-left: 0px;
+
+        }
+
+        .opt span:nth-child(2) {
+            margin-left: 0px;
+        }
+
+        .opt span:nth-child(2) {
+            margin-left: 0px;
+        }
+
+        .opt span:nth-child(3) {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .opt span:nth-child(4) {
+            background-color: #02d497;
+            color: #FFFFff;
+        }
+
+        .model {
+            background-color: #ffffff;
+            width: 104%;
+            height: 380px;
+            margin-bottom: 10px;
+        }
+
+        .model div:nth-child(1) {
+            display: inline-block;
+            width: 380px;
+            height: 380px;
+            margin-left: 31px;
+          
+
+        }
+
+        .model div:nth-child(1) img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .model div:nth-child(2) span {
+            color: #000000;
+            display: inline-block;
+        }
+
+        .model div:nth-child(2) {
+            width: 330px;
+            float: right;
+            font-size: 28px;
+            font-size: 1.8rem;
+            display: inline-block;
+            color: #000000;
+            margin: 100px auto
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','104%');
+            $("#page2").css({'width':'104%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+            $("#page2").load("/static/page/foot.html");
+        })
+    </script>
+</head>
+<body>
+<div id="page1" ></div>
+<div class="to">
+    <img src="/static/img/product/其他产品页_02.jpg">
+</div>
+<div class="opt">
+    <span><a href="/static/page/product/familye.html">智能家教机</a></span> <span><a href="/static/page/product/earlye.html">早教电脑</a></span>
+    <span><a href="/static/page/product/reading.html">早教阅读笔</a></span> <span>其他系列</span>
+</div>
+
+<div class="model">
+    <div> <img src="/static/img/product/其他产品页_05.jpg"></div><div> <span>电子书包 D92</span><br/><br/><b> 校园因科技更智慧</b> </div>
+</div>
+<div class="model">
+    <div> <img src="/static/img/product/其他产品页_08.jpg"></div><div> <span>学生电脑 T7</span><br/><br/><b> 一站式学习<br />
+    新体验</b></div><br />
+</div>
+<div class="model">
+    <div> <img src="/static/img/product/其他产品页_10.jpg"></div><div> <span>学生电脑 T9</span><br/><br/><b> 情智导学</b></div><br />
+</div>
+
+<div class="model">
+    <div> <img src="/static/img/product/其他产品页_12.jpg"></div><div> <span>电子词典全能 A920</span><br/><br/><b> 引领七大行业之最</b></div><br />
+</div>
+
+<div class="model">
+    <div> <img src="/static/img/product/其他产品页_14.jpg"></div><div> <span>电子词典 EH1</span><br/><br/><b> 权威 全面<br />
+    专业 海量 </b></div><br />
+</div>
+<div id="page2"></div>
+</body>
+</html>

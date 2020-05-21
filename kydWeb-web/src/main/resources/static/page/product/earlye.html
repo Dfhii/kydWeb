@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>$Title$</title>
+    <script  src="/static/js/jquery.js" ></script>
+    <script src="/static/js/hero.js"></script>
+    <script src="/static/js/pc.js"> </script>
+    <style>
+
+        body{background-color:#F2F2F2;
+            font-family: SourceHanSansCN-Regular;
+            width: 750px;
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            min-width: 750px;
+            position:revert;
+        }
+
+        body *{font-family: SourceHanSansCN-Regular}
+        /*body *{border: 1px solid #000000}*/
+        @media (max-width: 750px) {
+            body{background-color:#F2F2F2;
+                font-family: SourceHanSansCN-Regular;
+                width: 680px;
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                min-width: 750px;
+                position:revert;
+            }
+        }
+        /*@media (min-width: 751px) and (max-width: 1080px)  {*/
+        /*  html{  font-size: 28px;}*/
+        /*    .opt{background-color: #5cb85c}*/
+        /*}*/
+        /*@media (min-width: 301px) and (max-width: 750px)  {*/
+        /*    html{  font-size: 15px;}*/
+        /*    .opt{background-color: #ffff00}*/
+        /*}*/
+        /*@media (min-width: 0px) and (max-width: 300px)  {*/
+        /*    html{  font-size: 5px;}*/
+        /*    .opt{background-color: #1FC2C8}*/
+        /*}*/
+        /*.row{width: 101.2%; position: absolute;}*/
+        .to {
+            height: 750px;
+            width: 104%
+        }
+
+        .to img {
+            width: 100%;
+            height: 100%
+        }
+
+        .opt {
+            min-width: 104%;
+            width: 104%;
+            background-color: #FFFFff;
+            padding-bottom: 0px;
+            border-bottom: 3px solid #02d497;
+            display: inline-block;
+            margin: 0px auto;
+            position: revert;
+        }
+
+        a {
+            text-decoration: none;
+            color: #737373;
+        }
+
+        a:link {
+            text-decoration: none
+        }
+
+        .opt span {
+            min-width: 21.7%;
+            /*background-color: #ffffff;*/
+            width: 21.7%;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: inline-block;
+            margin-bottom: 0px;
+            font-size: 2rem;
+        }
+
+        .opt span:nth-child(1) {
+            margin-left: 0px;
+
+        }
+
+        .opt span:nth-child(2) {
+            margin-left: 0px;
+            background-color: #02d497;
+            color: #FFFFff;
+        }
+
+        .opt span:nth-child(2) {
+            margin-left: 0px;
+        }
+
+        .opt span:nth-child(3) {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .model {
+            background-color: #ffffff;
+            width: 104%;
+            height: 380px;
+            margin-bottom: 10px;
+        }
+
+        .model div:nth-child(1) {
+            display: inline-block;
+            width: 380px;
+            height: 380px;
+            margin-left: 31px;
+            margin-bottom: 10px;
+        }
+
+        .model div:nth-child(1) img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .model div:nth-child(2) span {
+            color: #000000;
+            display: inline-block;
+        }
+
+        .model div:nth-child(2) {
+            width: 330px;
+            float: right;
+            font-size: 28px;
+            font-size: 1.8rem;
+            display: inline-block;
+            color: #000000;
+            margin: 100px auto
+        }
+        .xp{width:74px;height:44px; float:left;margin-top: -3px;padding: 0px;position: absolute;display: inline-block;background: url('/static/img/product/标签_03.png') repeat-x center ;}
+        .xp-f{color: #FFFFff;font-size: 20px;margin-top: 4px;display: inline-block}
+        .best{width:74px;height:44px; float:left;margin-top: -3px;padding: 0px;position: absolute;display: inline-block;background: url('/static/img/product/标签_06.png') repeat-x center ;}
+        .best-f{color: #FFFFff;font-size: 20px;margin-top: 4px;display: inline-block}
+    </style>
+    <script>
+        $(function(){
+            $("#page1").css('width','104%');
+            $("#page2").css({'width':'104%','overflow':'hidden'});
+            $("#page1").load("/static/page/head.html");
+                $("#page2").load("/static/page/foot.html");
+
+
+            $('.model').click(function () {
+                window.location.replace('/static/page/product/M5.html');
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+<div id="page1" ></div>
+<div class="to">
+    <img src="/static/img/product/幼教产品页_02.jpg">
+</div>
+<div class="opt">
+    <span><a href="/static/page/product/familye.html">智能家教机</a></span> <span>早教电脑</span>
+    <span><a href="/static/page/product/reading.html">早教阅读笔</a></span> <span><a href="/static/page/product/other.html">其他系列</a></span>
+</div>
+
+<div class="model">
+    <div><span class="xp"><span class="xp-f">&nbsp;&nbsp;&nbsp;&nbsp;新品</span></span> <img src="/static/img/product/幼教产品页_05.jpg"></div><div> <span>儿童早教电脑 M2 Pro</span><br/><br/><b> 数学启蒙有奇米
+    <br/>妈妈也能教的好 </div></b>
+</div>
+<div class="model">
+    <div><span class="xp"><span class="xp-f">&nbsp;&nbsp;&nbsp;&nbsp;新品</span></span> <img src="/static/img/product/幼教产品页_08.jpg"></div><div> <span>儿童早教电脑 M5</span><br/><br/><b> 错题打印
+    <br/>扫码听课</div><br /></b>
+</div>
+<div class="model">
+    <div><span class="best"><span class="best-f">&nbsp;&nbsp;&nbsp;&nbsp;热卖</span></span>  <img src="/static/img/product/幼教产品页_10.jpg"></div><div> <span>儿童早教电脑 M2s</span><br/><br/><b> 爱数学
+    <br/>爱思考</div><br /></b>
+</div>
+
+<div class="model">
+    <div> <img src="/static/img/product/幼教产品页_10.jpg"></div><div> <span>儿童早教电脑 i9</span><br/><br/><b> 分龄分段
+    <br/>行业旗舰</div><br /></b>
+</div>
+<div id="page2"></div>
+
+</body>
+</html>

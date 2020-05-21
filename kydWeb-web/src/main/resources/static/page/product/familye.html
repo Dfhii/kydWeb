@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=0.528, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>智能家教机</title>
+    <script src="/static/js/vue.min.js"  charset="UTF-8"></script>
+    <script  src="/static/js/jquery.js" ></script>
+<!--    <script src="/static/js/pc.js"> </script>-->
+    <style>
+        html{
+            /*overflow:hidden*/
+            overflow-x:hidden;
+
+        }
+        body{
+            font-family: SourceHanSansCN-Regular;
+            background-color:#F2F2F2;
+            /*width: 750px;*/
+            margin:0px;
+            padding: 0px;
+            /*zoom: 52.5%;*/
+            /*min-width: 750px;*/
+            overflow:hidden;
+            position:revert;
+        }
+        body *{font-family: SourceHanSansCN-Regular}
+        @media screen and (min-width: 750px) and (max-width: 1000px) {
+            html{
+                font-size: 16px;
+            }
+        }
+        @media screen and (min-width: 1000px) and (max-width: 1350px) {
+            html{
+                font-size: 24px;
+            }
+        }
+        @media screen and (min-width: 1350px) and (max-width: 1700px) {
+            html{
+                font-size: 30px;
+            }
+        }
+        @media screen and (min-width: 2000px) and (max-width: 2700px) {
+            html{
+                font-size: 36px;
+            }
+        }
+        @media screen and (min-width: 750px) {
+            .to {
+                height: auto;
+                width: 100%
+            }
+
+            .to img {
+                width: 100%;
+                height: 100%
+            }
+
+            .opt {
+                min-width: 100%;
+                width: 100%;
+                background-color: #FFFFff;
+                padding-bottom: 0px;
+                border-bottom: 3px solid #02d497;
+                display: inline-block;
+                margin: 0px auto;
+                position: revert;
+            }
+
+            a {
+                text-decoration: none;
+                color: #737373;
+            }
+
+            a:link {
+                text-decoration: none
+            }
+
+            .opt span {
+                min-width: 22.4%;
+                /*background-color: #ffffff;*/
+                width: 22.4%;
+                text-align: center;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                display: inline-block;
+                margin-bottom: 0px;
+                font-size: 1.8rem;
+            }
+
+            .opt span:nth-child(1) {
+                margin-left: 0px;
+                background-color: #02d497;
+                color: #FFFFff;
+            }
+
+            .opt span:nth-child(2) {
+                margin-left: 0px;
+            }
+
+            .opt span:nth-child(2) {
+                margin-left: 0px;
+            }
+
+            .opt span:nth-child(3) {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+
+            .model{
+                background-color: #ffffff;
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            .model div:nth-child(1){
+                display: inline-block;
+                width: 45%;
+               
+                margin-left: 31px;
+                margin-bottom: 10px;
+            }
+
+            .model div:nth-child(1) img{
+                width: 100%;
+                height: 100%;
+            }
+
+            .model div:nth-child(2) span{
+                color: #000000;
+                display: inline-block;
+            }
+
+            .model div:nth-child(2){
+                width: 37%;
+                float: right;
+                font-size: 1.9rem;
+    
+                display: inline-block;
+                color: #000000;
+                margin: 10% auto
+            }
+            .product-hr{margin-left: 0px; width: 65px;background-color: #02d497;height: 5px; border:0px ;}
+            .xp {
+                width: 74px;
+                height: 44px;
+                float: left;
+                margin-top: -3px;
+                padding: 0px;
+                position: absolute;
+                display: inline-block;
+                background: url('/static/img/product/标签_03.png') repeat-x center;
+            }
+
+            .xp-f {
+                color: #FFFFff;
+                font-size: 20px;
+                margin-top: 4px;
+                display: inline-block
+            }
+
+            .best {
+                width: 74px;
+                height: 44px;
+                float: left;
+                margin-top: -3px;
+                padding: 0px;
+                position: absolute;
+                display: inline-block;
+                background: url('/static/img/product/标签_06.png') repeat-x center;
+            }
+
+            .best-f {
+                color: #FFFFff;
+                font-size: 20px;
+                margin-top: 4px;
+                display: inline-block
+            }
+        }
+        a:hover{
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none;
+        }
+        @media  (max-width: 720px){
+          /*body *{border: 1px solid #000000}*/
+            body{
+                font-family: SourceHanSansCN-Regular;
+                background-color:#F2F2F2;
+                /*width: 680px;*/
+                margin:0px;
+                padding: 0px;
+                /*zoom: 52.5%;*/
+                /*min-width: 680px;*/
+                position:revert;
+            }
+            .product-hr{margin-left: 0px; width: 65px;background-color: #02d497;height: 5px; border:0px ;}
+            .opt span {
+                min-width: 21.7%;
+                /*background-color: #ffffff;*/
+                width: 22.2%;
+                text-align: center;
+                padding-left: 9.1px;
+                padding-right: 9.1px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                display: inline-block;
+                margin-bottom: 0px;
+                font-size: 1.6rem;
+            }
+            .model{
+                background-color: #ffffff;
+                width: 100%;
+                height: 385px;
+                margin-bottom: 10px;
+            }
+
+            .model div:nth-child(1){
+                display: inline-block;
+                width: 46%;
+                height: 350px;
+                margin-left: 31px;
+                margin-bottom: 10px;
+            }
+
+            .model div:nth-child(1) img{
+                width: 100%;
+                height: 100%;
+            }
+
+            .model div:nth-child(2) span{
+                color: #000000;
+                display: inline-block;
+            }
+
+            .model div:nth-child(2){
+ 
+                width: 35%;
+                float: right;
+                font-size: 28px;
+                font-size: 1.8rem;
+                display: inline-block;
+                color: #000000;
+                margin: 10% auto
+            }
+
+        }
+    </style>
+
+</head>
+<body class="row">
+    <div id="page1" ></div>
+    <div class="to">
+    <img src="/static/img/product/家教机产品页_02.jpg">
+    </div>
+    <div class="opt">
+<!--        <a href="/static/page/product/earlye.html"></a>-->
+<!--        <a href="/static/page/product/reading.html"></a>-->
+<!--        <a href="/static/page/product/other.html"></a>-->
+        <span onclick="familye()">智能家教机</span><span onclick="earlye()">早教电脑</span><span onclick="reading()">早教阅读笔</span><span onclick="other()">其他系列</span>
+    </div>
+    <div id="show">
+
+       <a v-for='prd in product'  v-on:click="detailsHref(prd.Id,prd.Name)"  >
+           <div class="model" >
+           <div><span class="xp" v-if='prd.IsHot==2'><span class="xp-f" >&nbsp;&nbsp;&nbsp;&nbsp;新品</span></span>
+               <span class="best" v-if='prd.IsHot==1'><span class="best-f"   >&nbsp;&nbsp;&nbsp;&nbsp;热卖</span></span>
+              <img :src="prd.AppHomeCoverImage"></div> <div style="margin-right: 30px"> <span>{{prd.Name}}<hr class="product-hr"/></span><br/><br/>  <b v-html="prd.Title"></b>   </div>
+            </div>
+       </a>
+
+
+    </div>
+    <div id="page2"></div>
+</body>
+<script>
+    bol=true;
+   var vue=new Vue({
+        el:"#show",
+        data:{
+            product:[]
+        }
+    })
+ 
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+    var data = getUrlParam('id');
+
+    if(bol){
+        if(data !=1 && data!=null){
+            bol=false;
+        }else{
+            familye();
+        }
+    }
+    if(data==1){
+        familye();
+    }else if(data==2){
+        earlye();
+    }else if(data==3){
+        reading();
+    }else if(data==4){
+        other();
+    }
+    var url="/static/page/product/productDetails.html";
+    $(function(){
+        $("#page1").css('width','100%');
+        $("#page2").css({'width':'100%','overflow':'hidden'});
+        $("#page1").load("/static/page/head.html");
+        $("#page2").load("/static/page/foot.html");
+
+        // $('#show').delegate("div","click",function () {
+        //     // window.location.assign(url);
+        // })
+    })
+
+    function familye(){
+        document.title="智能家教机";
+        $(".opt span:eq(0)").css({"background-color":"#02d497","color":"#ffffff"})
+        $(".opt span:eq(0)").siblings("span").css({"background-color":"#ffffff","color":"rgb(38,38,38)"})
+        $(".to").html("       <img src=\"/static/img/product/家教机产品页_02.jpg\">");
+        $.ajax({
+            url:"/product/findProduct",
+            data:"SeriesId=1",
+            dataType:"JSON",
+            success:function(data){
+                vue.product=data;
+            }
+        });
+        // $("#show").html(" \n");
+        //
+        // "\n" +
+        // "     <a href='/static/page/product/H80.html'><div class=\"model\">\n" +
+        // "        <div> <img src=\"/static/img/product/家教机产品页3_06.jpg\" ></div><div> <span>机器人家教机 H80</span><br/><br/>  <b>错题打印<br />扫码听课</b> </div>\n" +
+        // "    </div></a>\n" +
+        // "\n" +
+        // "      <a href='/static/page/product/H80.html'><div class=\"model\">\n" +
+        // "        <div><span class=\"best\"><span class=\"best-f\">&nbsp;&nbsp;&nbsp;&nbsp;热卖</span></span> <img src=\"/static/img/product/家教机产品页3_08.jpg\"></div> <div> <span>机器人家教机 H90s</span><br/><br/>  <b>高效提分<br />智能陪伴 </b></div>\n" +
+        // "    </div></a>" +
+        // " <a href='/static/page/product/H80.html'><div class=\"model\">\n" +
+        // "        <div><img src=\"/static/img/product/家教机产品页3_10.jpg\"></div> <div> <span>机器人家教机 H66</span><br/><br/>  <b>能打印错题的<br />机器人家教机 </b></div>\n" +
+        // "    </div></a>" +
+        // " <a href='/static/page/product/H80.html'><div class=\"model\">\n" +
+        // "        <div><img src=\"/static/img/product/家教机产品页3_12.jpg\"></div> <div> <span>机器人家教机 H19</span><br/><br/>  <b>学习不容易<br />就来找小易 </b></div>\n" +
+        // "    </div></a>" +
+        // " <a href='/static/page/product/H80.html'><div class=\"model\">\n" +
+        // "        <div><img src=\"/static/img/product/家教机产品页3_18.jpg\"></div> <div> <span>机器人家教机 H29</span><br/><br/>  <b>一问就答<br />一拍就会 </b></div>\n" +
+        // "    </div></a>" +
+        // "<a href='/static/page/product/H80.html'><div class=\"model\">\n" +
+        // "        <div><img src=\"/static/img/product/家教机产品页3_16.jpg\"></div> <div> <span>机器人家教机 H26s</span><br/><br/>  <b>妙解好问题<br />吃透知识点 </b></div>\n" +
+        // "    </div></a>"
+    }
+
+   function detailsHref(id,name){
+       window.location.assign(url+"?Id="+id+"&Name="+name);
+   }
+    function earlye(){
+        document.title="早教电脑";
+        $(".opt span:eq(1)").css({"background-color":"#02d497","color":"#ffffff"})
+        $(".opt span:eq(1)").siblings("span").css({"background-color":"#ffffff","color":"rgb(38,38,38)"})
+        $(".to").html("    <img src=\"/static/img/product/幼教产品页_02.jpg\">");
+        $.ajax({
+            url:"/product/findProduct",
+            data:"SeriesId=2",
+            dataType:"JSON",
+            success:function(data){
+                vue.product=data;
+            }
+        });
+        // $("#show").html("\n" +
+        //     "<a href='/static/page/product/M5.html'><div class=\"model\">\n" +
+        //     "    <div><span class=\"xp\"><span class=\"xp-f\">&nbsp;&nbsp;&nbsp;&nbsp;新品</span></span> <img src=\"/static/img/product/幼教产品页_05.jpg\"></div><div> <span>儿童早教电脑 M2 Pro</span><br/><br/><b> 数学启蒙有奇米\n" +
+        //     "    <br/>妈妈也能教的好 </div></b>\n" +
+        //     "</div></a>\n" +
+        //     "<a href='/static/page/product/M5.html'><div class=\"model\">\n" +
+        //     "    <div><span class=\"xp\"><span class=\"xp-f\">&nbsp;&nbsp;&nbsp;&nbsp;新品</span></span> <img src=\"/static/img/product/幼教产品页_08.jpg\"></div><div> <span>儿童早教电脑 M5</span><br/><br/><b> 错题打印\n" +
+        //     "    <br/>扫码听课</div><br /></b>\n" +
+        //     "</div></a>\n" +
+        //     "<a href='/static/page/product/M5.html'><div class=\"model\">\n" +
+        //     "    <div><span class=\"best\"><span class=\"best-f\">&nbsp;&nbsp;&nbsp;&nbsp;热卖</span></span>  <img src=\"/static/img/product/幼教产品页_10.jpg\"></div><div> <span>儿童早教电脑 M2s</span><br/><br/><b> 爱数学\n" +
+        //     "    <br/>爱思考</div><br /></b>\n" +
+        //     "</div></a>\n" +
+        //     "\n" +
+        //     "<a href='/static/page/product/M5.html'><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/幼教产品页3_10.jpg\"></div><div> <span>儿童早教电脑 i9</span><br/><br/><b> 分龄分段\n" +
+        //     "    <br/>行业旗舰</div><br /></b>\n" +
+        //     "</div></a>" +
+        //     "<a href='/static/page/product/M5.html'><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/幼教产品页3_12.jpg\"></div><div> <span>儿童早教电脑 M1</span><br/><br/><b> 锻炼思维\n" +
+        //     "    <br/>让孩子更聪明</div><br /></b>\n" +
+        //     "</div></a>")
+    }
+    function reading(){
+        document.title="早教点读笔";
+        $(".opt span:eq(2)").css({"background-color":"#02d497","color":"#ffffff"})
+        $(".opt span:eq(2)").siblings("span").css({"background-color":"#ffffff","color":"rgb(38,38,38)"})
+        $(".to").html("        <img src=\"/static/img/product/阅读笔产品页_02.jpg\">");
+        $.ajax({
+            url:"/product/findProduct",
+            data:"SeriesId=3",
+            dataType:"JSON",
+            success:function(data){
+                vue.product=data;
+            }
+        });
+        // $("#show").html("<a href='/static/page/product/V1.html'><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/阅读笔产品页_08.jpg\"></div><div> <span>早教点读笔 Q10S</span><br/><br/><b> 可以咬的点读笔</b></div><br />\n" +
+        //     "</div></a>\n" +
+        //     "<a href='/static/page/product/V1.html'><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/阅读笔产品页_10.jpg\"></div><div> <span>早教点读笔 Q7S</span><br/><br/><b> 分龄分段<br />\n" +
+        //     "    多元智能开发</b></div><br />\n" +
+        //     "</div></a>\n" +
+        //     "\n" +
+        //     "<a href='/static/page/product/V1.html'><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/阅读笔产品页_12.jpg\"></div><div> <span>早教点读笔 Q50</span><br/><br/><b> 同步显示<br />\n" +
+        //     "    点哪显哪</b></div><br />\n" +
+        //     "</div></a>");
+    }
+    function other(){
+        document.title="电子书包";
+        $(".opt span:eq(3)").css({"background-color":"#02d497","color":"#ffffff"})
+        $(".opt span:eq(3)").siblings("span").css({"background-color":"#ffffff","color":"rgb(38,38,38)"})
+        $(".to").html("        <img src=\"/static/img/product/其他产品页_02.jpg\">");
+        $.ajax({
+            url:"/product/findProduct",
+            data:"SeriesId=4",
+            dataType:"JSON",
+            success:function(data){
+                vue.product=data;
+            }
+        });
+        // $("#show").html("<a href=''><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/其他产品页_05.jpg\"></div><div> <span>电子书包 D92</span><br/><br/><b> 校园因科技更智慧</b> </div>\n" +
+        //     "</div></a>\n" +
+        //     "<a href=''><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/其他产品页_08.jpg\"></div><div> <span>学生电脑 T7</span><br/><br/><b> 一站式学习<br />\n" +
+        //     "    新体验</b></div><br />\n" +
+        //     "</div></a>\n" +
+        //     "<a href=''><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/其他产品页_10.jpg\"></div><div> <span>学生电脑 T9</span><br/><br/><b> 情智导学</b></div><br />\n" +
+        //     "</div></a>\n" +
+        //     "\n" +
+        //     "<a href=''><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/其他产品页_12.jpg\"></div><div> <span>电子词典全能 A920</span><br/><br/><b> 引领七大行业之最</b></div><br />\n" +
+        //     "</div></a>\n" +
+        //     "\n" +
+        //     "<a href=''><div class=\"model\">\n" +
+        //     "    <div> <img src=\"/static/img/product/其他产品页_14.jpg\"></div><div> <span>电子词典 EH1</span><br/><br/><b> 权威 全面<br />\n" +
+        //     "    专业 海量 </b></div><br />\n" +
+        //     "</div></a>");
+    }
+</script>
+</html>
